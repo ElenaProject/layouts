@@ -18,6 +18,7 @@ body {
   color: #000;
 }
 
+/*.............Header................*/
 .header {
   text-align: center;
 }
@@ -66,4 +67,13 @@ body {
 
 .menu__list-item:last-child {
   border-right: 1px solid #c4c4c4;
+}
+
+/*.............Slider................*/
+
+.slider__item {
+  min-height: 600px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
 }
