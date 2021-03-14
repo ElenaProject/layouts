@@ -73,7 +73,29 @@ body {
 
 .slider__item {
   min-height: 600px;
+
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  transform: translateY(-50%);
+}
+
+.slick-next {
+  right: 20px;
+}
+
+.slick-prev {
+  left: 20px;
+  z-index: 5;
 }
