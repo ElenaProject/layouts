@@ -17,3 +17,53 @@ body {
   line-height: 24px;
   color: #000;
 }
+
+.header {
+  text-align: center;
+}
+
+.header__logo {
+  padding: 88px 0 60px;
+}
+
+.menu {
+  border-top: 2px solid #c4c4c4;
+}
+
+.menu__list {
+  display: flex;
+  justify-content: center;
+}
+
+.menu__list-item {
+  width: 300px;
+}
+
+.menu__link-link {
+  display: block;
+  padding: 34px 10px 38px;
+  max-width: 300px;
+
+  font-size: 24px;
+  line-height: 28px;
+  color: #888;
+  text-decoration: none;
+
+  border-left: 1px solid #c4c4c4;
+  border-right: 1px solid #c4c4c4;
+  transition: all 0.3s;
+}
+
+.menu__link-link:hover,
+.menu__link-link--active {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.menu__list-item:first-child {
+  border-left: 1px solid #c4c4c4;
+}
+
+.menu__list-item:last-child {
+  border-right: 1px solid #c4c4c4;
+}
