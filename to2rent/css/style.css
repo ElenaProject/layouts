@@ -193,8 +193,7 @@ body {
   justify-content: space-between;
   padding: 100px 0;
 }
-.popular__item {
-}
+
 .popular__img {
   width: 280px;
   height: 280px;
@@ -202,6 +201,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
 }
+
 .popular__item-title {
   padding: 30px 10px;
 
@@ -210,6 +210,7 @@ body {
   line-height: 24px;
   font-weight: normal;
 }
+
 .popular__link {
   padding: 13px 48px;
 
@@ -217,4 +218,67 @@ body {
   text-decoration: none;
 
   background-color: #c4c4c4;
+}
+
+/*.............Reasons.............*/
+
+.reasons {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.reasons__inner {
+  display: flex;
+}
+
+.reasons__item {
+  padding-right: 129px;
+}
+
+.reasons__title {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 138px;
+
+  font-family: "PT Serif", serif;
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: normal;
+}
+.reasons__title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 103px;
+  height: 103px;
+}
+.reasons__title--icon-1::before {
+  background: url(../images/reasons_time-icon.png) no-repeat center;
+}
+.reasons__title--icon-2::before {
+  background: url(../images/reasons_world-icon.png) no-repeat center;
+}
+
+.reasons__text {
+  margin-bottom: 42px;
+}
+
+.reasons__link {
+  position: relative;
+  padding-left: 36px;
+
+  color: #888888;
+}
+.reasons__link::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+
+  width: 30px;
+  height: 30px;
+
+  background-image: url(../images/arrow-black.svg);
 }
