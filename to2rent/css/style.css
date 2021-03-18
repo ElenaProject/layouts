@@ -282,3 +282,38 @@ body {
 
   background-image: url(../images/arrow-black.svg);
 }
+
+/*.............Special.............*/
+
+.special {
+  min-height: 100vh;
+
+  text-align: right;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.special__title {
+  max-width: 457px;
+  margin-left: auto;
+  padding-top: 68px;
+  padding-bottom: 15px;
+
+  color: #ffffff;
+  font-family: "PT Serif", serif;
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: normal;
+}
+.special__link {
+  display: inline-block;
+  padding: 16px 18px;
+
+  color: #ffffff;
+  line-height: 18px;
+  text-decoration: none;
+
+  background-color: #000000;
+}
