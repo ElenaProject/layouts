@@ -26,6 +26,11 @@ img {
   object-fit: cover;
 }
 
+input,
+button {
+  border-radius: 0;
+}
+
 /*.............Header.............*/
 .header {
   text-align: center;
@@ -134,9 +139,8 @@ img {
 }
 
 .search__form-input {
-  height: 70px;
   width: 430px;
-  padding: 0 15px;
+  padding: 21px 15px;
 
   color: #888888;
   font-family: Roboto Condensed, sans-serif;
@@ -157,13 +161,15 @@ img {
 
 .search__form-btn {
   position: relative;
-  padding: 21px 23px 21px 36px;
+  height: 70px;
+  padding-right: 23px;
+  padding-left: 36px;
 
   color: #ffffff;
   font-size: 24px;
 
   background-color: #c4c4c4;
-  border: none;
+  border: 0;
   cursor: pointer;
 }
 
