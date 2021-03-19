@@ -406,11 +406,10 @@ img {
 .info__blog-link {
   position: relative;
   display: inline-block;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
   padding-left: 67px;
 
   color: #ffffff;
-  line-height: 18px;
   text-decoration: none;
 }
 
