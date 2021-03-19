@@ -282,6 +282,11 @@
     padding: 15px 20px;
     font-size: 22px;
   }
+
+  .search__form-btn::before {
+    display: none;
+  }
+
   .reasons__item {
     margin: 0 10px 50px;
   }
