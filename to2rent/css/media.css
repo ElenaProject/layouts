@@ -9,9 +9,6 @@
     height: 400px;
   }
 
-  .reasons {
-    margin-top: 0;
-  }
   .reasons__inner {
     justify-content: space-around;
   }
@@ -43,6 +40,13 @@
 }
 
 @media (max-width: 980px) {
+  .popular__inner,
+  .reasons,
+  .info,
+  .footer__top {
+    padding: 50px 0;
+  }
+
   .search__form {
     flex-wrap: wrap;
   }
@@ -90,6 +94,20 @@
   .info__blog-list {
     margin-left: 150px;
   }
+
+  .footer__top-inner {
+    display: block;
+  }
+
+  .footer__menu {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .question__form {
+    width: 80vw;
+    margin: 30px auto 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -97,7 +115,7 @@
     padding: 40px 0 25px;
   }
 
-  .logo__link-img--header {
+  .logo__link-img {
     max-width: 250px;
     height: 120px;
   }
@@ -117,10 +135,6 @@
   .popular__img {
     width: 400px;
     height: 400px;
-  }
-
-  .reasons {
-    margin-bottom: 50px;
   }
 
   .reasons__title {
@@ -150,6 +164,27 @@
 
   .special__title {
     padding-top: 40px;
+  }
+
+  .question__form {
+    flex-direction: column;
+  }
+
+  .question__form-label {
+    margin: 0 0 20px;
+    text-align: center;
+  }
+
+  .question__form-input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 20px 15px;
+    text-align: center;
+  }
+
+  .question__form-btn {
+    margin-left: auto;
+    padding: 18px 38px;
   }
 }
 
@@ -189,10 +224,6 @@
     width: 65%;
   }
 
-  .popular__inner {
-    padding-bottom: 50px;
-  }
-
   .popular__title {
     font-size: 36px;
     line-height: 42px;
@@ -201,10 +232,6 @@
   .popular__img {
     width: 280px;
     height: 280px;
-  }
-
-  .reasons {
-    margin: 10px 0;
   }
 
   .reasons__item {
@@ -255,11 +282,6 @@
     padding: 15px 20px;
     font-size: 22px;
   }
-
-  .popular__inner {
-    padding-bottom: 50px;
-  }
-
   .reasons__item {
     margin: 0 10px 50px;
   }
@@ -282,10 +304,6 @@
     font-size: 16px;
   }
 
-  .info {
-    padding: 50px 0;
-  }
-
   .info__blog {
     width: 350px;
   }
@@ -299,5 +317,14 @@
     width: 25px;
     height: 25px;
     background-size: cover;
+  }
+
+  .question__form-input {
+    margin-bottom: 0;
+  }
+
+  .question__form-btn {
+    width: 100%;
+    margin-left: 0;
   }
 }

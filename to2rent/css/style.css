@@ -35,7 +35,7 @@ img {
   padding: 88px 0 60px;
 }
 
-.logo__link-img--header {
+.logo__link-img {
   width: 392px;
   height: 152px;
   object-fit: contain;
@@ -232,8 +232,7 @@ img {
 /*.............Reasons.............*/
 
 .reasons {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  padding: 100px 0;
 }
 
 .reasons__inner {
