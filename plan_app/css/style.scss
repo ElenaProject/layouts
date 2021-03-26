@@ -1,22 +1,126 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
 
-// === Mixins ===
+// === MIXINS ===
 @mixin quicksand {
   font-family: "Quicksand", sans-serif;
 }
 @mixin roboto {
   font-family: "Roboto", sans-serif;
 }
-// === / Mixins ===
+// === / MIXINS ===
 
-// === Variables ===
+// === VARIABLES ===
 $fw-regular: 400;
 $fw-medium: 500;
 $fw-bold: 700;
-// === / Variables ===
 
-// === Common ===
+$padding-vertical-xs: 20px;
+$padding-vertical-s: 60px;
+$padding-vertical: 120px;
+
+$color-divider: #d8e3fe;
+// === / VARIABLES ===
+
+// === COMMON ===
 body {
   @include roboto;
 }
-// === / Common ===
+
+.section-outer {
+  border-bottom: 1px solid $color-divider;
+}
+.section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: $padding-vertical;
+  padding-bottom: $padding-vertical;
+
+  &--wide {
+    max-width: 1200px;
+  }
+}
+// === / COMMON ===
+
+// === HEADER ===
+.section-header {
+  .section-inner {
+    padding-top: $padding-vertical-xs;
+    padding-bottom: $padding-vertical-xs;
+  }
+}
+// === / HEADER ===
+
+// === HERO-IMAGE ===
+.section-hero-image {
+  background-color: #f4f7ff;
+}
+// === / HERO-IMAGE ===
+
+// === CUSTOMERS ===
+.section-customers {
+  .section-inner {
+    padding-top: $padding-vertical-s;
+    padding-bottom: $padding-vertical-s;
+  }
+}
+// === / CUSTOMERS ===
+
+// === PLAN-AND-MANAGE ===
+.section-plan-and-manage {
+  background-color: #e4e6f0;
+}
+// === / PLAN-AND-MANAGE ===
+
+// === FEATURES ===
+.section-features {
+}
+// === / FEATURES ===
+
+// === STATS ===
+.section-stats {
+  background-color: #e9efff;
+  .section-inner {
+    padding-top: $padding-vertical-s;
+    padding-bottom: $padding-vertical-s;
+  }
+}
+// === / STATS ===
+
+// === BLOG ===
+.section-blog {
+  background-color: #f5f8ff;
+}
+// === / BLOG ===
+
+// === QUOTES ===
+.section-quotes {
+  background-color: #eaf0ff;
+}
+// === / QUOTES ===
+
+// === FAQ ===
+.section-faq {
+}
+// === / FAQ ===
+
+// === GET-STARTED ===
+.section-get-started {
+  background-color: #6888ff;
+}
+// === / GET-STARTED ===
+
+// === NEWSLETTER ===
+.section-newsletter {
+  background-color: #fcfdff;
+}
+// === / NEWSLETTER ===
+
+// === FOOTER ===
+.section-footer {
+  border-bottom: none;
+  .section-inner {
+    padding-top: $padding-vertical-s;
+    padding-bottom: $padding-vertical-s;
+  }
+}
+// === / FOOTER ===
