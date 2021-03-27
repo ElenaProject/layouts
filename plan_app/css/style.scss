@@ -290,5 +290,15 @@ body {
     padding-top: $padding-vertical-s;
     padding-bottom: $padding-vertical-s;
   }
+
+  &__copyright {
+    @include quicksand();
+
+    margin-top: $base * 7;
+    margin-left: $base * 24;
+    color: #aeb8d0;
+    font-size: $fz-sm;
+    font-weight: $fw-medium;
+  }
 }
 // === / FOOTER ===

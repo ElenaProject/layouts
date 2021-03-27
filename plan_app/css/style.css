@@ -225,3 +225,12 @@ body {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+
+.section-footer__copyright {
+  font-family: "Quicksand", sans-serif;
+  margin-top: 28px;
+  margin-left: 96px;
+  color: #aeb8d0;
+  font-size: 12px;
+  font-weight: 500;
+}
