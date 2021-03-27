@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap");
 
 // === MIXINS ===
 @mixin quicksand {
@@ -22,12 +22,14 @@
   text-decoration: none;
   background-color: transparent;
   border: 0;
+  cursor: pointer;
 }
 // === / PLACEHOLDERS ===
 
 // === VARIABLES ===
 $base: 4px;
 
+$fw-light: 300;
 $fw-regular: 400;
 $fw-medium: 500;
 $fw-bold: 700;
@@ -43,7 +45,7 @@ $transition: 0.2s;
 
 $color-divider: #d8e3fe;
 $color-primary: #8d96bd;
-$color-secondary: #3d4f9f;
+$color-title: #3d4f9f;
 $color-logo: #5e81fe;
 
 // === / VARIABLES ===
@@ -51,6 +53,7 @@ $color-logo: #5e81fe;
 // === COMMON ===
 body {
   @include roboto;
+  color: $color-primary;
 }
 
 .visually-hidden {
@@ -71,8 +74,7 @@ body {
 .section-inner {
   max-width: 900px;
   margin: 0 auto;
-  padding-top: $padding-vertical;
-  padding-bottom: $padding-vertical;
+  padding: $padding-vertical 10px;
 
   &--wide {
     max-width: 1200px;
@@ -98,6 +100,79 @@ body {
     }
   }
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include quicksand;
+  margin: 0;
+  padding: 0;
+  color: $color-title;
+  font-weight: $fw-medium;
+}
+
+h1,
+h2 {
+  margin-bottom: $base * 7;
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  @include roboto;
+  margin-bottom: $base * 4;
+
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.title {
+  &__light {
+    font-weight: $fw-light;
+  }
+}
+
+.text {
+  margin: 0;
+  font-size: $fz-md;
+  line-height: 2;
+  letter-spacing: 0.03em;
+}
+
+.dots {
+  @extend %list;
+
+  display: flex;
+
+  &__item {
+    width: $base * 2;
+    height: $base * 2;
+    cursor: pointer;
+    background-color: #d1d6e3;
+    border-radius: 50%;
+    transition: $transition;
+
+    &--active {
+      background-color: $color-logo;
+    }
+
+    & + & {
+      margin-left: $base * 3;
+    }
+  }
+}
+
 // === / COMMON ===
 
 // === HEADER ===
@@ -105,9 +180,7 @@ body {
 // === / HEADER ===
 
 // === HERO-IMAGE ===
-.section-hero-image {
-  background-color: #f4f7ff;
-}
+@import "hero_image";
 // === / HERO-IMAGE ===
 
 // === CUSTOMERS ===

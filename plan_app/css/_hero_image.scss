@@ -1,0 +1,39 @@
+.section-hero-image {
+  background-color: #f4f7ff;
+}
+
+.slider-hero-image {
+  @extend %list;
+
+  position: relative;
+
+  &__item {
+    height: $base * 140;
+    text-align: center;
+    background-position: 50% 85%;
+    background-size: cover;
+  }
+
+  &__text {
+    width: 55%;
+    margin: 0 auto $base * 5;
+  }
+
+  &__btn {
+    @extend %btn;
+
+    display: inline-block;
+    width: $base * 13;
+    height: $base * 13;
+    background: #ffffff url(../img/icons/btn-play.svg) no-repeat 54% 50%;
+    border-radius: 50%;
+    box-shadow: 0px 10px 50px rgba(201, 209, 231, 0.6);
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: $base * 7;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
