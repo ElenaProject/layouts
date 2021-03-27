@@ -32,6 +32,9 @@ $fw-regular: 400;
 $fw-medium: 500;
 $fw-bold: 700;
 
+$fz-sm: 12px;
+$fz-md: 15px;
+
 $padding-vertical-xs: $base * 5;
 $padding-vertical-s: $base * 15;
 $padding-vertical: $base * 30;
@@ -81,7 +84,7 @@ body {
   @include quicksand;
 
   padding: $base * 3 $base * 4;
-  font-size: 13px;
+  font-size: $fz-sm;
   font-weight: $fw-bold;
   border-radius: 2px;
   transition: $transition;
@@ -137,7 +140,7 @@ body {
     @include quicksand;
 
     color: #697ca6;
-    font-size: 12px;
+    font-size: $fz-sm;
     font-weight: $fw-medium;
     text-decoration: none;
     transition: $transition;
