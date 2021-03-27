@@ -9,21 +9,54 @@
 }
 // === / MIXINS ===
 
+// === PLACEHOLDERS ===
+
+%list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+%btn {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  background-color: transparent;
+  border: 0;
+}
+// === / PLACEHOLDERS ===
+
 // === VARIABLES ===
+$base: 4px;
+
 $fw-regular: 400;
 $fw-medium: 500;
 $fw-bold: 700;
 
-$padding-vertical-xs: 20px;
-$padding-vertical-s: 60px;
-$padding-vertical: 120px;
+$padding-vertical-xs: $base * 5;
+$padding-vertical-s: $base * 15;
+$padding-vertical: $base * 30;
 
 $color-divider: #d8e3fe;
+
+$transition: 0.2s;
 // === / VARIABLES ===
 
 // === COMMON ===
 body {
   @include roboto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
 }
 
 .section-outer {
@@ -39,6 +72,26 @@ body {
     max-width: 1200px;
   }
 }
+
+.btn {
+  @extend %btn;
+  @include quicksand;
+
+  padding: $base * 3 $base * 4;
+  font-size: 13px;
+  font-weight: $fw-bold;
+  border-radius: 2px;
+  transition: $transition;
+
+  &--primary {
+    color: #3a79ff;
+    background-color: #d2e1ff;
+
+    &:hover {
+      background-color: darken(#d2e1ff, 5%);
+    }
+  }
+}
 // === / COMMON ===
 
 // === HEADER ===
@@ -47,7 +100,116 @@ body {
     padding-top: $padding-vertical-xs;
     padding-bottom: $padding-vertical-xs;
   }
+
+  &__btn {
+    margin-left: $base * 11;
+  }
 }
+.main-navigation {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  width: $base * 6;
+  height: $base * 6;
+  background-color: #5e81fe;
+  border-radius: 50%;
+}
+.nav {
+  margin-left: $base * 18;
+
+  &__list {
+    @extend %list;
+
+    display: flex;
+  }
+
+  &__item {
+    & + & {
+      margin-left: $base * 10;
+    }
+  }
+
+  &__link {
+    @include quicksand;
+
+    color: #697ca6;
+    font-size: 12px;
+    font-weight: $fw-medium;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      color: #5e81fe;
+    }
+    &--active {
+      color: #5e81fe;
+      font-weight: $fw-bold;
+    }
+  }
+}
+.socials {
+  margin-left: auto;
+
+  &__list {
+    @extend %list;
+
+    display: flex;
+  }
+
+  &__item {
+    & + & {
+      margin-left: $base * 10;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 17px;
+    height: 17px;
+    font-size: 0;
+    background-repeat: no-repeat;
+    transition: $transition;
+
+    &--icon--facebook {
+      margin-top: -3px;
+      background-image: url(../img/icons/facebook.svg);
+    }
+
+    &--active#{&}--icon--facebook,
+    &--icon--facebook:hover {
+      background-image: url(../img/icons/facebook-hover.svg);
+    }
+
+    &--icon--telegram {
+      background-image: url(../img/icons/telegram.svg);
+    }
+
+    &--active#{&}--icon--telegram,
+    &--icon--telegram:hover {
+      background-image: url(../img/icons/telegram-hover.svg);
+    }
+
+    &--icon--twitter {
+      background-image: url(../img/icons/twitter.svg);
+    }
+
+    &--active#{&}--icon--twitter,
+    &--icon--twitter:hover {
+      background-image: url(../img/icons/twitter-hover.svg);
+    }
+
+    &--icon--medium {
+      background-image: url(../img/icons/medium.svg);
+    }
+
+    &--active#{&}--icon--medium,
+    &--icon--medium:hover {
+      background-image: url(../img/icons/medium-hover.svg);
+    }
+  }
+}
+
 // === / HEADER ===
 
 // === HERO-IMAGE ===
