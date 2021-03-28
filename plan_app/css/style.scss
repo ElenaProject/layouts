@@ -41,7 +41,7 @@ $padding-vertical-xs: $base * 5;
 $padding-vertical-s: $base * 15;
 $padding-vertical: $base * 30;
 
-$transition: 0.2s;
+$transition: 0.5s;
 
 $color-divider: #d8e3fe;
 $color-primary: #8d96bd;
@@ -184,12 +184,7 @@ h5 {
 // === / HERO-IMAGE ===
 
 // === CUSTOMERS ===
-.section-customers {
-  .section-inner {
-    padding-top: $padding-vertical-s;
-    padding-bottom: $padding-vertical-s;
-  }
-}
+@import "customers";
 // === / CUSTOMERS ===
 
 // === PLAN-AND-MANAGE ===

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap");
-.dots, .nav__list, .socials__list, .slider-hero-image {
+.dots, .nav__list, .socials__list, .slider-hero-image, .customers {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -52,8 +52,8 @@ body {
   font-size: 12px;
   font-weight: 700;
   border-radius: 2px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .btn--primary {
@@ -123,8 +123,8 @@ h5 {
   cursor: pointer;
   background-color: #d1d6e3;
   border-radius: 50%;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .dots__item--active {
@@ -180,8 +180,8 @@ h5 {
   font-size: 12px;
   font-weight: 500;
   text-decoration: none;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .nav__link:hover {
@@ -213,8 +213,8 @@ h5 {
   height: 17px;
   font-size: 0;
   background-repeat: no-repeat;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .socials__link--icon--facebook {
@@ -291,6 +291,31 @@ h5 {
 .section-customers .section-inner {
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.customers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.customers__item {
+  color: #d6dae5;
+  font-size: 28px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.customers__item:hover, .customers__item--active {
+  color: #5982e7;
 }
 
 .section-plan-and-manage {
