@@ -201,53 +201,45 @@ h5 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .socials__item + .socials__item {
-  margin-left: 40px;
+  margin-left: 32px;
 }
 
 .socials__link {
   display: block;
-  width: 17px;
-  height: 17px;
-  font-size: 0;
-  background-repeat: no-repeat;
+  color: #b6bac7;
+  font-size: 13px;
+  text-decoration: none;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-.socials__link--icon--facebook {
-  margin-top: -3px;
-  background-image: url(../img/icons/facebook.svg);
+.socials__link:hover, .socials__link--active {
+  color: #6188ff;
 }
 
-.socials__link--active.socials__link--icon--facebook, .socials__link--icon--facebook:hover {
-  background-image: url(../img/icons/facebook-hover.svg);
+.icon-facebook {
+  font-size: 16px;
 }
 
-.socials__link--icon--telegram {
-  background-image: url(../img/icons/telegram.svg);
+.icon-telegram {
+  width: 14px;
+  height: 13px;
+  background: url(../img/icons/telegram.svg);
 }
 
-.socials__link--active.socials__link--icon--telegram, .socials__link--icon--telegram:hover {
+.icon-telegram:hover,
+.icon-telegram .socials__link--active {
   background-image: url(../img/icons/telegram-hover.svg);
 }
 
-.socials__link--icon--twitter {
-  background-image: url(../img/icons/twitter.svg);
-}
-
-.socials__link--active.socials__link--icon--twitter, .socials__link--icon--twitter:hover {
-  background-image: url(../img/icons/twitter-hover.svg);
-}
-
-.socials__link--icon--medium {
-  background-image: url(../img/icons/medium.svg);
-}
-
-.socials__link--active.socials__link--icon--medium, .socials__link--icon--medium:hover {
-  background-image: url(../img/icons/medium-hover.svg);
+.icon-medium {
+  color: #757e9a;
 }
 
 .section-hero-image {
@@ -271,13 +263,23 @@ h5 {
 }
 
 .slider-hero-image__btn {
+  position: relative;
   display: inline-block;
   width: 52px;
   height: 52px;
-  background: #ffffff url(../img/icons/btn-play.svg) no-repeat 54% 50%;
+  color: #5e81ff;
+  font-size: 12px;
   border-radius: 50%;
   -webkit-box-shadow: 0px 10px 50px rgba(201, 209, 231, 0.6);
           box-shadow: 0px 10px 50px rgba(201, 209, 231, 0.6);
+}
+
+.slider-hero-image__btn::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-35%, -40%);
+          transform: translate(-35%, -40%);
 }
 
 .slider-hero-image__dots {

@@ -22,12 +22,21 @@
   &__btn {
     @extend %btn;
 
+    position: relative;
     display: inline-block;
     width: $base * 13;
     height: $base * 13;
-    background: #ffffff url(../img/icons/btn-play.svg) no-repeat 54% 50%;
+    color: #5e81ff;
+    font-size: $fz-sm;
     border-radius: 50%;
     box-shadow: 0px 10px 50px rgba(201, 209, 231, 0.6);
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-35%, -40%);
+    }
   }
 
   &__dots {
