@@ -40,6 +40,7 @@ $fz-md: 15px;
 $padding-vertical-xs: $base * 5;
 $padding-vertical-s: $base * 15;
 $padding-vertical: $base * 30;
+$padding-vertical-xl: $base * 53;
 
 $transition: 0.5s;
 
@@ -63,7 +64,7 @@ body {
   margin: -1px;
   padding: 0;
   overflow: hidden;
-  border: 0;
+  border: 1px solid transparent;
   clip: rect(0, 0, 0, 0);
   clip-path: inset(100%);
 }
@@ -81,6 +82,7 @@ body {
   }
 }
 
+//  Buttons
 .btn {
   @extend %btn;
   @include quicksand;
@@ -97,6 +99,44 @@ body {
 
     &:hover {
       background-color: darken(#d2e1ff, 5%);
+    }
+  }
+
+  &--secondary {
+    padding-right: $base * 6;
+    padding-left: $base * 6;
+    color: #ffffff;
+    background-color: #4c85ff;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: darken(#4c85ff, 10%);
+    }
+  }
+
+  &--no-bg {
+    padding-right: $base * 5;
+    padding-left: $base * 5;
+    color: #adb4d2;
+    border: 1px solid #d1d1e4;
+
+    &:hover {
+      color: darken(#adb4d2, 10%);
+      border: 1px solid darken(#d1d1e4, 10%);
+    }
+  }
+
+  &-group {
+    display: flex;
+
+    .btn:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .btn:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
   }
 }
@@ -122,6 +162,7 @@ h2 {
 
 h3 {
   font-size: 36px;
+  margin-bottom: $base * 7;
 }
 
 h4 {
@@ -187,11 +228,9 @@ h5 {
 @import "customers";
 // === / CUSTOMERS ===
 
-// === PLAN-AND-MANAGE ===
-.section-plan-and-manage {
-  background-color: #e4e6f0;
-}
-// === / PLAN-AND-MANAGE ===
+// === APP-DEMO ===
+@import "app-demo";
+// === / APP-DEMO ===
 
 // === FEATURES ===
 .section-features {
