@@ -48,6 +48,7 @@ $color-divider: #d8e3fe;
 $color-primary: #8d96bd;
 $color-title: #3d4f9f;
 $color-logo: #5e81fe;
+$color-features: #4074f8;
 
 // === / VARIABLES ===
 
@@ -93,12 +94,21 @@ body {
   border-radius: 2px;
   transition: $transition;
 
-  &--primary {
+  &--primary--blue {
     color: #3a79ff;
     background-color: #d2e1ff;
 
     &:hover {
       background-color: darken(#d2e1ff, 5%);
+    }
+  }
+
+  &--primary--pink {
+    color: #d43f3f;
+    background-color: #ffd7d7;
+
+    &:hover {
+      background-color: darken(#ffd7d7, 5%);
     }
   }
 
@@ -167,6 +177,7 @@ h3 {
 
 h4 {
   font-size: 24px;
+  margin-bottom: $base * 23;
 }
 
 h5 {
@@ -233,8 +244,7 @@ h5 {
 // === / APP-DEMO ===
 
 // === FEATURES ===
-.section-features {
-}
+@import "features";
 // === / FEATURES ===
 
 // === STATS ===
