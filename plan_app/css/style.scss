@@ -36,6 +36,8 @@ $fw-bold: 700;
 
 $fz-sm: 12px;
 $fz-md: 15px;
+$fz-lg: 18px;
+$fz-xl: 48px;
 
 $padding-vertical-xs: $base * 5;
 $padding-vertical-s: $base * 15;
@@ -248,13 +250,7 @@ h5 {
 // === / FEATURES ===
 
 // === STATS ===
-.section-stats {
-  background-color: #e9efff;
-  .section-inner {
-    padding-top: $padding-vertical-s;
-    padding-bottom: $padding-vertical-s;
-  }
-}
+@import "stats";
 // === / STATS ===
 
 // === BLOG ===
