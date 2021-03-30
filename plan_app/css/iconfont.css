@@ -1,10 +1,10 @@
 @font-face {
   font-family: "iconfont";
-  src: url("../fonts/iconfont.eot?s2pebg");
-  src: url("../fonts/iconfont.eot?s2pebg#iefix") format("embedded-opentype"),
-    url("../fonts/iconfont.ttf?s2pebg") format("truetype"),
-    url("../fonts/iconfont.woff?s2pebg") format("woff"),
-    url("../fonts/iconfont.svg?s2pebg#iconfont") format("svg");
+  src: url("../fonts/iconfont.eot?ysunan");
+  src: url("../fonts/iconfont.eot?ysunan#iefix") format("embedded-opentype"),
+    url("../fonts/iconfont.ttf?ysunan") format("truetype"),
+    url("../fonts/iconfont.woff?ysunan") format("woff"),
+    url("../fonts/iconfont.svg?ysunan#iconfont") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,7 +26,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* social */
+.icon-arrow:before {
+  content: "\e910";
+}
+.icon-loupe:before {
+  content: "\e90f";
+}
 .icon-facebook:before {
   content: "\e905";
 }
@@ -36,12 +41,27 @@
 .icon-twitter:before {
   content: "\e907";
 }
-
+.icon-users:before {
+  content: "\e908";
+}
+.icon-save:before {
+  content: "\e909";
+}
+.icon-productivity:before {
+  content: "\e90a";
+}
+.icon-overview:before {
+  content: "\e90b";
+}
+.icon-files:before {
+  content: "\e90c";
+}
+.icon-chats:before {
+  content: "\e90d";
+}
 .icon-play:before {
   content: "\e90e";
 }
-
-/* customers */
 .icon-apple-watch:before {
   content: "\e900";
 }
@@ -56,26 +76,4 @@
 }
 .icon-facebook1:before {
   content: "\e904";
-}
-
-/* features */
-.icon-save:before {
-  content: "\e909";
-}
-.icon-overview:before {
-  content: "\e90b";
-}
-.icon-files:before {
-  content: "\e90c";
-}
-.icon-chats:before {
-  content: "\e90d";
-}
-
-/* Stats */
-.icon-productivity:before {
-  content: "\e90a";
-}
-.icon-users:before {
-  content: "\e908";
 }

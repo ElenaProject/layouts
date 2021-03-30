@@ -222,6 +222,7 @@ h5 {
   @extend %list;
 
   display: flex;
+  justify-content: center;
 
   &__item {
     width: $base * 2;
@@ -268,9 +269,7 @@ h5 {
 // === / STATS ===
 
 // === BLOG ===
-.section-blog {
-  background-color: #f5f8ff;
-}
+@import "blog";
 // === / BLOG ===
 
 // === QUOTES ===
