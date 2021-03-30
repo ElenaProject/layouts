@@ -17,10 +17,16 @@
 }
 
 %btn {
+  // позволяет задать вертик внутр отступы + ширина по содержанию
+  display: inline-block;
   margin: 0;
   padding: 0;
+  // ключаем принудительное наследование шрифта
+  font: inherit;
+  // убирает подчеркивание у ссылок
   text-decoration: none;
   background-color: transparent;
+  // рамка у кнопок
   border: 0;
   cursor: pointer;
 }
@@ -95,6 +101,14 @@ body {
   font-weight: $fw-bold;
   border-radius: 2px;
   transition: $transition;
+
+  &[class*="primary"] {
+    box-sizing: border-box;
+    width: $base * 28;
+    padding: $base * 3 $base * 2;
+    text-align: center;
+    word-wrap: break-word;
+  }
 
   &--primary--blue {
     color: #3a79ff;
