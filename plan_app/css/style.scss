@@ -167,6 +167,8 @@ body {
   }
 }
 
+// Headers
+
 h1,
 h2,
 h3,
@@ -273,9 +275,7 @@ h5 {
 // === / BLOG ===
 
 // === QUOTES ===
-.section-quotes {
-  background-color: #eaf0ff;
-}
+@import "quotes";
 // === / QUOTES ===
 
 // === FAQ ===
