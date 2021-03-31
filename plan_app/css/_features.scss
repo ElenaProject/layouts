@@ -39,7 +39,7 @@
       right: 100%;
       width: $divider-width;
       height: 1px;
-      background-color: #dae4fe;
+      background-color: $color-logo-grey;
     }
   }
 
@@ -47,10 +47,10 @@
     width: $base * 17;
     height: $base * 17;
     margin: 0 auto $base * 8;
-    color: $color-features;
+    color: $color-logo;
     font-size: $base * 5;
     line-height: $base * 17;
-    background-color: #f1f5ff;
+    background-color: $color-bg-grey;
     border-radius: 50%;
 
     &::before {
@@ -60,7 +60,7 @@
 
   &__title {
     margin-bottom: $base * 6;
-    color: $color-features;
+    color: $color-logo;
     font-size: $fz-md;
     font-weight: $fw-bold;
   }
@@ -73,7 +73,7 @@
 .or-block {
   display: inline-flex;
   align-items: center;
-  color: #adb3cb;
+  color: $color-logo-grey;
   font-size: $fz-sm;
   text-transform: uppercase;
 
@@ -84,6 +84,6 @@
     height: 1px;
     margin-right: $base * 4;
     margin-left: $base * 4;
-    background-color: #dae4fe;
+    background-color: $color-logo-grey;
   }
 }

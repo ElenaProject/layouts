@@ -13,7 +13,7 @@
 
     padding: $base * 8;
     padding-left: $base * 18;
-    border-bottom: 1px solid #d8e3fe;
+    border-bottom: 1px solid $color-logo-grey;
 
     &-trigger {
       position: relative;
@@ -43,11 +43,11 @@
 
     &--active {
       #{$parent}-trigger {
-        color: #495274;
+        color: $color-dark-grey;
         font-weight: $fw-bold;
 
         &::before {
-          color: #495274;
+          color: $color-dark-grey;
           transform: translateY(-50%) rotate(180deg);
         }
       }

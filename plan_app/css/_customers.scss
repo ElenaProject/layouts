@@ -13,7 +13,7 @@
   align-items: center;
 
   &__item {
-    color: #d6dae5;
+    color: $color-logo-grey;
     font-size: $base * 7;
     text-align: center;
     text-decoration: none;
@@ -21,7 +21,7 @@
 
     &:hover,
     &--active {
-      color: #5982e7;
+      color: $color-logo;
     }
   }
 }

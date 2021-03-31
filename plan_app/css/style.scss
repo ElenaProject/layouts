@@ -52,18 +52,23 @@ $padding-vertical-xl: $base * 53;
 
 $transition: 0.5s;
 
-$color-divider: #d8e3fe;
-$color-primary: #8d96bd;
-$color-title: #3d4f9f;
+$color-white: #ffffff;
+// Blue
+$color-light-blue: #d8e3fe;
 $color-logo: #5e81fe;
-$color-features: #4074f8;
+$color-title: #3d4f9f;
+// Grey
+$color-bg-grey: #e8ecf4;
+$color-logo-grey: #d6dae5;
+$color-text: #8d96bd;
+$color-dark-grey: #757e9a;
 
 // === / VARIABLES ===
 
 // === COMMON ===
 body {
   @include roboto;
-  color: $color-primary;
+  color: $color-text;
 }
 
 .visually-hidden {
@@ -79,7 +84,7 @@ body {
 }
 
 .section-outer {
-  border-bottom: 1px solid $color-divider;
+  border-bottom: 1px solid $color-light-blue;
 }
 .section-inner {
   box-sizing: border-box;
@@ -114,11 +119,11 @@ body {
   }
 
   &--primary--blue {
-    color: #3a79ff;
-    background-color: #d2e1ff;
+    color: $color-logo;
+    background-color: $color-light-blue;
 
     &:hover {
-      background-color: darken(#d2e1ff, 5%);
+      background-color: darken($color-light-blue, 5%);
     }
   }
 
@@ -135,22 +140,22 @@ body {
     &--dark {
       padding-right: $base * 6;
       padding-left: $base * 6;
-      color: #ffffff;
-      background-color: #4c85ff;
+      color: $color-white;
+      background-color: $color-logo;
 
       &:hover {
-        background-color: darken(#4c85ff, 10%);
+        background-color: darken($color-logo, 10%);
       }
     }
 
     &--light {
       padding-right: $base * 8;
       padding-left: $base * 8;
-      color: #565f82;
-      background-color: #ffffff;
+      color: $color-dark-grey;
+      background-color: $color-white;
 
       &:hover {
-        background-color: darken(#ffffff, 10%);
+        background-color: darken($color-white, 10%);
       }
     }
   }
@@ -158,36 +163,36 @@ body {
   &--no-bg {
     padding-right: $base * 5;
     padding-left: $base * 5;
-    color: #adb4d2;
+    color: $color-text;
     font-weight: $fw-medium;
-    border: 1px solid #d1d1e4;
+    border: 1px solid $color-logo-grey;
 
     &:hover {
-      color: darken(#adb4d2, 10%);
-      border: 1px solid darken(#d1d1e4, 10%);
+      color: darken($color-text, 10%);
+      border: 1px solid darken($color-logo-grey, 10%);
     }
   }
 
   &--no-bg--light {
     padding-right: $base * 3;
     padding-left: $base * 3;
-    color: #c7d3ff;
+    color: $color-logo-grey;
     font-weight: $fw-medium;
-    border: 1px solid #a0b4ff;
+    border: 1px solid $color-logo-grey;
 
     &:hover {
-      color: #ffffff;
-      border: 1px solid #ffffff;
+      color: $color-white;
+      border: 1px solid $color-white;
     }
   }
 
   &--grey {
     padding: $base * 4 $base * 9;
-    color: #7382a3;
-    background-color: #e8ecf4;
+    color: $color-text;
+    background-color: $color-bg-grey;
 
     &:hover {
-      background-color: darken(#e8ecf4, 10%);
+      background-color: darken($color-bg-grey, 10%);
     }
   }
 
@@ -212,18 +217,18 @@ body {
   @include quicksand;
 
   padding: $base * 5 $base * 6;
-  color: #7a85ad;
+  color: $color-text;
   font-size: $fz-sm;
   font-weight: $fw-bold;
-  background-color: #efeff7;
+  background-color: $color-bg-grey;
   border: 1px solid transparent;
-  border-radius: $base;
+  border-radius: $base * 1.25;
   outline-color: $color-title;
 
   &::placeholder {
     @include quicksand;
 
-    color: #7a85ad;
+    color: $color-text;
     font-size: $fz-sm;
     font-weight: $fw-bold;
   }
@@ -297,7 +302,7 @@ h5 {
     width: $base * 2;
     height: $base * 2;
     cursor: pointer;
-    background-color: #d1d6e3;
+    background-color: $color-light-blue;
     border-radius: 50%;
     transition: $transition;
 

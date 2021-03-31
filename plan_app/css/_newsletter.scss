@@ -30,12 +30,7 @@
 
     &-submit {
       padding: $base * 5 $base * 14;
-      color: #ffffff;
-      background-color: #4d6ce1;
-
-      &:hover {
-        background-color: darken(#4d6ce1, 10%);
-      }
+      border-radius: $base * 1.25;
     }
   }
 }

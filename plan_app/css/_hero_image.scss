@@ -26,9 +26,9 @@
     display: inline-block;
     width: $base * 13;
     height: $base * 13;
-    color: #5e81ff;
+    color: $color-logo;
     font-size: $fz-sm;
-    background-color: #ffffff;
+    background-color: $color-white;
     border-radius: 50%;
     box-shadow: 0px $base * 2 $base * 12 rgba(201, 209, 231, 0.6);
 

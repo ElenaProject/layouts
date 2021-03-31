@@ -12,14 +12,14 @@
   }
   &__left {
     align-items: flex-end;
-    color: #ffffff;
+    color: $color-white;
     text-align: right;
     background: linear-gradient(229.32deg, #6888ff 12.77%, #5e80ff 73.11%);
   }
 
   &__right {
     padding-left: $base * 22;
-    color: #5e80ff;
+    color: $color-logo;
     background: linear-gradient(101.48deg, #e9efff 41.56%, #e0e9ff 81.53%);
   }
 

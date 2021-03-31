@@ -36,7 +36,7 @@
   &__link {
     @include quicksand;
 
-    color: #697ca6;
+    color: $color-text;
     font-size: $fz-sm;
     font-weight: $fw-medium;
     text-decoration: none;
@@ -69,14 +69,14 @@
 
   &__link {
     display: block;
-    color: #b6bac7;
+    color: $color-text;
     font-size: $fz-md;
     text-decoration: none;
     transition: $transition;
 
     &:hover,
     &--active {
-      color: #6188ff;
+      color: $color-logo;
     }
   }
 }
@@ -99,6 +99,6 @@
   }
 
   &-medium {
-    color: #757e9a;
+    color: $color-dark-grey;
   }
 }

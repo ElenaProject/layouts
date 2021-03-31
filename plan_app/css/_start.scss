@@ -1,6 +1,6 @@
 .section-start {
   position: relative;
-  color: #ffffff;
+  color: $color-white;
   text-align: center;
   background: linear-gradient(#6888ff, #5e80ff);
 
@@ -21,7 +21,7 @@
   }
 
   &__title {
-    color: #ffffff;
+    color: $color-white;
   }
 
   &__text {

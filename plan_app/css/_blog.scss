@@ -7,12 +7,13 @@
 }
 
 .slider-blog {
+  $color-grey-blog: #a8b4e5;
   @extend %list;
 
   position: relative;
   margin-bottom: $base * 25;
-  background-color: #ffffff;
-  border: 1px solid #d8e3fe;
+  background-color: $color-white;
+  border: 1px solid $color-logo-grey;
   box-shadow: 0px $base * 4 $base * 12 #eff4ff;
 
   &__item {
@@ -55,11 +56,11 @@
       z-index: 1;
       width: $base * 15;
       height: $base * 15;
-      color: #a7aac6;
+      color: $color-text;
       font-size: $fz-md;
       line-height: $base * 16;
       text-align: center;
-      background-color: #ffffff;
+      background-color: $color-white;
       border-radius: 50%;
       opacity: 0;
       transform: translate(-50%, -50%);
@@ -131,11 +132,11 @@
     @extend %btn;
 
     margin-left: $base * 2;
-    color: #a6b6da;
+    color: $color-grey-blog;
     font-weight: $fw-bold;
 
     &:hover {
-      color: darken(#a6b6da, 10%);
+      color: darken($color-grey-blog, 10%);
     }
   }
 
@@ -146,13 +147,13 @@
     top: 50%;
     width: $base * 10;
     height: $base * 10;
-    color: #a8b4e5;
+    color: $color-grey-blog;
     text-align: center;
     line-height: $base * 10;
     vertical-align: middle;
 
     &:hover {
-      color: darken(#a8b4e5, 10%);
+      color: darken($color-grey-blog, 10%);
     }
 
     &--prev {
