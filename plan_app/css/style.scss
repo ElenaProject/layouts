@@ -130,14 +130,27 @@ body {
   }
 
   &--secondary {
-    padding-right: $base * 6;
-    padding-left: $base * 6;
-    color: #ffffff;
-    background-color: #4c85ff;
-    border: 1px solid transparent;
+    &--dark {
+      padding-right: $base * 6;
+      padding-left: $base * 6;
+      color: #ffffff;
+      background-color: #4c85ff;
+      border: 1px solid transparent;
 
-    &:hover {
-      background-color: darken(#4c85ff, 10%);
+      &:hover {
+        background-color: darken(#4c85ff, 10%);
+      }
+    }
+
+    &--light {
+      padding-right: $base * 8;
+      padding-left: $base * 8;
+      color: #565f82;
+      background-color: #ffffff;
+
+      &:hover {
+        background-color: darken(#ffffff, 10%);
+      }
     }
   }
 
@@ -145,11 +158,25 @@ body {
     padding-right: $base * 5;
     padding-left: $base * 5;
     color: #adb4d2;
+    font-weight: $fw-medium;
     border: 1px solid #d1d1e4;
 
     &:hover {
       color: darken(#adb4d2, 10%);
       border: 1px solid darken(#d1d1e4, 10%);
+    }
+  }
+
+  &--no-bg--light {
+    padding-right: $base * 3;
+    padding-left: $base * 3;
+    color: #c7d3ff;
+    font-weight: $fw-medium;
+    border: 1px solid #a0b4ff;
+
+    &:hover {
+      color: #ffffff;
+      border: 1px solid #ffffff;
     }
   }
 
@@ -231,6 +258,7 @@ h5 {
 .text {
   margin: 0;
   font-size: $fz-md;
+  font-weight: $fw-regular;
   line-height: 2;
   letter-spacing: 0.03em;
 }
@@ -297,11 +325,9 @@ h5 {
 @import "faq";
 // === / FAQ ===
 
-// === GET-STARTED ===
-.section-get-started {
-  background-color: #6888ff;
-}
-// === / GET-STARTED ===
+// === START ===
+@import "start";
+// === / START ===
 
 // === NEWSLETTER ===
 .section-newsletter {

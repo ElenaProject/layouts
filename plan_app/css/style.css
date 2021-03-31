@@ -87,7 +87,7 @@ body {
   background-color: #ffbebe;
 }
 
-.btn--secondary {
+.btn--secondary--dark {
   padding-right: 24px;
   padding-left: 24px;
   color: #ffffff;
@@ -95,20 +95,45 @@ body {
   border: 1px solid transparent;
 }
 
-.btn--secondary:hover {
+.btn--secondary--dark:hover {
   background-color: #1962ff;
+}
+
+.btn--secondary--light {
+  padding-right: 32px;
+  padding-left: 32px;
+  color: #565f82;
+  background-color: #ffffff;
+}
+
+.btn--secondary--light:hover {
+  background-color: #e6e6e6;
 }
 
 .btn--no-bg {
   padding-right: 20px;
   padding-left: 20px;
   color: #adb4d2;
+  font-weight: 500;
   border: 1px solid #d1d1e4;
 }
 
 .btn--no-bg:hover {
   color: #8c96c0;
   border: 1px solid #b1b1d1;
+}
+
+.btn--no-bg--light {
+  padding-right: 12px;
+  padding-left: 12px;
+  color: #c7d3ff;
+  font-weight: 500;
+  border: 1px solid #a0b4ff;
+}
+
+.btn--no-bg--light:hover {
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 .btn--grey {
@@ -185,6 +210,7 @@ h5 {
 .text {
   margin: 0;
   font-size: 15px;
+  font-weight: 400;
   line-height: 2;
   letter-spacing: 0.03em;
 }
@@ -433,12 +459,12 @@ h5 {
   margin-bottom: 48px;
 }
 
-.section-app-demo .btn--secondary {
+.section-app-demo .btn--secondary--dark {
   position: relative;
   padding-right: 36px;
 }
 
-.section-app-demo .btn--secondary::before {
+.section-app-demo .btn--secondary--dark::before {
   position: absolute;
   top: 15px;
   right: 20px;
@@ -878,8 +904,43 @@ h5 {
   display: flex;
 }
 
-.section-get-started {
-  background-color: #6888ff;
+.section-start {
+  position: relative;
+  color: #ffffff;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6888ff), to(#5e80ff));
+  background: linear-gradient(#6888ff, #5e80ff);
+}
+
+.section-start::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../img/clouds-dark.svg) no-repeat center;
+}
+
+.section-start__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.section-start__title {
+  color: #ffffff;
+}
+
+.section-start__text {
+  max-width: 80%;
+  margin: 0 auto 48px;
+}
+
+.section-start__btn-group {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .section-newsletter {
