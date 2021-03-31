@@ -27,7 +27,7 @@
   text-decoration: none;
   background-color: transparent;
   // рамка у кнопок
-  border: 0;
+  border: 1px solid transparent;
   cursor: pointer;
 }
 // === / PLACEHOLDERS ===
@@ -93,6 +93,7 @@ body {
 }
 
 //  Buttons
+
 .btn {
   @extend %btn;
   @include quicksand;
@@ -101,6 +102,7 @@ body {
   font-size: $fz-sm;
   font-weight: $fw-bold;
   border-radius: 2px;
+  outline-color: $color-title;
   transition: $transition;
 
   &[class*="primary"] {
@@ -135,7 +137,6 @@ body {
       padding-left: $base * 6;
       color: #ffffff;
       background-color: #4c85ff;
-      border: 1px solid transparent;
 
       &:hover {
         background-color: darken(#4c85ff, 10%);
@@ -202,6 +203,29 @@ body {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
+  }
+}
+
+// Input
+
+.input {
+  @include quicksand;
+
+  padding: $base * 5 $base * 6;
+  color: #7a85ad;
+  font-size: $fz-sm;
+  font-weight: $fw-bold;
+  background-color: #efeff7;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline-color: $color-title;
+
+  &::placeholder {
+    @include quicksand;
+
+    color: #7a85ad;
+    font-size: $fz-sm;
+    font-weight: $fw-bold;
   }
 }
 
@@ -330,9 +354,7 @@ h5 {
 // === / START ===
 
 // === NEWSLETTER ===
-.section-newsletter {
-  background-color: #fcfdff;
-}
+@import "newsletter";
 // === / NEWSLETTER ===
 
 // === FOOTER ===

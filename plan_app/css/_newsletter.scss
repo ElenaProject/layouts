@@ -1,0 +1,41 @@
+.section-newsletter {
+  background-color: #fcfdff;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    flex-basis: 40%;
+  }
+
+  &__title {
+    margin-bottom: $base * 4;
+    font-size: $fz-lg;
+    font-weight: $fw-bold;
+  }
+
+  &__form {
+    flex-basis: 55%;
+    display: flex;
+  }
+
+  &__input {
+    &-email {
+      flex-grow: 1;
+      margin-right: $base * 3;
+    }
+
+    &-submit {
+      padding: $base * 5 $base * 14;
+      color: #ffffff;
+      background-color: #4d6ce1;
+
+      &:hover {
+        background-color: darken(#4d6ce1, 10%);
+      }
+    }
+  }
+}

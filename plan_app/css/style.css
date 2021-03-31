@@ -12,7 +12,7 @@
   font: inherit;
   text-decoration: none;
   background-color: transparent;
-  border: 0;
+  border: 1px solid transparent;
   cursor: pointer;
 }
 
@@ -56,6 +56,7 @@ body {
   font-size: 12px;
   font-weight: 700;
   border-radius: 2px;
+  outline-color: #3d4f9f;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -92,7 +93,6 @@ body {
   padding-left: 24px;
   color: #ffffff;
   background-color: #4c85ff;
-  border: 1px solid transparent;
 }
 
 .btn--secondary--dark:hover {
@@ -160,6 +160,46 @@ body {
 .btn-group .btn:last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+.input {
+  font-family: "Quicksand", sans-serif;
+  padding: 20px 24px;
+  color: #7a85ad;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #efeff7;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline-color: #3d4f9f;
+}
+
+.input::-webkit-input-placeholder {
+  font-family: "Quicksand", sans-serif;
+  color: #7a85ad;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.input:-ms-input-placeholder {
+  font-family: "Quicksand", sans-serif;
+  color: #7a85ad;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.input::-ms-input-placeholder {
+  font-family: "Quicksand", sans-serif;
+  color: #7a85ad;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.input::placeholder {
+  font-family: "Quicksand", sans-serif;
+  color: #7a85ad;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 h1,
@@ -945,6 +985,54 @@ h5 {
 
 .section-newsletter {
   background-color: #fcfdff;
+}
+
+.section-newsletter__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-newsletter__content {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+
+.section-newsletter__title {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.section-newsletter__form {
+  -ms-flex-preferred-size: 55%;
+      flex-basis: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section-newsletter__input-email {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-right: 12px;
+}
+
+.section-newsletter__input-submit {
+  padding: 20px 56px;
+  color: #ffffff;
+  background-color: #4d6ce1;
+}
+
+.section-newsletter__input-submit:hover {
+  background-color: #244ad7;
 }
 
 .section-footer {
