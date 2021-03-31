@@ -1,0 +1,60 @@
+.section-faq {
+  &__inner {
+    padding-left: $base * 15;
+    padding-right: $base * 15;
+  }
+
+  &__list {
+    @extend %list;
+  }
+
+  &__item {
+    $parent: &;
+
+    padding: $base * 8;
+    padding-left: $base * 18;
+    border-bottom: 1px solid #d8e3fe;
+
+    &-trigger {
+      position: relative;
+      margin: 0;
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: $base * -12;
+        font-size: $fz-sm;
+        transform: translateY(-50%);
+        transition: $transition;
+      }
+    }
+
+    &-content {
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      padding: $base * 6 0 $base * 6 $base * 4;
+    }
+
+    &-text {
+      flex-basis: 63%;
+    }
+
+    &--active {
+      #{$parent}-trigger {
+        color: #495274;
+        font-weight: $fw-bold;
+
+        &::before {
+          color: #495274;
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+
+      #{$parent}-content {
+        display: flex;
+      }
+    }
+  }
+}

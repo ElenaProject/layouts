@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap");
-.dots, .nav__list, .socials__list, .slider-hero-image, .customers, .features, .slider-blog, .slider-quotes {
+.dots, .nav__list, .socials__list, .slider-hero-image, .customers, .features, .slider-blog, .slider-quotes, .section-faq__list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -39,6 +39,8 @@ body {
 }
 
 .section-inner {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   max-width: 900px;
   margin: 0 auto;
   padding: 120px 10px;
@@ -109,6 +111,16 @@ body {
   border: 1px solid #b1b1d1;
 }
 
+.btn--grey {
+  padding: 16px 36px;
+  color: #7382a3;
+  background-color: #e8ecf4;
+}
+
+.btn--grey:hover {
+  background-color: #c6d0e4;
+}
+
 .btn-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -162,8 +174,12 @@ h5 {
   text-transform: uppercase;
 }
 
-.title__light {
+.title--light {
   font-weight: 300;
+}
+
+.title--center {
+  text-align: center;
 }
 
 .text {
@@ -799,6 +815,67 @@ h5 {
      object-fit: cover;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.section-faq__inner {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.section-faq__item {
+  padding: 32px;
+  padding-left: 72px;
+  border-bottom: 1px solid #d8e3fe;
+}
+
+.section-faq__item-trigger {
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+}
+
+.section-faq__item-trigger::before {
+  position: absolute;
+  top: 50%;
+  left: -48px;
+  font-size: 12px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.section-faq__item-content {
+  display: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 24px 0 24px 16px;
+}
+
+.section-faq__item-text {
+  -ms-flex-preferred-size: 63%;
+      flex-basis: 63%;
+}
+
+.section-faq__item--active .section-faq__item-trigger {
+  color: #495274;
+  font-weight: 700;
+}
+
+.section-faq__item--active .section-faq__item-trigger::before {
+  color: #495274;
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+}
+
+.section-faq__item--active .section-faq__item-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .section-get-started {

@@ -82,6 +82,7 @@ body {
   border-bottom: 1px solid $color-divider;
 }
 .section-inner {
+  box-sizing: border-box;
   max-width: 900px;
   margin: 0 auto;
   padding: $padding-vertical 10px;
@@ -152,6 +153,16 @@ body {
     }
   }
 
+  &--grey {
+    padding: $base * 4 $base * 9;
+    color: #7382a3;
+    background-color: #e8ecf4;
+
+    &:hover {
+      background-color: darken(#e8ecf4, 10%);
+    }
+  }
+
   &-group {
     display: flex;
 
@@ -208,8 +219,12 @@ h5 {
 }
 
 .title {
-  &__light {
+  &--light {
     font-weight: $fw-light;
+  }
+
+  &--center {
+    text-align: center;
   }
 }
 
@@ -279,8 +294,7 @@ h5 {
 // === / QUOTES ===
 
 // === FAQ ===
-.section-faq {
-}
+@import "faq";
 // === / FAQ ===
 
 // === GET-STARTED ===
