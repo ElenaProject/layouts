@@ -13,6 +13,9 @@
 }
 
 .features {
+  $margin-left: $base * 16;
+  $divider-width: $base * 7;
+
   @extend %list;
 
   display: flex;
@@ -21,19 +24,20 @@
 
   &__item {
     position: relative;
-    width: 140px;
+    flex-basis: 25%;
 
     & + & {
-      margin-left: 66px;
+      margin-left: $margin-left;
     }
 
     &:not(:first-child)::before {
       content: "";
       position: absolute;
       top: 50%;
-      left: -47px;
+      left: -($margin-left + $divider-width)/2;
+
       right: 100%;
-      width: 28px;
+      width: $divider-width;
       height: 1px;
       background-color: #dae4fe;
     }
@@ -46,9 +50,12 @@
     color: $color-features;
     font-size: $base * 5;
     line-height: $base * 17;
-    vertical-align: middle;
     background-color: #f1f5ff;
     border-radius: 50%;
+
+    &::before {
+      vertical-align: middle;
+    }
   }
 
   &__title {

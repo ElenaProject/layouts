@@ -13,11 +13,12 @@
   margin-bottom: $base * 25;
   background-color: #ffffff;
   border: 1px solid #d8e3fe;
-  box-shadow: 0px 15px 50px #eff4ff;
+  box-shadow: 0px $base * 4 $base * 12 #eff4ff;
 
   &__item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: $base * 16 $base * 8;
   }
 
@@ -29,16 +30,17 @@
   &__gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 13px;
+    grid-template-rows: repeat(2, $base * 30);
+    gap: $base * 3;
     margin: 0;
   }
 
   &__img-link {
     position: relative;
     text-decoration: none;
-    border-radius: 5px;
-    box-shadow: 0px 15px 100px #e5ebf8;
+    overflow: hidden;
+    border-radius: $base * 1.25;
+    box-shadow: 0px $base * 4 $base * 25 #e5ebf8;
 
     &:hover {
       &::before {
@@ -115,7 +117,6 @@
   }
 
   &__text {
-    max-height: 116px;
     margin: $base * 8 0;
     font-size: $fz-md;
     letter-spacing: normal;

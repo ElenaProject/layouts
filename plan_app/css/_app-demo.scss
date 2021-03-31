@@ -33,9 +33,10 @@
 
     &::before {
       position: absolute;
-      top: 15px;
+      top: 50%;
       right: $base * 5;
-      font-size: 7px;
+      font-size: $base * 1.8;
+      transform: translateY(-51%);
     }
   }
 }

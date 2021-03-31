@@ -70,7 +70,7 @@
   &__link {
     display: block;
     color: #b6bac7;
-    font-size: 13px;
+    font-size: $fz-md;
     text-decoration: none;
     transition: $transition;
 
@@ -84,13 +84,13 @@
 // icons
 .icon {
   &-facebook {
-    font-size: 16px;
+    font-size: $base * 4;
   }
 
   &-telegram {
-    width: 14px;
-    height: 13px;
-    background: url(../img/icons/telegram.svg);
+    width: $base * 4;
+    height: $base * 4;
+    background: url(../img/icons/telegram.svg) no-repeat center;
 
     &:hover,
     .socials__link--active {

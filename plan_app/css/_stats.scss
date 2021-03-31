@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 212px;
     padding: $base * 16 $base * 22;
   }
   &__left {
@@ -25,11 +24,13 @@
   }
 
   &__icon {
+    margin-bottom: $base * 6;
     font-size: $base * 16;
   }
 
   &__amount {
     margin: 0;
+    margin-bottom: $base * 7;
     font-size: $fz-xl;
   }
 

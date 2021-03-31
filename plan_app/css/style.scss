@@ -101,7 +101,7 @@ body {
   padding: $base * 3 $base * 4;
   font-size: $fz-sm;
   font-weight: $fw-bold;
-  border-radius: 2px;
+  border-radius: $base/2;
   outline-color: $color-title;
   transition: $transition;
 
@@ -217,7 +217,7 @@ body {
   font-weight: $fw-bold;
   background-color: #efeff7;
   border: 1px solid transparent;
-  border-radius: 5px;
+  border-radius: $base;
   outline-color: $color-title;
 
   &::placeholder {
