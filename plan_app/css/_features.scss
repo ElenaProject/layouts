@@ -61,12 +61,12 @@
   &__title {
     margin-bottom: $base * 6;
     color: $color-logo;
-    font-size: $fz-md;
+    font-size: $fz-s;
     font-weight: $fw-bold;
   }
 
   &__text {
-    font-size: $fz-sm;
+    font-size: $fz-xs;
   }
 }
 
@@ -74,7 +74,7 @@
   display: inline-flex;
   align-items: center;
   color: $color-logo-grey;
-  font-size: $fz-sm;
+  font-size: $fz-xs;
   text-transform: uppercase;
 
   &::before,

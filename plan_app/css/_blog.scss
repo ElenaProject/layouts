@@ -59,7 +59,7 @@
       width: $base * 15;
       height: $base * 15;
       color: $color-text;
-      font-size: $fz-md;
+      font-size: $fz-s;
       line-height: $base * 16;
       text-align: center;
       background-color: $color-white;
@@ -125,7 +125,7 @@
 
   &__text {
     margin: $base * 8 0;
-    font-size: $fz-md;
+    font-size: $fz-s;
     letter-spacing: normal;
     overflow: hidden;
   }

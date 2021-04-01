@@ -40,10 +40,13 @@ $fw-regular: 400;
 $fw-medium: 500;
 $fw-bold: 700;
 
-$fz-sm: 12px;
-$fz-md: 15px;
-$fz-lg: 18px;
-$fz-xl: 48px;
+$fz-xxs: 10px;
+$fz-xs: 12px;
+$fz-s: 15px;
+$fz-m: 18px;
+$fz-l: 24px;
+$fz-xl: 36px;
+$fz-xxl: 48px;
 
 $padding-vertical-xs: $base * 5;
 $padding-vertical-s: $base * 15;
@@ -105,7 +108,7 @@ body {
   @include quicksand;
 
   padding: $base * 3 $base * 4;
-  font-size: $fz-sm;
+  font-size: $fz-xs;
   font-weight: $fw-bold;
   border-radius: $base/2;
   outline-color: $color-title;
@@ -219,7 +222,7 @@ body {
 
   padding: $base * 5 $base * 6;
   color: $color-text;
-  font-size: $fz-sm;
+  font-size: $fz-xs;
   font-weight: $fw-bold;
   background-color: $color-bg-grey;
   border: 1px solid transparent;
@@ -230,7 +233,7 @@ body {
     @include quicksand;
 
     color: $color-text;
-    font-size: $fz-sm;
+    font-size: $fz-xs;
     font-weight: $fw-bold;
   }
 }
@@ -251,7 +254,7 @@ body {
 
   &__section {
     margin-bottom: $base * 4;
-    font-size: 10px;
+    font-size: $fz-xxs;
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
@@ -261,14 +264,14 @@ body {
   @include quicksand();
 
   margin-bottom: $base * 7;
-  font-size: 24px;
+  font-size: $fz-l;
 
   &--medium {
-    font-size: 36px;
+    font-size: $fz-xl;
   }
 
   &--large {
-    font-size: 48px;
+    font-size: $fz-xxl;
   }
   span {
     font-weight: $fw-light;
@@ -277,7 +280,7 @@ body {
 
 .text {
   margin: 0;
-  font-size: $fz-md;
+  font-size: $fz-s;
   font-weight: $fw-regular;
   line-height: 2;
   letter-spacing: 0.03em;

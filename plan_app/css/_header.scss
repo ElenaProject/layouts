@@ -37,7 +37,7 @@
     @include quicksand;
 
     color: $color-text;
-    font-size: $fz-sm;
+    font-size: $fz-xs;
     font-weight: $fw-medium;
     text-decoration: none;
     transition: $transition;
@@ -70,7 +70,7 @@
   &__link {
     display: block;
     color: $color-text;
-    font-size: $fz-md;
+    font-size: $fz-s;
     text-decoration: none;
     transition: $transition;
 
