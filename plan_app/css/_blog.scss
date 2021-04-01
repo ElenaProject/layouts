@@ -6,11 +6,13 @@
   }
 }
 
+.slider-wrapper {
+  position: relative;
+}
+
 .slider-blog {
-  $color-grey-blog: #a8b4e5;
   @extend %list;
 
-  position: relative;
   margin-bottom: $base * 25;
   background-color: $color-white;
   border: 1px solid $color-logo-grey;
@@ -139,32 +141,32 @@
       color: darken($color-grey-blog, 10%);
     }
   }
+}
 
-  &__arrow {
-    @extend %btn;
+.blog-arrow {
+  @extend %btn;
 
-    position: absolute;
-    top: 50%;
-    width: $base * 10;
-    height: $base * 10;
-    color: $color-grey-blog;
-    text-align: center;
-    line-height: $base * 10;
-    vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  width: $base * 10;
+  height: $base * 10;
+  color: $color-grey-blog;
+  text-align: center;
+  line-height: $base * 10;
+  vertical-align: middle;
 
-    &:hover {
-      color: darken($color-grey-blog, 10%);
-    }
+  &:hover {
+    color: darken($color-grey-blog, 10%);
+  }
 
-    &--prev {
-      right: 100%;
-      margin-right: $base * 16;
-      transform: translateY(-50%);
-    }
-    &--next {
-      left: 100%;
-      margin-left: $base * 16;
-      transform: translateY(-50%) rotate(180deg);
-    }
+  &--prev {
+    right: 100%;
+    margin-right: $base * 16;
+    transform: translateY(-50%);
+  }
+  &--next {
+    left: 100%;
+    margin-left: $base * 16;
+    transform: translateY(-50%) rotate(180deg);
   }
 }
