@@ -45,12 +45,6 @@
     border-radius: $base * 1.25;
     box-shadow: 0px $base * 4 $base * 25 #e5ebf8;
 
-    &:hover {
-      &::before {
-        opacity: 1;
-      }
-    }
-
     &::before {
       position: absolute;
       top: 50%;
@@ -67,6 +61,12 @@
       opacity: 0;
       transform: translate(-50%, -50%);
       transition: $transition;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
     }
 
     &::after {

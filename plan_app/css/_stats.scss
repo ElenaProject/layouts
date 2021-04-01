@@ -35,8 +35,9 @@
   }
 
   &__description {
+    flex-grow: 1;
     margin: 0;
-    width: $base * 65;
+    width: 40%;
     font-size: $fz-m;
     line-height: 1.3;
     letter-spacing: 0.03em;
