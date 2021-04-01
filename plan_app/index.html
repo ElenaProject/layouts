@@ -109,7 +109,12 @@
 		<section class="section-outer section-app-demo">
 			<div class="section-inner section-app-demo__inner">
 				<div class="section-app-demo__content">
-					<img class="section-app-demo__img" src="img/app.png" alt="app demonstration" width="854" height="736">
+					<picture class="section-app-demo__img">
+						<source type="image/webp"
+							srcset="img/compressed/app.webp 1x, img/compressed/app@2x.webp 2x, img/compressed/app@3x.webp 3x">
+						<img src="img/compressed/app.png" srcset="img/compressed/app@2x.png 2x, img/compressed/app@3x.png 3x"
+							alt="app demonstration" width="854" height="736">
+					</picture>
 					<h2 class="title title__section section-app-demo__title">DESKTOP AND MOBILE APP</h2>
 					<p class="title subtitle subtitle--medium">Plan <span>and</span> manage</p>
 					<p class="text section-app-demo__text">Brute laoreet efficiendi id his, ea illum nonumes luptatum pro.
@@ -192,15 +197,21 @@
 							<figure class="slider-blog__gallery">
 								<a class="slider-blog__img-link slider-blog__img-link--big icon-loupe" aria-label="enlarge image"
 									href="#">
-									<img src="img/article-big.jpg" alt="desktop with notebook" width="268" height="267">
+									<img src="img/compressed/article-big.jpg"
+										srcset="img/compressed/article-big@2x.jpg 2x, img/compressed/article-big@3x.jpg 3x"
+										alt="desktop with notebook" width="268" height="267">
 								</a>
 								<a class="slider-blog__img-link slider-blog__img-link--s--pink icon-loupe" aria-label="enlarge image"
 									href="#">
-									<img src="img/article-s-1.jpg" alt="notebook and coffee" width="127" height="127">
+									<img src="img/compressed/article-s-1.jpg"
+										srcset="img/compressed/article-s-1@2x.jpg 2x, img/compressed/article-s-1@3x.jpg 3x"
+										alt="notebook and coffee" width="127" height="127">
 								</a>
 								<a class="slider-blog__img-link slider-blog__img-link--s--blue icon-loupe" aria-label="enlarge image"
 									href="#">
-									<img src="img/article-s-2.jpg" alt="man before the schedule" width="127" height="127">
+									<img src="img/compressed/article-s-2.jpg"
+										srcset="img/compressed/article-s-2@2x.jpg 2x, img/compressed/article-s-2@3x.jpg 3x"
+										alt="man before the schedule" width="127" height="127">
 								</a>
 							</figure>
 							<article class="slider-blog__article">
@@ -358,7 +369,7 @@
 		<section class="section-outer section-newsletter">
 			<div class="section-inner section-newsletter__inner">
 				<div class="section-newsletter__content">
-					<h2 class="title subtitlesection-newsletter__title">Sign up for newsletter</h2>
+					<h2 class="title subtitle section-newsletter__title">Sign up for newsletter</h2>
 					<p class="text">Cu qui soleat partiendo urbanitas. Eum aperiri indoctum eu, homero
 						alterum.
 					</p>
