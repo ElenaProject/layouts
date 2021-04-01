@@ -1,0 +1,27 @@
+.section-customers {
+  .section-inner {
+    padding-top: $padding-vertical-s;
+    padding-bottom: $padding-vertical-s;
+  }
+}
+
+.customers {
+  @extend %list;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    color: $color-logo-grey;
+    font-size: $base * 7;
+    text-align: center;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover,
+    &--active {
+      color: $color-logo;
+    }
+  }
+}

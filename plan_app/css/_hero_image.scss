@@ -1,0 +1,49 @@
+.section-hero-image {
+  background-color: #f4f7ff;
+}
+
+.slider-hero-image {
+  @extend %list;
+
+  position: relative;
+
+  &__item {
+    height: $base * 140;
+    text-align: center;
+    background-position: 50% 85%;
+    background-size: cover;
+  }
+
+  &__text {
+    width: 55%;
+    margin: 0 auto $base * 5;
+  }
+
+  &__btn {
+    @extend %btn;
+
+    position: relative;
+    display: inline-block;
+    width: $base * 13;
+    height: $base * 13;
+    color: $color-logo;
+    font-size: $fz-sm;
+    background-color: $color-white;
+    border-radius: 50%;
+    box-shadow: 0px $base * 2 $base * 12 rgba(201, 209, 231, 0.6);
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-35%, -40%);
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: $base * 7;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

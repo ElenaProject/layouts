@@ -1,0 +1,89 @@
+.section-features {
+  text-align: center;
+  background: url(../img/clouds.svg) no-repeat center;
+
+  &__subtitle {
+    margin-bottom: $base * 6;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.features {
+  $margin-left: $base * 16;
+  $divider-width: $base * 7;
+
+  @extend %list;
+
+  display: flex;
+  width: 761/900 * 100%;
+  margin: 0 auto $base * 23;
+
+  &__item {
+    position: relative;
+    flex-basis: 25%;
+
+    & + & {
+      margin-left: $margin-left;
+    }
+
+    &:not(:first-child)::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -($margin-left + $divider-width)/2;
+
+      right: 100%;
+      width: $divider-width;
+      height: 1px;
+      background-color: $color-logo-grey;
+    }
+  }
+
+  &__icon {
+    width: $base * 17;
+    height: $base * 17;
+    margin: 0 auto $base * 8;
+    color: $color-logo;
+    font-size: $base * 5;
+    line-height: $base * 17;
+    background-color: $color-bg-grey;
+    border-radius: 50%;
+
+    &::before {
+      vertical-align: middle;
+    }
+  }
+
+  &__title {
+    margin-bottom: $base * 6;
+    color: $color-logo;
+    font-size: $fz-md;
+    font-weight: $fw-bold;
+  }
+
+  &__text {
+    font-size: $fz-sm;
+  }
+}
+
+.or-block {
+  display: inline-flex;
+  align-items: center;
+  color: $color-logo-grey;
+  font-size: $fz-sm;
+  text-transform: uppercase;
+
+  &::before,
+  &::after {
+    content: "";
+    width: $base * 4;
+    height: 1px;
+    margin-right: $base * 4;
+    margin-left: $base * 4;
+    background-color: $color-logo-grey;
+  }
+}

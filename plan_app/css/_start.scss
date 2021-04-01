@@ -1,0 +1,35 @@
+.section-start {
+  position: relative;
+  color: $color-white;
+  text-align: center;
+  background: linear-gradient(#6888ff, #5e80ff);
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../img/clouds-dark.svg) no-repeat center;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    color: $color-white;
+  }
+
+  &__text {
+    max-width: 80%;
+    margin: 0 auto $base * 12;
+  }
+
+  &__btn-group {
+    justify-content: center;
+  }
+}

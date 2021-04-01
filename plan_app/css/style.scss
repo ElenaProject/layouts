@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap");
+
+// === MIXINS ===
+@mixin quicksand {
+  font-family: "Quicksand", sans-serif;
+}
+@mixin roboto {
+  font-family: "Roboto", sans-serif;
+}
+// === / MIXINS ===
+
+// === PLACEHOLDERS ===
+%list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+%btn {
+  // позволяет задать вертик внутр отступы + ширина по содержанию
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  // ключаем принудительное наследование шрифта
+  font: inherit;
+  // убирает подчеркивание у ссылок
+  text-decoration: none;
+  background-color: transparent;
+  // рамка у кнопок
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+// === / PLACEHOLDERS ===
+
+// === VARIABLES ===
+$base: 4px;
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+$fz-sm: 12px;
+$fz-md: 15px;
+$fz-lg: 18px;
+$fz-xl: 48px;
+
+$padding-vertical-xs: $base * 5;
+$padding-vertical-s: $base * 15;
+$padding-vertical: $base * 30;
+$padding-vertical-xl: $base * 53;
+
+$transition: 0.5s;
+
+$color-white: #ffffff;
+// Blue
+$color-light-blue: #d8e3fe;
+$color-logo: #5e81fe;
+$color-title: #3d4f9f;
+// Grey
+$color-bg-grey: #e8ecf4;
+$color-logo-grey: #d6dae5;
+$color-text: #8d96bd;
+$color-dark-grey: #757e9a;
+
+// === / VARIABLES ===
+
+// === COMMON ===
+body {
+  @include roboto;
+  color: $color-text;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid transparent;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
+}
+
+.section-outer {
+  border-bottom: 1px solid $color-light-blue;
+}
+.section-inner {
+  box-sizing: border-box;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: $padding-vertical 10px;
+
+  &--wide {
+    max-width: 1200px;
+  }
+}
+
+//  Buttons
+
+.btn {
+  @extend %btn;
+  @include quicksand;
+
+  padding: $base * 3 $base * 4;
+  font-size: $fz-sm;
+  font-weight: $fw-bold;
+  border-radius: $base/2;
+  outline-color: $color-title;
+  transition: $transition;
+
+  &[class*="primary"] {
+    box-sizing: border-box;
+    width: $base * 28;
+    padding: $base * 3 $base * 2;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  &--primary--blue {
+    color: $color-logo;
+    background-color: $color-light-blue;
+
+    &:hover {
+      background-color: darken($color-light-blue, 5%);
+    }
+  }
+
+  &--primary--pink {
+    color: #d43f3f;
+    background-color: #ffd7d7;
+
+    &:hover {
+      background-color: darken(#ffd7d7, 5%);
+    }
+  }
+
+  &--secondary {
+    &--dark {
+      padding-right: $base * 6;
+      padding-left: $base * 6;
+      color: $color-white;
+      background-color: $color-logo;
+
+      &:hover {
+        background-color: darken($color-logo, 10%);
+      }
+    }
+
+    &--light {
+      padding-right: $base * 8;
+      padding-left: $base * 8;
+      color: $color-dark-grey;
+      background-color: $color-white;
+
+      &:hover {
+        background-color: darken($color-white, 10%);
+      }
+    }
+  }
+
+  &--no-bg {
+    padding-right: $base * 5;
+    padding-left: $base * 5;
+    color: $color-text;
+    font-weight: $fw-medium;
+    border: 1px solid $color-logo-grey;
+
+    &:hover {
+      color: darken($color-text, 10%);
+      border: 1px solid darken($color-logo-grey, 10%);
+    }
+  }
+
+  &--no-bg--light {
+    padding-right: $base * 3;
+    padding-left: $base * 3;
+    color: $color-logo-grey;
+    font-weight: $fw-medium;
+    border: 1px solid $color-logo-grey;
+
+    &:hover {
+      color: $color-white;
+      border: 1px solid $color-white;
+    }
+  }
+
+  &--grey {
+    padding: $base * 4 $base * 9;
+    color: $color-text;
+    background-color: $color-bg-grey;
+
+    &:hover {
+      background-color: darken($color-bg-grey, 10%);
+    }
+  }
+
+  &-group {
+    display: flex;
+
+    .btn:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .btn:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+
+// Input
+
+.input {
+  @include quicksand;
+
+  padding: $base * 5 $base * 6;
+  color: $color-text;
+  font-size: $fz-sm;
+  font-weight: $fw-bold;
+  background-color: $color-bg-grey;
+  border: 1px solid transparent;
+  border-radius: $base * 1.25;
+  outline-color: $color-title;
+
+  &::placeholder {
+    @include quicksand;
+
+    color: $color-text;
+    font-size: $fz-sm;
+    font-weight: $fw-bold;
+  }
+}
+
+// Headers
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include quicksand;
+  margin: 0;
+  padding: 0;
+  color: $color-title;
+  font-weight: $fw-medium;
+}
+
+h1,
+h2 {
+  margin-bottom: $base * 7;
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 36px;
+  margin-bottom: $base * 7;
+}
+
+h4 {
+  font-size: 24px;
+  margin-bottom: $base * 23;
+}
+
+h5 {
+  @include roboto;
+  margin-bottom: $base * 4;
+
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.title {
+  &--light {
+    font-weight: $fw-light;
+  }
+
+  &--center {
+    text-align: center;
+  }
+}
+
+.text {
+  margin: 0;
+  font-size: $fz-md;
+  font-weight: $fw-regular;
+  line-height: 2;
+  letter-spacing: 0.03em;
+}
+
+.dots {
+  @extend %list;
+
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    width: $base * 2;
+    height: $base * 2;
+    cursor: pointer;
+    background-color: $color-light-blue;
+    border-radius: 50%;
+    transition: $transition;
+
+    &--active {
+      background-color: $color-logo;
+    }
+
+    & + & {
+      margin-left: $base * 3;
+    }
+  }
+}
+
+// === / COMMON ===
+
+// === HEADER ===
+@import "header";
+// === / HEADER ===
+
+// === HERO-IMAGE ===
+@import "hero_image";
+// === / HERO-IMAGE ===
+
+// === CUSTOMERS ===
+@import "customers";
+// === / CUSTOMERS ===
+
+// === APP-DEMO ===
+@import "app-demo";
+// === / APP-DEMO ===
+
+// === FEATURES ===
+@import "features";
+// === / FEATURES ===
+
+// === STATS ===
+@import "stats";
+// === / STATS ===
+
+// === BLOG ===
+@import "blog";
+// === / BLOG ===
+
+// === QUOTES ===
+@import "quotes";
+// === / QUOTES ===
+
+// === FAQ ===
+@import "faq";
+// === / FAQ ===
+
+// === START ===
+@import "start";
+// === / START ===
+
+// === NEWSLETTER ===
+@import "newsletter";
+// === / NEWSLETTER ===
+
+// === FOOTER ===
+@import "footer";
+// === / FOOTER ===

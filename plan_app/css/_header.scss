@@ -1,0 +1,104 @@
+.section-header {
+  .section-inner {
+    padding-top: $padding-vertical-xs;
+    padding-bottom: $padding-vertical-xs;
+  }
+
+  &__btn {
+    margin-left: $base * 11;
+  }
+}
+.main-navigation {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  width: $base * 6;
+  height: $base * 6;
+  background-color: $color-logo;
+  border-radius: 50%;
+}
+.nav {
+  margin-left: $base * 18;
+
+  &__list {
+    @extend %list;
+
+    display: flex;
+  }
+
+  &__item {
+    & + & {
+      margin-left: $base * 10;
+    }
+  }
+
+  &__link {
+    @include quicksand;
+
+    color: $color-text;
+    font-size: $fz-sm;
+    font-weight: $fw-medium;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      color: $color-logo;
+    }
+    &--active {
+      color: $color-logo;
+      font-weight: $fw-bold;
+    }
+  }
+}
+.socials {
+  margin-left: auto;
+
+  &__list {
+    @extend %list;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    & + & {
+      margin-left: $base * 8;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: $color-text;
+    font-size: $fz-md;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover,
+    &--active {
+      color: $color-logo;
+    }
+  }
+}
+
+// icons
+.icon {
+  &-facebook {
+    font-size: $base * 4;
+  }
+
+  &-telegram {
+    width: $base * 4;
+    height: $base * 4;
+    background: url(../img/icons/telegram.svg) no-repeat center;
+
+    &:hover,
+    .socials__link--active {
+      background-image: url(../img/icons/telegram-hover.svg);
+    }
+  }
+
+  &-medium {
+    color: $color-dark-grey;
+  }
+}

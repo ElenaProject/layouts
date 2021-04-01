@@ -1,0 +1,42 @@
+.section-app-demo {
+  position: relative;
+  overflow: hidden;
+
+  &__inner {
+    padding-top: $padding-vertical-xl;
+  }
+
+  &__content {
+    max-width: 45%;
+  }
+
+  &__img {
+    position: absolute;
+    z-index: -1;
+    top: 18%;
+    left: 44%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  &__subtitle {
+    margin-bottom: $base * 7;
+  }
+
+  &__text {
+    margin-bottom: $base * 12;
+  }
+
+  .btn--secondary--dark {
+    position: relative;
+    padding-right: $base * 9;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      right: $base * 5;
+      font-size: $base * 1.8;
+      transform: translateY(-51%);
+    }
+  }
+}
