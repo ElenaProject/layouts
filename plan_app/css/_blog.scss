@@ -8,12 +8,12 @@
 
 .slider-wrapper {
   position: relative;
+  margin: $base * 20 auto;
 }
 
 .slider-blog {
   @extend %list;
 
-  margin-bottom: $base * 25;
   background-color: $color-white;
   border: 1px solid $color-logo-grey;
   box-shadow: 0px $base * 4 $base * 12 #eff4ff;
@@ -117,6 +117,10 @@
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  &__subtitle {
+    font-weight: $fw-regular;
   }
 
   &__text {

@@ -2,7 +2,7 @@
   text-align: center;
   background: url(../img/clouds.svg) no-repeat center;
 
-  &__subtitle {
+  &__title {
     margin-bottom: $base * 6;
   }
 
@@ -20,7 +20,7 @@
 
   display: flex;
   width: 761/900 * 100%;
-  margin: 0 auto $base * 23;
+  margin: $base * 23 auto;
 
   &__item {
     position: relative;

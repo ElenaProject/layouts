@@ -4,6 +4,10 @@
     padding-right: $base * 15;
   }
 
+  &__subtitle {
+    margin-bottom: $base * 17;
+  }
+
   &__list {
     @extend %list;
   }
@@ -16,8 +20,10 @@
     border-bottom: 1px solid $color-logo-grey;
 
     &-trigger {
+      @include quicksand;
+
       position: relative;
-      margin: 0;
+      font-weight: $fw-medium;
       cursor: pointer;
 
       &::before {

@@ -43,7 +43,7 @@ body {
           box-sizing: border-box;
   max-width: 900px;
   margin: 0 auto;
-  padding: 120px 10px;
+  padding: 120px 16px;
 }
 
 .section-inner--wide {
@@ -202,49 +202,41 @@ body {
   font-weight: 700;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Quicksand", sans-serif;
+.title {
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   color: #3d4f9f;
   font-weight: 500;
 }
 
-h1,
-h2 {
-  margin-bottom: 28px;
-  font-size: 48px;
+.title--center {
+  text-align: center;
 }
 
-h3 {
-  font-size: 36px;
-  margin-bottom: 28px;
-}
-
-h4 {
-  font-size: 24px;
-  margin-bottom: 92px;
-}
-
-h5 {
-  font-family: "Roboto", sans-serif;
+.title__section {
   margin-bottom: 16px;
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.title--light {
-  font-weight: 300;
+.subtitle {
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 28px;
+  font-size: 24px;
 }
 
-.title--center {
-  text-align: center;
+.subtitle--medium {
+  font-size: 36px;
+}
+
+.subtitle--large {
+  font-size: 48px;
+}
+
+.subtitle span {
+  font-weight: 300;
 }
 
 .text {
@@ -492,7 +484,7 @@ h5 {
      object-fit: cover;
 }
 
-.section-app-demo__subtitle {
+.section-app-demo__title {
   margin-bottom: 28px;
 }
 
@@ -519,7 +511,7 @@ h5 {
   background: url(../img/clouds.svg) no-repeat center;
 }
 
-.section-features__subtitle {
+.section-features__title {
   margin-bottom: 24px;
 }
 
@@ -537,7 +529,7 @@ h5 {
   display: -ms-flexbox;
   display: flex;
   width: 84.55556%;
-  margin: 0 auto 92px;
+  margin: 92px auto;
 }
 
 .features__item {
@@ -675,10 +667,10 @@ h5 {
 
 .slider-wrapper {
   position: relative;
+  margin: 80px auto;
 }
 
 .slider-blog {
-  margin-bottom: 100px;
   background-color: #ffffff;
   border: 1px solid #d6dae5;
   -webkit-box-shadow: 0px 16px 48px #eff4ff;
@@ -780,6 +772,10 @@ h5 {
      object-fit: cover;
 }
 
+.slider-blog__subtitle {
+  font-weight: 400;
+}
+
 .slider-blog__text {
   margin: 32px 0;
   font-size: 15px;
@@ -846,12 +842,12 @@ h5 {
           justify-content: space-between;
 }
 
-.section-quotes__subtitle {
-  margin-bottom: 28px;
+.section-quotes__title {
+  margin-bottom: 32px;
 }
 
-.section-quotes__title {
-  margin-bottom: 16px;
+.section-quotes__subtitle {
+  margin-bottom: 20px;
 }
 
 .section-quotes__left {
@@ -902,6 +898,10 @@ h5 {
   padding-right: 60px;
 }
 
+.section-faq__subtitle {
+  margin-bottom: 68px;
+}
+
 .section-faq__item {
   padding: 32px;
   padding-left: 72px;
@@ -909,8 +909,9 @@ h5 {
 }
 
 .section-faq__item-trigger {
+  font-family: "Quicksand", sans-serif;
   position: relative;
-  margin: 0;
+  font-weight: 500;
   cursor: pointer;
 }
 

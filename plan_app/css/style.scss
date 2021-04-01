@@ -91,7 +91,7 @@ body {
   box-sizing: border-box;
   max-width: 900px;
   margin: 0 auto;
-  padding: $padding-vertical 10px;
+  padding: $padding-vertical $base * 4;
 
   &--wide {
     max-width: 1200px;
@@ -237,51 +237,41 @@ body {
 
 // Headers
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @include quicksand;
+.title {
+  @include roboto;
+
   margin: 0;
   padding: 0;
   color: $color-title;
   font-weight: $fw-medium;
-}
-
-h1,
-h2 {
-  margin-bottom: $base * 7;
-  font-size: 48px;
-}
-
-h3 {
-  font-size: 36px;
-  margin-bottom: $base * 7;
-}
-
-h4 {
-  font-size: 24px;
-  margin-bottom: $base * 23;
-}
-
-h5 {
-  @include roboto;
-  margin-bottom: $base * 4;
-
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.title {
-  &--light {
-    font-weight: $fw-light;
-  }
 
   &--center {
     text-align: center;
+  }
+
+  &__section {
+    margin-bottom: $base * 4;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+.subtitle {
+  @include quicksand();
+
+  margin-bottom: $base * 7;
+  font-size: 24px;
+
+  &--medium {
+    font-size: 36px;
+  }
+
+  &--large {
+    font-size: 48px;
+  }
+  span {
+    font-weight: $fw-light;
   }
 }
 
