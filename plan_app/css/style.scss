@@ -23,8 +23,26 @@
 }
 // === / PLACEHOLDERS ===
 
+// === FUNCTIONS ===
+
+// т.к. р-ры могут быть в разных ед измерения
+// сначала получаем множитель без единиц измерения (н-р 16px -> 16)
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// переводим р-р в rem (при базовом р-ре 16)
+@function calcRem($num) {
+  @return (strip-unit($num) / 16) * 1rem;
+}
+// оборачиваем все наши размеры в переменных в эту функцию - получаем р-ры в rem
+// теперь при изменении font-size для html - все размеры автоматич пересчитаются
+
+// === / FUNCTIONS ===
+
 // === VARIABLES ===
-$base: 4px;
+$base: calcRem(4px);
 
 // Font-weight
 $fw-light: 300;
@@ -33,13 +51,13 @@ $fw-medium: 500;
 $fw-bold: 700;
 
 // Font-size
-$fz-xxs: 10px;
-$fz-xs: 12px;
-$fz-s: 15px;
-$fz-m: 18px;
-$fz-l: 24px;
-$fz-xl: 36px;
-$fz-xxl: 48px;
+$fz-xxs: calcRem(10px);
+$fz-xs: calcRem(12px);
+$fz-s: calcRem(15px);
+$fz-m: calcRem(18px);
+$fz-l: calcRem(24px);
+$fz-xl: calcRem(36px);
+$fz-xxl: calcRem(48px);
 
 $padding-vertical-xs: $base * 5;
 $padding-vertical-s: $base * 15;
@@ -107,6 +125,7 @@ $breakpoints: (
 // === / MIXINS ===
 
 // === COMMON ===
+
 body {
   @include roboto;
   color: $color-text;
