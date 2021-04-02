@@ -603,6 +603,12 @@ body {
      object-fit: cover;
 }
 
+@media (max-width: 991px) {
+  .section-app-demo__img {
+    left: 35%;
+  }
+}
+
 .section-app-demo__title {
   margin-bottom: 1.75rem;
 }

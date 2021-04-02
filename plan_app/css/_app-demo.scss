@@ -17,6 +17,10 @@
     left: 44%;
     max-width: 100%;
     object-fit: cover;
+
+    @include breakpoint-max(lg) {
+      left: 35%;
+    }
   }
 
   &__title {
