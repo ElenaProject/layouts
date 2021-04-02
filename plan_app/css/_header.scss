@@ -3,14 +3,20 @@
     padding-top: $padding-vertical-xs;
     padding-bottom: $padding-vertical-xs;
   }
-
-  &__btn {
-    margin-left: $base * 11;
-  }
 }
 .main-navigation {
   display: flex;
   align-items: center;
+
+  &__inner {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint-max(lg) {
+      display: none;
+    }
+  }
 }
 .logo {
   width: $base * 6;
@@ -18,6 +24,29 @@
   background-color: $color-logo;
   border-radius: 50%;
 }
+
+.menu-icon {
+  display: none;
+  margin-left: auto;
+  padding: $base * 2.5 $base * 3;
+
+  &__line {
+    display: block;
+    width: $base * 4;
+    height: $base/2;
+    background-color: $color-logo-grey;
+    transition: $transition;
+
+    & + & {
+      margin-top: $base;
+    }
+  }
+
+  @include breakpoint-max(lg) {
+    display: block;
+  }
+}
+
 .nav {
   margin-left: $base * 18;
 
@@ -101,4 +130,8 @@
   &-medium {
     color: $color-dark-grey;
   }
+}
+
+.nav-btn {
+  margin-left: $base * 11;
 }

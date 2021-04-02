@@ -5,6 +5,54 @@
     padding-bottom: $padding-vertical-s;
   }
 
+  &__main-navigation {
+    @include breakpoint-max(lg) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @include breakpoint-max(md) {
+      flex-direction: column;
+    }
+  }
+
+  &__nav {
+    @include breakpoint-max(lg) {
+      margin-left: 15%;
+    }
+
+    @include breakpoint-max(md) {
+      margin-top: $base * 7;
+      margin-left: 0;
+    }
+  }
+
+  &__nav-list {
+    @include breakpoint-max(lg) {
+      .nav__link {
+        font-size: $fz-s;
+      }
+    }
+  }
+
+  &__socials {
+    @include breakpoint-max(lg) {
+      flex-basis: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: $base * 10;
+      margin-bottom: $base * 3;
+      margin-left: 0;
+    }
+  }
+
+  &__btn {
+    @include breakpoint-max(lg) {
+      margin: 0;
+      margin-bottom: $base * 8;
+    }
+  }
+
   &__copyright {
     @include quicksand();
 
@@ -13,5 +61,10 @@
     color: #aeb8d0;
     font-size: $fz-xs;
     font-weight: $fw-medium;
+
+    @include breakpoint-max(lg) {
+      margin: 0;
+      text-align: center;
+    }
   }
 }
