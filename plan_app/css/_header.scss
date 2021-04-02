@@ -1,9 +1,19 @@
 .section-header {
+  position: relative;
+
   .section-inner {
     padding-top: $padding-vertical-xs;
     padding-bottom: $padding-vertical-xs;
   }
+
+  &__nav {
+    @include breakpoint-max(lg) {
+      flex-basis: 100%;
+      flex-grow: 1;
+    }
+  }
 }
+
 .main-navigation {
   display: flex;
   align-items: center;
@@ -11,10 +21,21 @@
   &__inner {
     flex-grow: 1;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
 
     @include breakpoint-max(lg) {
       display: none;
+
+      position: absolute;
+      z-index: 10;
+      top: 100%;
+      left: 0;
+      right: 0;
+      margin: 0;
+      padding: $base * 5;
+      background-color: $color-white;
     }
   }
 }
@@ -50,15 +71,27 @@
 .nav {
   margin-left: $base * 18;
 
+  @include breakpoint-max(lg) {
+    margin-left: 0;
+  }
+
   &__list {
     @extend %list;
 
     display: flex;
+
+    @include breakpoint-max(lg) {
+      justify-content: center;
+    }
   }
 
   &__item {
     & + & {
       margin-left: $base * 10;
+
+      @include breakpoint-max(lg) {
+        margin-left: $base * 15;
+      }
     }
   }
 
@@ -78,10 +111,23 @@
       color: $color-logo;
       font-weight: $fw-bold;
     }
+
+    @include breakpoint-max(lg) {
+      font-size: $fz-m;
+    }
   }
 }
 .socials {
   margin-left: auto;
+
+  @include breakpoint-max(lg) {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: $base * 10;
+    margin-bottom: $base * 3;
+    margin-left: 0;
+  }
 
   &__list {
     @extend %list;
@@ -134,4 +180,9 @@
 
 .nav-btn {
   margin-left: $base * 11;
+
+  @include breakpoint-max(lg) {
+    margin: 0;
+    margin-bottom: $base * 9;
+  }
 }
