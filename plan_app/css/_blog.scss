@@ -173,4 +173,8 @@
     margin-left: $base * 16;
     transform: translateY(-50%) rotate(180deg);
   }
+
+  @include breakpoint-max(xl) {
+    display: none;
+  }
 }

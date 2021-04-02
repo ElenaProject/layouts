@@ -874,6 +874,12 @@ body {
           transform: translateY(-50%) rotate(180deg);
 }
 
+@media (max-width: 1199px) {
+  .blog-arrow {
+    display: none;
+  }
+}
+
 .section-quotes {
   background: -webkit-gradient(linear, left top, left bottom, from(#eaf0ff), to(#f6f9ff));
   background: linear-gradient(180deg, #eaf0ff 0%, #f6f9ff 100%);
