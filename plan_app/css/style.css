@@ -395,7 +395,7 @@ body {
 
 @media (max-width: 991px) {
   .nav__item + .nav__item {
-    margin-left: 60px;
+    margin-left: 56px;
   }
 }
 
@@ -773,10 +773,21 @@ body {
       -ms-flex-positive: 1;
           flex-grow: 1;
   margin: 0;
-  width: 40%;
   font-size: 18px;
   line-height: 1.3;
   letter-spacing: 0.03em;
+}
+
+@media (min-width: 1200px) {
+  .section-stats__description {
+    width: 53%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .section-stats__description {
+    width: 43%;
+  }
 }
 
 .section-blog {

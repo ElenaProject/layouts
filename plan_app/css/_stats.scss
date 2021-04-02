@@ -37,9 +37,21 @@
   &__description {
     flex-grow: 1;
     margin: 0;
-    width: 40%;
+    // width: 43%;
     font-size: $fz-m;
     line-height: 1.3;
     letter-spacing: 0.03em;
+
+    @include breakpoint-min(l) {
+      width: 75%;
+    }
+
+    @include breakpoint-min(xl) {
+      width: 53%;
+    }
+
+    @include breakpoint-min(xxl) {
+      width: 43%;
+    }
   }
 }
