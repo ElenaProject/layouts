@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap");
 
-// === MIXINS ===
-@mixin quicksand {
-  font-family: "Quicksand", sans-serif;
-}
-@mixin roboto {
-  font-family: "Roboto", sans-serif;
-}
-// === / MIXINS ===
-
 // === PLACEHOLDERS ===
 %list {
   list-style: none;
@@ -35,11 +26,13 @@
 // === VARIABLES ===
 $base: 4px;
 
+// Font-weight
 $fw-light: 300;
 $fw-regular: 400;
 $fw-medium: 500;
 $fw-bold: 700;
 
+// Font-size
 $fz-xxs: 10px;
 $fz-xs: 12px;
 $fz-s: 15px;
@@ -55,6 +48,7 @@ $padding-vertical-xl: $base * 53;
 
 $transition: 0.5s;
 
+// Colors
 $color-white: #ffffff;
 // Blue
 $color-light-blue: #d8e3fe;
@@ -67,7 +61,50 @@ $color-text: #8d96bd;
 $color-dark-grey: #757e9a;
 $color-grey-blog: #a8b4e5;
 
+// Breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
 // === / VARIABLES ===
+
+// === MIXINS ===
+@mixin quicksand {
+  font-family: "Quicksand", sans-serif;
+}
+@mixin roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+// Breakpoints
+@mixin breakpoint-min($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@mixin breakpoint-max($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: (#{map-get($breakpoints, $breakpoint) - 1px})) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+// === / MIXINS ===
 
 // === COMMON ===
 body {
@@ -94,7 +131,7 @@ body {
   box-sizing: border-box;
   max-width: 900px;
   margin: 0 auto;
-  padding: $padding-vertical $base * 4;
+  padding: $padding-vertical $base * 5;
 
   &--wide {
     max-width: 1200px;
