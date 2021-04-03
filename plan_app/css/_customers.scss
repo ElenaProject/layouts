@@ -5,7 +5,24 @@
   justify-content: space-between;
   align-items: center;
 
-  &__item {
+  @include breakpoint-max(md) {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__item {
+      flex-basis: 30%;
+      padding-bottom: $base * 8;
+      text-align: center;
+    }
+  }
+
+  @include breakpoint-max(md) {
+    &__item {
+      flex-basis: 45%;
+    }
+  }
+
+  &__link {
     color: $color-logo-grey;
     font-size: $base * 7;
     text-align: center;
@@ -15,6 +32,18 @@
     &:hover,
     &--active {
       color: $color-logo;
+    }
+
+    @include breakpoint-max(lg) {
+      font-size: $fz-l;
+    }
+
+    @include breakpoint-max(md) {
+      font-size: $base * 9;
+    }
+
+    @include breakpoint-max(sm) {
+      font-size: $base * 7;
     }
   }
 }
