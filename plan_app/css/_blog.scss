@@ -22,6 +22,15 @@
   border: 1px solid $color-logo-grey;
   box-shadow: 0px $base * 4 $base * 12 #eff4ff;
 
+  @include breakpoint-max(md) {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  @include breakpoint-max(sm) {
+    width: auto;
+  }
+
   &__item {
     display: flex;
     align-items: center;
@@ -29,6 +38,13 @@
 
     @include breakpoint-max(lg) {
       align-items: start;
+    }
+
+    @include breakpoint-max(md) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      padding: $base * 8;
     }
   }
 
@@ -45,6 +61,16 @@
       grid-template-rows: repeat(2, $base * 25);
       gap: $base * 2;
       margin-right: $base * 7;
+    }
+
+    @include breakpoint-max(md) {
+      margin: 0;
+      margin-bottom: $base * 8;
+    }
+
+    @include breakpoint-max(sm) {
+      grid-template-columns: repeat(3, $base * 21);
+      grid-template-rows: repeat(2, $base * 21);
     }
   }
 
@@ -141,10 +167,23 @@
 
   &__article {
     flex-grow: 1;
+
+    @include breakpoint-max(md) {
+      position: relative;
+      z-index: 10;
+    }
   }
 
   &__subtitle {
     font-weight: $fw-regular;
+
+    @include breakpoint-max(md) {
+      text-align: center;
+    }
+
+    @include breakpoint-max(sm) {
+      text-align: left;
+    }
   }
 
   &__text {
