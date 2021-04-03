@@ -5,6 +5,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include breakpoint-max(md) {
+      flex-direction: column;
+    }
   }
 
   &__content {
@@ -20,6 +24,11 @@
   &__form {
     flex-basis: 55%;
     display: flex;
+
+    @include breakpoint-max(md) {
+      width: 70%;
+      margin-top: $base * 8;
+    }
   }
 
   &__input {
