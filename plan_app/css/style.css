@@ -820,29 +820,41 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 4rem 2rem;
 }
 
-.slider-blog__gallery, .slider-blog__article {
-  -ms-flex-preferred-size: 47%;
-      flex-basis: 47%;
+@media (max-width: 991px) {
+  .slider-blog__item {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
 }
 
 .slider-blog__gallery {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (7.5rem)[3];
+      grid-template-columns: repeat(3, 7.5rem);
   -ms-grid-rows: (7.5rem)[2];
       grid-template-rows: repeat(2, 7.5rem);
   gap: 0.75rem;
   margin: 0;
+  margin-right: 2.5rem;
+}
+
+@media (max-width: 991px) {
+  .slider-blog__gallery {
+    -ms-grid-columns: (6.25rem)[3];
+        grid-template-columns: repeat(3, 6.25rem);
+    -ms-grid-rows: (6.25rem)[2];
+        grid-template-rows: repeat(2, 6.25rem);
+    gap: 0.5rem;
+    margin-right: 1.75rem;
+  }
 }
 
 .slider-blog__img-link {
@@ -889,15 +901,27 @@ body {
 
 .slider-blog__img-link--big {
   grid-column: span 2;
+  -ms-grid-column-span: 2;
   grid-row: span 2;
+  -ms-grid-row-span: 2;
 }
 
 .slider-blog__img-link--big::after {
   background: linear-gradient(13.46deg, rgba(255, 199, 53, 0.44) 1.89%, rgba(255, 227, 154, 0.93) 1.9%, rgba(255, 159, 90, 0) 68.24%);
 }
 
+.slider-blog__img-link--s--pink {
+  -ms-grid-column: 3;
+  -ms-grid-row: 1;
+}
+
 .slider-blog__img-link--s--pink::after {
   background: linear-gradient(27.48deg, rgba(255, 53, 53, 0.48) 14.02%, rgba(255, 179, 90, 0) 68%);
+}
+
+.slider-blog__img-link--s--blue {
+  -ms-grid-column: 3;
+  -ms-grid-row: 2;
 }
 
 .slider-blog__img-link--s--blue::after {
@@ -909,6 +933,12 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.slider-blog__article {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .slider-blog__subtitle {
