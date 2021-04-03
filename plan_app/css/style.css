@@ -1533,6 +1533,12 @@ body {
   }
 }
 
+@media (max-width: 575px) {
+  .section-newsletter__form {
+    width: 100%;
+  }
+}
+
 .section-newsletter__input-email {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
