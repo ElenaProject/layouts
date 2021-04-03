@@ -27,24 +27,60 @@
     margin: $base * 15 auto;
   }
 
+  @include breakpoint-max(md) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @include breakpoint-max(sm) {
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: $base * 4;
+  }
+
   &__item {
     position: relative;
     flex-basis: 25%;
 
     & + & {
       margin-left: $margin-left;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -($margin-left + $divider-width)/2;
+
+        right: 100%;
+        width: $divider-width;
+        height: 1px;
+        background-color: $color-logo-grey;
+      }
+
+      @include breakpoint-max(sm) {
+        margin-left: 0;
+
+        &::before {
+          display: none;
+        }
+      }
     }
 
-    &:not(:first-child)::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: -($margin-left + $divider-width)/2;
+    @include breakpoint-max(md) {
+      flex-basis: 35%;
+      margin-bottom: $base * 12;
 
-      right: 100%;
-      width: $divider-width;
-      height: 1px;
-      background-color: $color-logo-grey;
+      &:nth-child(3n) {
+        margin-left: 0;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    @include breakpoint-max(sm) {
+      flex-basis: 45%;
     }
   }
 
@@ -61,13 +97,21 @@
     &::before {
       vertical-align: middle;
     }
+
+    @include breakpoint-max(md) {
+      margin-bottom: $base * 5;
+    }
   }
 
   &__title {
-    margin-bottom: $base * 6;
+    margin-bottom: $base * 7;
     color: $color-logo;
     font-size: $fz-s;
     font-weight: $fw-bold;
+
+    @include breakpoint-max(md) {
+      margin-bottom: $base * 3;
+    }
   }
 
   &__text {
