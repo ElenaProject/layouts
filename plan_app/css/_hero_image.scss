@@ -22,13 +22,29 @@
     background-size: cover;
 
     @include breakpoint-max(lg) {
-      height: $base * 120;
+      height: $base * 130;
+    }
+
+    @include breakpoint-max(md) {
+      height: $base * 140;
+    }
+
+    @include breakpoint-max(sm) {
+      background-position: 45% 85%;
     }
   }
 
   &__text {
     width: 55%;
     margin: 0 auto $base * 5;
+
+    @include breakpoint-max(md) {
+      width: 70%;
+    }
+
+    @include breakpoint-max(sm) {
+      width: 90%;
+    }
   }
 
   &__btn {

@@ -554,13 +554,37 @@ body {
 
 @media (max-width: 991px) {
   .slider-hero-image__item {
-    height: 30rem;
+    height: 32.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider-hero-image__item {
+    height: 35rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .slider-hero-image__item {
+    background-position: 45% 85%;
   }
 }
 
 .slider-hero-image__text {
   width: 55%;
   margin: 0 auto 1.25rem;
+}
+
+@media (max-width: 767px) {
+  .slider-hero-image__text {
+    width: 70%;
+  }
+}
+
+@media (max-width: 575px) {
+  .slider-hero-image__text {
+    width: 90%;
+  }
 }
 
 .slider-hero-image__btn {
