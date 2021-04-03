@@ -3,8 +3,7 @@
 
   &__nav {
     @include breakpoint-max(lg) {
-      flex-basis: 100%;
-      flex-grow: 1;
+      align-self: stretch;
     }
   }
 }
@@ -16,13 +15,12 @@
   &__inner {
     flex-grow: 1;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     align-items: center;
 
     @include breakpoint-max(lg) {
       display: none;
 
+      flex-direction: column;
       position: absolute;
       z-index: 10;
       top: 100%;
@@ -74,10 +72,7 @@
     @extend %list;
 
     display: flex;
-
-    @include breakpoint-max(lg) {
-      justify-content: center;
-    }
+    justify-content: space-evenly;
   }
 
   &__item {
@@ -85,7 +80,7 @@
       margin-left: $base * 10;
 
       @include breakpoint-max(lg) {
-        margin-left: $base * 14;
+        margin-left: 0;
       }
     }
   }
@@ -116,7 +111,6 @@
   margin-left: auto;
 
   @include breakpoint-max(lg) {
-    flex-basis: 100%;
     display: flex;
     justify-content: center;
     margin-top: $base * 10;
