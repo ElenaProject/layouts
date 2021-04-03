@@ -170,6 +170,20 @@ body {
     padding-bottom: $base * 53;
   }
 
+  @include breakpoint-max(lg) {
+    &--m {
+      padding-top: $base * 10;
+      padding-bottom: $base * 10;
+    }
+    &--l {
+      padding-top: $base * 20;
+      padding-bottom: $base * 20;
+    }
+    &--xl {
+      padding-top: $base * 40;
+      padding-bottom: $base * 40;
+    }
+  }
 }
 
 //  Buttons

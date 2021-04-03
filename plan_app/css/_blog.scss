@@ -9,6 +9,10 @@
 .slider-wrapper {
   position: relative;
   margin: $base * 20 auto;
+
+  @include breakpoint-max(lg) {
+    margin: $base * 13 auto;
+  }
 }
 
 .slider-blog {

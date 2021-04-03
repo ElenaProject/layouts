@@ -1,6 +1,7 @@
 .section-features {
   text-align: center;
   background: url(../img/clouds.svg) no-repeat center;
+  background-size: cover;
 
   &__title {
     margin-bottom: $base * 6;
@@ -21,6 +22,10 @@
   display: flex;
   width: 761/900 * 100%;
   margin: $base * 23 auto;
+
+  @include breakpoint-max(lg) {
+    margin: $base * 15 auto;
+  }
 
   &__item {
     position: relative;

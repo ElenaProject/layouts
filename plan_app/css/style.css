@@ -70,6 +70,20 @@ body {
   padding-bottom: 13.25rem;
 }
 
+@media (max-width: 991px) {
+  .vertical-indent--m {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  .vertical-indent--l {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .vertical-indent--xl {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+}
 
 .btn {
   font-family: "Quicksand", sans-serif;
@@ -641,6 +655,7 @@ body {
 .section-features {
   text-align: center;
   background: url(../img/clouds.svg) no-repeat center;
+  background-size: cover;
 }
 
 .section-features__title {
@@ -662,6 +677,12 @@ body {
   display: flex;
   width: 84.55556%;
   margin: 5.75rem auto;
+}
+
+@media (max-width: 991px) {
+  .features {
+    margin: 3.75rem auto;
+  }
 }
 
 .features__item {
@@ -814,6 +835,12 @@ body {
 .slider-wrapper {
   position: relative;
   margin: 5rem auto;
+}
+
+@media (max-width: 991px) {
+  .slider-wrapper {
+    margin: 3.25rem auto;
+  }
 }
 
 .slider-blog {
