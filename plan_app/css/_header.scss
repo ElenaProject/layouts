@@ -1,11 +1,6 @@
 .section-header {
   position: relative;
 
-  .section-inner {
-    padding-top: $padding-vertical-xs;
-    padding-bottom: $padding-vertical-xs;
-  }
-
   &__nav {
     @include breakpoint-max(lg) {
       flex-basis: 100%;

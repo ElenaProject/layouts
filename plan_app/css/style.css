@@ -43,12 +43,33 @@ body {
           box-sizing: border-box;
   max-width: 900px;
   margin: 0 auto;
-  padding: 7.5rem 1.25rem;
+  padding: 0 1.25rem;
 }
 
 .section-inner--wide {
   max-width: 1200px;
 }
+
+.vertical-indent--s {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.vertical-indent--m {
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+
+.vertical-indent--l {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+}
+
+.vertical-indent--xl {
+  padding-top: 13.25rem;
+  padding-bottom: 13.25rem;
+}
+
 
 .btn {
   font-family: "Quicksand", sans-serif;
@@ -276,11 +297,6 @@ body {
 
 .section-header {
   position: relative;
-}
-
-.section-header .section-inner {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
 }
 
 @media (max-width: 991px) {
@@ -550,11 +566,6 @@ body {
           transform: translate(-35%, -40%);
 }
 
-.section-customers .section-inner {
-  padding-top: 3.75rem;
-  padding-bottom: 3.75rem;
-}
-
 .customers {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -583,10 +594,6 @@ body {
 .section-app-demo {
   position: relative;
   overflow: hidden;
-}
-
-.section-app-demo__inner {
-  padding-top: 13.25rem;
 }
 
 .section-app-demo__content {
@@ -1238,11 +1245,6 @@ body {
 
 .section-footer {
   border-bottom: none;
-}
-
-.section-footer .section-inner {
-  padding-top: 3.75rem;
-  padding-bottom: 3.75rem;
 }
 
 @media (max-width: 991px) {

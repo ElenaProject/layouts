@@ -59,11 +59,6 @@ $fz-l: calcRem(24px);
 $fz-xl: calcRem(36px);
 $fz-xxl: calcRem(48px);
 
-$padding-vertical-xs: $base * 5;
-$padding-vertical-s: $base * 15;
-$padding-vertical: $base * 30;
-$padding-vertical-xl: $base * 53;
-
 $transition: 0.5s;
 
 // Colors
@@ -150,11 +145,31 @@ body {
   box-sizing: border-box;
   max-width: 900px;
   margin: 0 auto;
-  padding: $padding-vertical $base * 5;
+  padding: 0 $base * 5;
 
   &--wide {
     max-width: 1200px;
   }
+}
+
+.vertical-indent {
+  &--s {
+    padding-top: $base * 5;
+    padding-bottom: $base * 5;
+  }
+  &--m {
+    padding-top: $base * 15;
+    padding-bottom: $base * 15;
+  }
+  &--l {
+    padding-top: $base * 30;
+    padding-bottom: $base * 30;
+  }
+  &--xl {
+    padding-top: $base * 53;
+    padding-bottom: $base * 53;
+  }
+
 }
 
 //  Buttons
