@@ -1269,6 +1269,16 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow: hidden;
+}
+
+@media (max-width: 575px) {
+  .section-quotes__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .section-quotes__title {
@@ -1282,6 +1292,12 @@ body {
 .section-quotes__left {
   -ms-flex-preferred-size: 44%;
       flex-basis: 44%;
+}
+
+@media (max-width: 575px) {
+  .section-quotes__left {
+    margin-bottom: 4rem;
+  }
 }
 
 .section-quotes__right {

@@ -4,6 +4,11 @@
   &__inner {
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
+
+    @include breakpoint-max(sm) {
+      flex-direction: column;
+    }
   }
 
   &__title {
@@ -16,6 +21,10 @@
 
   &__left {
     flex-basis: 44%;
+
+    @include breakpoint-max(sm) {
+      margin-bottom: $base * 16;
+    }
   }
   &__right {
     flex-basis: 48%;
