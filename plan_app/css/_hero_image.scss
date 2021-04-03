@@ -20,6 +20,10 @@
     text-align: center;
     background-position: 50% 85%;
     background-size: cover;
+
+    @include breakpoint-max(lg) {
+      height: $base * 120;
+    }
   }
 
   &__text {
