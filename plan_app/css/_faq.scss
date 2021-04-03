@@ -1,5 +1,6 @@
 .section-faq {
   &__inner {
+    box-sizing: border-box;
     padding-left: $base * 15;
     padding-right: $base * 15;
 
