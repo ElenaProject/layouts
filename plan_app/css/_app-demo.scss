@@ -4,6 +4,14 @@
 
   &__content {
     max-width: 45%;
+
+    @include breakpoint-max(md) {
+      max-width: 55%;
+    }
+
+    @include breakpoint-max(sm) {
+      max-width: 100%;
+    }
   }
 
   &__img {
@@ -17,6 +25,11 @@
     @include breakpoint-max(lg) {
       left: 35%;
     }
+
+    @include breakpoint-max(sm) {
+      top: 20%;
+      left: -23%;
+    }
   }
 
   &__title {
@@ -25,6 +38,10 @@
 
   &__text {
     margin-bottom: $base * 12;
+
+    @include breakpoint-max(sm) {
+      margin-top: 115%;
+    }
   }
 
   .btn--secondary--dark {

@@ -661,6 +661,18 @@ body {
   max-width: 45%;
 }
 
+@media (max-width: 767px) {
+  .section-app-demo__content {
+    max-width: 55%;
+  }
+}
+
+@media (max-width: 575px) {
+  .section-app-demo__content {
+    max-width: 100%;
+  }
+}
+
 .section-app-demo__img {
   position: absolute;
   z-index: -1;
@@ -677,12 +689,25 @@ body {
   }
 }
 
+@media (max-width: 575px) {
+  .section-app-demo__img {
+    top: 20%;
+    left: -23%;
+  }
+}
+
 .section-app-demo__title {
   margin-bottom: 1.75rem;
 }
 
 .section-app-demo__text {
   margin-bottom: 3rem;
+}
+
+@media (max-width: 575px) {
+  .section-app-demo__text {
+    margin-top: 115%;
+  }
 }
 
 .section-app-demo .btn--secondary--dark {
