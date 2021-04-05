@@ -43,6 +43,10 @@
     @include breakpoint-max(sm) {
       margin-top: 115%;
     }
+
+    @include breakpoint-max(xs) {
+      margin-top: 155%;
+    }
   }
 
   .btn--secondary--dark {

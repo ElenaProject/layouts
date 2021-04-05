@@ -202,6 +202,12 @@ body {
       @include vertical-indent($base * 20);
     }
   }
+
+  @include breakpoint-max(xs) {
+    &--xl {
+      @include vertical-indent($base * 15);
+    }
+  }
 }
 
 //  Buttons
