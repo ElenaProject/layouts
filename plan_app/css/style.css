@@ -1484,6 +1484,14 @@ body {
   }
 }
 
+@media (max-width: 399px) {
+  .section-quotes__left {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 2.5rem;
+  }
+}
+
 .section-quotes__right {
   -ms-flex-preferred-size: 48%;
       flex-basis: 48%;
@@ -1502,6 +1510,13 @@ body {
   -webkit-filter: drop-shadow(0px 0.25rem 3rem #d4dcf1);
           filter: drop-shadow(0px 0.25rem 3rem #d4dcf1);
   position: relative;
+}
+
+@media (max-width: 399px) {
+  .slider-quotes__item {
+    padding: 2rem;
+    padding-bottom: 3rem;
+  }
 }
 
 .slider-quotes__item-text {
