@@ -28,6 +28,11 @@
   &__text {
     max-width: 80%;
     margin: 0 auto $base * 12;
+
+    @include breakpoint-max(xs) {
+      min-width: 85%;
+      margin-bottom: $base * 10;
+    }
   }
 
   &__btn-group {
