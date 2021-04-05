@@ -49,5 +49,9 @@
     @include breakpoint-max(sm) {
       font-size: $base * 7;
     }
+
+    @include breakpoint-max(xs) {
+      font-size: $fz-l;
+    }
   }
 }
