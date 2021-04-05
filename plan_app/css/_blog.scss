@@ -13,6 +13,10 @@
   @include breakpoint-max(lg) {
     margin: $base * 13 auto;
   }
+
+  @include breakpoint-max(lg) {
+    margin: $base * 8 auto;
+  }
 }
 
 .slider-blog {
@@ -46,6 +50,10 @@
       align-items: center;
       padding: $base * 8;
     }
+
+    @include breakpoint-max(xs) {
+      padding: $base * 4;
+    }
   }
 
   &__gallery {
@@ -71,6 +79,12 @@
     @include breakpoint-max(sm) {
       grid-template-columns: repeat(3, $base * 21);
       grid-template-rows: repeat(2, $base * 21);
+    }
+
+    @include breakpoint-max(xs) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, $base * 27);
+      gap: $base * 3;
     }
   }
 
@@ -121,6 +135,11 @@
       -ms-grid-column-span: 2;
       grid-row: span 2;
       -ms-grid-row-span: 2;
+
+      @include breakpoint-max(xs) {
+        grid-column: span 2;
+        -ms-grid-column-span: 2;
+      }
 
       &::after {
         background: linear-gradient(
@@ -184,6 +203,10 @@
     @include breakpoint-max(sm) {
       text-align: left;
     }
+
+    @include breakpoint-max(sm) {
+      font-size: $base * 8.5;
+    }
   }
 
   &__text {
@@ -195,6 +218,11 @@
 
   &__article-btns {
     display: flex;
+
+    @include breakpoint-max(xs) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__link {
@@ -206,6 +234,11 @@
 
     &:hover {
       color: darken($color-grey-blog, 10%);
+    }
+
+    @include breakpoint-max(xs) {
+      margin-left: 0;
+      margin-top: $base * 3;
     }
   }
 }
