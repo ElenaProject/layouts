@@ -152,59 +152,54 @@ body {
 }
 
 .vertical-indent {
+  @mixin vertical-indent($size) {
+    padding-top: $size;
+    padding-bottom: $size;
+  }
+
   &--s {
-    padding-top: $base * 5;
-    padding-bottom: $base * 5;
+    @include vertical-indent($base * 5);
   }
 
   &--m {
-    padding-top: $base * 15;
-    padding-bottom: $base * 15;
+    @include vertical-indent($base * 15);
   }
 
   &--l {
-    padding-top: $base * 30;
-    padding-bottom: $base * 30;
+    @include vertical-indent($base * 30);
   }
 
   &--xl {
-    padding-top: $base * 53;
-    padding-bottom: $base * 53;
+    @include vertical-indent($base * 53);
   }
 
   @include breakpoint-max(lg) {
     &--m {
-      padding-top: $base * 10;
-      padding-bottom: $base * 10;
+      @include vertical-indent($base * 10);
     }
 
     &--l {
-      padding-top: $base * 20;
-      padding-bottom: $base * 20;
+      @include vertical-indent($base * 20);
     }
 
     &--xl {
-      padding-top: $base * 30;
-      padding-bottom: $base * 30;
+      @include vertical-indent($base * 30);
     }
   }
 
   @include breakpoint-max(md) {
     &--xl {
-      padding-top: $base * 25;
-      padding-bottom: $base * 25;
+      @include vertical-indent($base * 25);
     }
   }
 
   @include breakpoint-max(sm) {
     &--l {
-      padding-top: $base * 10;
-      padding-bottom: $base * 10;
+      @include vertical-indent($base * 10);
     }
 
     &--xl {
-      padding-top: $base * 20;
-      padding-bottom: $base * 20;
+      @include vertical-indent($base * 20);
     }
   }
 }
