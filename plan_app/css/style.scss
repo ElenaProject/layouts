@@ -156,14 +156,17 @@ body {
     padding-top: $base * 5;
     padding-bottom: $base * 5;
   }
+
   &--m {
     padding-top: $base * 15;
     padding-bottom: $base * 15;
   }
+
   &--l {
     padding-top: $base * 30;
     padding-bottom: $base * 30;
   }
+
   &--xl {
     padding-top: $base * 53;
     padding-bottom: $base * 53;
@@ -174,13 +177,34 @@ body {
       padding-top: $base * 10;
       padding-bottom: $base * 10;
     }
+
     &--l {
       padding-top: $base * 20;
       padding-bottom: $base * 20;
     }
+
     &--xl {
-      padding-top: $base * 40;
-      padding-bottom: $base * 40;
+      padding-top: $base * 30;
+      padding-bottom: $base * 30;
+    }
+  }
+
+  @include breakpoint-max(md) {
+    &--xl {
+      padding-top: $base * 25;
+      padding-bottom: $base * 25;
+    }
+  }
+
+  @include breakpoint-max(sm) {
+    &--l {
+      padding-top: $base * 10;
+      padding-bottom: $base * 10;
+    }
+
+    &--xl {
+      padding-top: $base * 20;
+      padding-bottom: $base * 20;
     }
   }
 }

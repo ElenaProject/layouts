@@ -11,8 +11,12 @@
 
     &__item {
       flex-basis: 30%;
-      padding-bottom: $base * 8;
+      margin-bottom: $base * 8;
       text-align: center;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
