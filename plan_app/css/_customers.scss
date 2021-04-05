@@ -7,7 +7,7 @@
 
   @include breakpoint-max(md) {
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
 
     &__item {
       flex-basis: 30%;
