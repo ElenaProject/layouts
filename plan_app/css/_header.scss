@@ -64,6 +64,10 @@
 .nav {
   margin-left: $base * 18;
 
+  @include breakpoint-max(xl) {
+    margin-left: $base * 12;
+  }
+
   @include breakpoint-max(lg) {
     margin-left: 0;
   }
@@ -87,6 +91,10 @@
 
     & + & {
       @include breakpoint-min(lg) {
+        margin-left: $base * 8;
+      }
+
+      @include breakpoint-min(xl) {
         margin-left: $base * 10;
       }
     }
@@ -96,7 +104,7 @@
     @include quicksand;
 
     color: $color-text;
-    font-size: $fz-xs;
+    font-size: $fz-m;
     font-weight: $fw-medium;
     text-decoration: none;
     transition: $transition;
@@ -107,10 +115,6 @@
     &--active {
       color: $color-logo;
       font-weight: $fw-bold;
-    }
-
-    @include breakpoint-max(lg) {
-      font-size: $fz-m;
     }
   }
 }
