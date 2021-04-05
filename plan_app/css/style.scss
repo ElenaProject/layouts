@@ -381,6 +381,10 @@ body {
 
   &--large {
     font-size: $fz-xxl;
+
+    @include breakpoint-max(xs) {
+      font-size: $base * 10;
+    }
   }
   span {
     font-weight: $fw-light;
