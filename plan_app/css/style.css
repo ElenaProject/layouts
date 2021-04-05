@@ -921,6 +921,16 @@ body {
   background-color: #d6dae5;
 }
 
+@media (max-width: 575px) {
+  .or-block {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  .or-block::before, .or-block::after {
+    display: none;
+  }
+}
+
 .section-stats {
   font-family: "Quicksand", sans-serif;
   display: -webkit-box;

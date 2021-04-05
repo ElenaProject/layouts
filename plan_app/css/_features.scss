@@ -135,4 +135,14 @@
     margin-left: $base * 4;
     background-color: $color-logo-grey;
   }
+
+  @include breakpoint-max(sm) {
+    margin-right: $base * 4;
+    margin-left: $base * 4;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
 }
