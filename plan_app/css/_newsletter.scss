@@ -44,6 +44,11 @@
     &-submit {
       padding: $base * 5 $base * 14;
       border-radius: $base * 1.25;
+
+      @include breakpoint-max(xs) {
+        padding-left: $base * 4;
+        padding-right: $base * 4;
+      }
     }
   }
 }

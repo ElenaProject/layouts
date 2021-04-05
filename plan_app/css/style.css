@@ -1651,6 +1651,13 @@ body {
   border-radius: 0.3125rem;
 }
 
+@media (max-width: 399px) {
+  .section-newsletter__input-submit {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 .section-footer {
   border-bottom: none;
 }
