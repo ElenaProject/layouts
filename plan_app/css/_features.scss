@@ -38,6 +38,10 @@
     margin-bottom: $base * 4;
   }
 
+  @include breakpoint-max(xs) {
+    flex-direction: column;
+  }
+
   &__item {
     position: relative;
     flex-basis: 25%;
@@ -116,6 +120,11 @@
 
   &__text {
     font-size: $fz-xs;
+
+    @include breakpoint-max(xs) {
+      max-width: 60%;
+      margin: 0 auto;
+    }
   }
 }
 

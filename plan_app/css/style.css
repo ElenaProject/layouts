@@ -847,6 +847,15 @@ body {
   }
 }
 
+@media (max-width: 399px) {
+  .features {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .features__item {
   position: relative;
   -ms-flex-preferred-size: 25%;
@@ -934,6 +943,13 @@ body {
 
 .features__text {
   font-size: 0.75rem;
+}
+
+@media (max-width: 399px) {
+  .features__text {
+    max-width: 60%;
+    margin: 0 auto;
+  }
 }
 
 .or-block {
