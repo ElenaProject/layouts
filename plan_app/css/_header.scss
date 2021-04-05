@@ -71,16 +71,23 @@
   &__list {
     @extend %list;
 
-    display: flex;
-    justify-content: space-evenly;
+    text-align: center;
+
+    @include breakpoint-min(sm) {
+      display: flex;
+      justify-content: space-evenly;
+    }
   }
 
   &__item {
-    & + & {
-      margin-left: $base * 10;
+    @include breakpoint-max(sm) {
+      padding: $base * 5;
+      border-bottom: 1px solid $color-bg-grey;
+    }
 
-      @include breakpoint-max(lg) {
-        margin-left: 0;
+    & + & {
+      @include breakpoint-min(lg) {
+        margin-left: $base * 10;
       }
     }
   }
@@ -111,6 +118,7 @@
   margin-left: auto;
 
   @include breakpoint-max(lg) {
+    flex-basis: 100%;
     display: flex;
     justify-content: center;
     margin-top: $base * 10;
