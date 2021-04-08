@@ -29,14 +29,9 @@
   &__item {
     $parent: &;
 
-    padding: $base * 8;
+    padding: $base * 6;
     padding-left: $base * 18;
     border-bottom: 1px solid $color-logo-grey;
-
-    @include breakpoint-max(sm) {
-      padding-top: $base * 6;
-      padding-bottom: $base * 6;
-    }
 
     @include breakpoint-max(xs) {
       padding: $base * 4;
@@ -47,8 +42,19 @@
       @include quicksand;
 
       position: relative;
-      font-weight: $fw-medium;
+      margin: 0;
       cursor: pointer;
+
+      &-btn {
+        @extend %btn;
+
+        display: block;
+        width: 100%;
+        padding: 0 $base;
+        color: $color-text;
+        text-align: left;
+        outline-color: $color-bg-grey;
+      }
 
       &::before {
         position: absolute;
@@ -92,9 +98,10 @@
 
     &--active {
       #{$parent}-trigger {
-        color: $color-dark-grey;
-        font-weight: $fw-bold;
-
+        &-btn {
+          color: $color-dark-grey;
+          font-weight: $fw-bold;
+        }
         &::before {
           color: $color-dark-grey;
           transform: translateY(-50%) rotate(180deg);

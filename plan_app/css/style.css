@@ -1,11 +1,10 @@
-@import url(./normalize.css);
 .dots, .nav__list, .socials__list, .slider-hero-image, .customers, .features, .slider-blog, .slider-quotes, .section-faq__list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.btn, .slider-hero-image__btn, .slider-blog__link, .blog-arrow {
+.btn, .slider-hero-image__btn, .slider-blog__link, .blog-arrow, .section-faq__item-trigger-btn {
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -1568,16 +1567,9 @@ body {
 }
 
 .section-faq__item {
-  padding: 2rem;
+  padding: 1.5rem;
   padding-left: 4.5rem;
   border-bottom: 1px solid #d6dae5;
-}
-
-@media (max-width: 575px) {
-  .section-faq__item {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
 }
 
 @media (max-width: 399px) {
@@ -1590,8 +1582,17 @@ body {
 .section-faq__item-trigger {
   font-family: "Quicksand", sans-serif;
   position: relative;
-  font-weight: 500;
+  margin: 0;
   cursor: pointer;
+}
+
+.section-faq__item-trigger-btn {
+  display: block;
+  width: 100%;
+  padding: 0 0.25rem;
+  color: #8d96bd;
+  text-align: left;
+  outline-color: #e8ecf4;
 }
 
 .section-faq__item-trigger::before {
@@ -1651,7 +1652,7 @@ body {
   }
 }
 
-.section-faq__item--active .section-faq__item-trigger {
+.section-faq__item--active .section-faq__item-trigger-btn {
   color: #757e9a;
   font-weight: 700;
 }
