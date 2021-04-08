@@ -17,6 +17,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  padding-top: 80px;
   color: #8d96bd;
 }
 
@@ -338,7 +339,12 @@ body {
 }
 
 .section-header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background-color: #ffffff;
 }
 
 @media (max-width: 991px) {

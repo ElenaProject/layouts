@@ -124,6 +124,8 @@ $breakpoints: (
 
 body {
   @include roboto;
+
+  padding-top: 80px;
   color: $color-text;
 }
 
