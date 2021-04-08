@@ -402,22 +402,60 @@ body {
 }
 
 .menu-icon {
+  position: relative;
   display: none;
   margin-left: auto;
-  padding: 0.625rem 0.75rem;
+  width: 2.5rem;
+  height: 2.25rem;
+  padding: 0.25rem;
+}
+
+.menu-icon::before, .menu-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 1.5rem;
+  height: 0.125rem;
+  background-color: #d6dae5;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.menu-icon::before {
+  top: 0.5rem;
+}
+
+.menu-icon::after {
+  bottom: 0.5rem;
 }
 
 .menu-icon__line {
   display: block;
-  width: 1rem;
+  margin: 0 auto;
+  width: 1.5rem;
   height: 0.125rem;
   background-color: #d6dae5;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-.menu-icon__line + .menu-icon__line {
-  margin-top: 0.25rem;
+.menu-icon--active::before {
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(40deg);
+          transform: translate(-50%, -50%) rotate(40deg);
+}
+
+.menu-icon--active::after {
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-40deg);
+          transform: translate(-50%, -50%) rotate(-40deg);
+}
+
+.menu-icon--active .menu-icon__line {
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 @media (max-width: 991px) {

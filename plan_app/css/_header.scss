@@ -45,19 +45,57 @@
 }
 
 .menu-icon {
+  $parent: &;
+
+  position: relative;
   display: none;
   margin-left: auto;
-  padding: $base * 2.5 $base * 3;
+  width: $base * 10;
+  height: $base * 9;
+  padding: $base;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: $base * 6;
+    height: $base/2;
+    background-color: $color-logo-grey;
+    transform: translateX(-50%);
+    transition: $transition;
+  }
+
+  &::before {
+    top: $base * 2;
+  }
+
+  &::after {
+    bottom: $base * 2;
+  }
 
   &__line {
     display: block;
-    width: $base * 4;
+    margin: 0 auto;
+    width: $base * 6;
     height: $base/2;
     background-color: $color-logo-grey;
     transition: $transition;
+  }
 
-    & + & {
-      margin-top: $base;
+  &--active {
+    &::before {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(40deg);
+    }
+
+    &::after {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-40deg);
+    }
+
+    #{$parent}__line {
+      transform: scale(0);
     }
   }
 
