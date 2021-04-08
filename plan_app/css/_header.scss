@@ -6,6 +6,27 @@
   z-index: 20;
   background-color: $color-white;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &--active-nav {
+    &::before {
+      display: block;
+    }
+
+    .main-navigation__inner {
+      display: flex;
+    }
+  }
+
   &__nav {
     @include breakpoint-max(lg) {
       align-self: stretch;

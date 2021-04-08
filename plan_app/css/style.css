@@ -347,6 +347,27 @@ body {
   background-color: #ffffff;
 }
 
+.section-header::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.section-header--active-nav::before {
+  display: block;
+}
+
+.section-header--active-nav .main-navigation__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 @media (max-width: 991px) {
   .section-header__nav {
     -ms-flex-item-align: stretch;
