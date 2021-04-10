@@ -115,7 +115,8 @@
       transition: $transition;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       &::before {
         opacity: 1;
       }

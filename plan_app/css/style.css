@@ -1337,7 +1337,7 @@ body {
   transition: 0.5s;
 }
 
-.slider-blog__img-link:hover::before {
+.slider-blog__img-link:hover::before, .slider-blog__img-link:focus::before {
   opacity: 1;
 }
 
