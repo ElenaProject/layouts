@@ -1,3 +1,55 @@
+// submenu
+
+// mobile or not
+const isMobile = {
+  Android: function () {
+    return navigator.userAgent.match(/Android/i);
+  },
+  BlackBerry: function () {
+    return navigator.userAgent.match(/BlackBerry/i);
+  },
+  iOS: function () {
+    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+  },
+  Opera: function () {
+    return navigator.userAgent.match(/Opera Mini/i);
+  },
+  Windows: function () {
+    return navigator.userAgent.match(/IEMobile/i);
+  },
+  any: function () {
+    return (
+      isMobile.Android() ||
+      isMobile.BlackBerry() ||
+      isMobile.iOS() ||
+      isMobile.Opera() ||
+      isMobile.Windows()
+    );
+  },
+};
+
+if (isMobile.any()) {
+  // если с мобильного добавляем к body класс _touch
+  document.body.classList.add("_touch");
+
+  // находим все стрелки в меню
+  let linkArrows = document.querySelectorAll(".nav__link-arrow");
+  // если они есть
+  if (linkArrows.length > 0) {
+    // для всех стрелок
+    for (let i = 0; i < linkArrows.length; i++) {
+      // назначаем обработчик
+      linkArrows[i].addEventListener("click", function (e) {
+        // при клике родителю добавляем класс _active
+        linkArrows[i].parentElement.classList.toggle("_active");
+      });
+    }
+  }
+} else {
+  // если не с мобильного - класс _pc
+  document.body.classList.add("_pc");
+}
+
 // accordion
 
 let faqList = document.querySelector(".section-faq__list");

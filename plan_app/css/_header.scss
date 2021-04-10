@@ -151,17 +151,27 @@
 
   &__item {
     position: relative;
-    padding-bottom: $base * 2;
 
-    &:hover {
+    // появляется при наведении и в фокусе только на ПК
+    ._pc &:hover,
+    ._pc &:focus-within,
+    ._touch &._active {
       #{$parent}__sublist {
+        display: block;
         visibility: visible;
         opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    ._touch &._active {
+      #{$parent}__link-arrow {
+        transform: rotate(180deg);
       }
     }
 
     @include breakpoint-max(sm) {
-      padding: $base * 5;
+      padding: $base * 5 0;
       border-bottom: 1px solid $color-bg-grey;
     }
 
@@ -179,6 +189,8 @@
   &__link {
     @include quicksand;
 
+    display: inline-block;
+    padding: $base * 2 0;
     color: $color-text;
     font-size: $fz-m;
     font-weight: $fw-medium;
@@ -192,6 +204,31 @@
       color: $color-logo;
       font-weight: $fw-bold;
     }
+
+    &-arrow {
+      position: absolute;
+      top: 45%;
+      right: -($base * 3.5);
+      display: none;
+      width: 0;
+      height: 0;
+      padding: 0;
+      border: none;
+      border-left: $base solid transparent;
+      border-right: $base solid transparent;
+      border-top: $base * 2 solid $color-text;
+      transition: $transition;
+      outline: 0;
+
+      ._touch & {
+        display: inline-block;
+
+        @include breakpoint-max(sm) {
+          position: relative;
+          right: -1%;
+        }
+      }
+    }
   }
 
   &__sublist {
@@ -200,26 +237,39 @@
     position: absolute;
     top: 100%;
     right: 0;
-    min-width: 130%;
-    padding: $base * 2 0;
+    min-width: 140%;
     background-color: $color-logo;
     visibility: hidden;
     opacity: 0;
     transition: $transition;
+    pointer-events: none;
+
+    ._touch & {
+      right: -($base * 4);
+
+      @include breakpoint-max(sm) {
+        position: relative;
+        right: 0;
+        display: none;
+        min-width: 100%;
+      }
+    }
   }
 
   &__subitem-link {
     @include quicksand;
 
     display: block;
-    padding: $base * 2 $base * 3;
+    padding: $base * 3;
     color: $color-white;
     text-decoration: none;
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
       color: $color-text;
-      font-weight: $fw-bold;
-      background-color: $color-white;
+      font-weight: $fw-medium;
+      background-color: $color-light-blue;
     }
   }
 }

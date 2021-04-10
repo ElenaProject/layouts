@@ -518,17 +518,25 @@ body {
 
 .nav__item {
   position: relative;
-  padding-bottom: 0.5rem;
 }
 
-.nav__item:hover .nav__sublist {
+._pc .nav__item:hover .nav__sublist,
+._pc .nav__item:focus-within .nav__sublist,
+._touch .nav__item._active .nav__sublist {
+  display: block;
   visibility: visible;
   opacity: 1;
+  pointer-events: all;
+}
+
+._touch .nav__item._active .nav__link-arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 @media (max-width: 575px) {
   .nav__item {
-    padding: 1.25rem;
+    padding: 1.25rem 0;
     border-bottom: 1px solid #e8ecf4;
   }
 }
@@ -547,6 +555,8 @@ body {
 
 .nav__link {
   font-family: "Quicksand", sans-serif;
+  display: inline-block;
+  padding: 0.5rem 0;
   color: #8d96bd;
   font-size: 1.125rem;
   font-weight: 500;
@@ -564,31 +574,72 @@ body {
   font-weight: 700;
 }
 
+.nav__link-arrow {
+  position: absolute;
+  top: 45%;
+  right: -0.875rem;
+  display: none;
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: none;
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
+  border-top: 0.5rem solid #8d96bd;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: 0;
+}
+
+._touch .nav__link-arrow {
+  display: inline-block;
+}
+
+@media (max-width: 575px) {
+  ._touch .nav__link-arrow {
+    position: relative;
+    right: -1%;
+  }
+}
+
 .nav__sublist {
   position: absolute;
   top: 100%;
   right: 0;
-  min-width: 130%;
-  padding: 0.5rem 0;
+  min-width: 140%;
   background-color: #5e81fe;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  pointer-events: none;
+}
+
+._touch .nav__sublist {
+  right: -1rem;
+}
+
+@media (max-width: 575px) {
+  ._touch .nav__sublist {
+    position: relative;
+    right: 0;
+    display: none;
+    min-width: 100%;
+  }
 }
 
 .nav__subitem-link {
   font-family: "Quicksand", sans-serif;
   display: block;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem;
   color: #ffffff;
   text-decoration: none;
 }
 
-.nav__subitem-link:hover {
+.nav__subitem-link:hover, .nav__subitem-link:active, .nav__subitem-link:focus {
   color: #8d96bd;
-  font-weight: 700;
-  background-color: #ffffff;
+  font-weight: 500;
+  background-color: #d8e3fe;
 }
 
 .socials {
