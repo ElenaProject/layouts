@@ -126,6 +126,8 @@
 }
 
 .nav {
+  $parent: &;
+
   margin-left: $base * 18;
 
   @include breakpoint-max(xl) {
@@ -148,6 +150,16 @@
   }
 
   &__item {
+    position: relative;
+    padding-bottom: $base * 2;
+
+    &:hover {
+      #{$parent}__sublist {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
     @include breakpoint-max(sm) {
       padding: $base * 5;
       border-bottom: 1px solid $color-bg-grey;
@@ -179,6 +191,35 @@
     &--active {
       color: $color-logo;
       font-weight: $fw-bold;
+    }
+  }
+
+  &__sublist {
+    @extend %list;
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 130%;
+    padding: $base * 2 0;
+    background-color: $color-logo;
+    visibility: hidden;
+    opacity: 0;
+    transition: $transition;
+  }
+
+  &__subitem-link {
+    @include quicksand;
+
+    display: block;
+    padding: $base * 2 $base * 3;
+    color: $color-white;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-text;
+      font-weight: $fw-bold;
+      background-color: $color-white;
     }
   }
 }

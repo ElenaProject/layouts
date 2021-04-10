@@ -1,4 +1,4 @@
-.dots, .nav__list, .socials__list, .slider-hero-image, .customers, .features, .slider-blog, .slider-quotes, .section-faq__list {
+.dots, .nav__list, .nav__sublist, .socials__list, .slider-hero-image, .customers, .features, .slider-blog, .slider-quotes, .section-faq__list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -516,6 +516,16 @@ body {
   }
 }
 
+.nav__item {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.nav__item:hover .nav__sublist {
+  visibility: visible;
+  opacity: 1;
+}
+
 @media (max-width: 575px) {
   .nav__item {
     padding: 1.25rem;
@@ -552,6 +562,33 @@ body {
 .nav__link--active {
   color: #5e81fe;
   font-weight: 700;
+}
+
+.nav__sublist {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 130%;
+  padding: 0.5rem 0;
+  background-color: #5e81fe;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.nav__subitem-link {
+  font-family: "Quicksand", sans-serif;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav__subitem-link:hover {
+  color: #8d96bd;
+  font-weight: 700;
+  background-color: #ffffff;
 }
 
 .socials {
