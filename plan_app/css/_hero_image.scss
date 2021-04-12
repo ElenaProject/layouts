@@ -1,13 +1,6 @@
 .section-hero-image {
   position: relative;
   background-color: #f4f7ff;
-
-  &__dots {
-    position: absolute;
-    bottom: $base * 7;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
 
 .slider-hero-image {

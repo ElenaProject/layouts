@@ -139,6 +139,22 @@ for (let menuLinkAnchor of menuLinksAnchor) {
   });
 }
 
+// -----------  hero-slider  -----------
+
+// Инициализируем swiper
+// Слайдер hero-image
+new Swiper(".section-hero-image", {
+  loop: true,
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  grabCursor: true,
+  keyboard: true,
+});
+
 //-----------  accordion  -----------
 
 let faqList = document.querySelector(".section-faq__list");

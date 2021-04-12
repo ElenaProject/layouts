@@ -342,6 +342,24 @@ body {
   margin-left: 0.75rem;
 }
 
+.swiper-pagination-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0 !important;
+  cursor: pointer;
+  background-color: #d6dae5;
+  border: 0.375rem solid transparent;
+  border-radius: 50%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 1;
+  background-clip: content-box;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #5e81fe;
+}
+
 .section-header {
   position: fixed;
   z-index: 20;
@@ -747,14 +765,6 @@ body {
 .section-hero-image {
   position: relative;
   background-color: #f4f7ff;
-}
-
-.section-hero-image__dots {
-  position: absolute;
-  bottom: 1.75rem;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
 }
 
 .slider-hero-image {
