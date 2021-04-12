@@ -2,7 +2,8 @@
 let navSublists = document.querySelectorAll(".nav__sublist");
 let header = document.querySelector(".section-header");
 let burgerBtn = document.querySelector(".menu-icon");
-let menuLinks = document.querySelectorAll(".nav__link[data-goto]");
+let menuLinks = document.querySelectorAll(".nav__link");
+let menuLinksAnchor = document.querySelectorAll(".nav__link[data-goto]");
 
 // -----------  submenu  -----------
 
@@ -63,37 +64,68 @@ for (let i = 0; i < navSublists.length; i++) {
   navSublist.addEventListener("click", function () {
     navSublist.parentElement.classList.remove("_active");
 
-    if (burgerBtn.classList.contains("menu-icon--active")) {
-      burgerBtn.classList.remove("menu-icon--active");
-      header.classList.remove("section-header--active-nav");
-      document.body.style.overflow = "";
-    }
+    resetNav();
   });
 }
+
+//-----------  burger-menu  -----------
+
+burgerBtn.addEventListener("click", function () {
+  header.classList.toggle("section-header--active-nav");
+  burgerBtn.classList.toggle("menu-icon--active");
+
+  // блокируем/возобновляем скролл страницы
+  if (burgerBtn.classList.contains("menu-icon--active")) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+
+  let navItems = document.querySelectorAll(".nav__item");
+
+  for (navItem of navItems) {
+    if (navItem.classList.contains("_active")) {
+      navItem.classList.remove("_active");
+    }
+  }
+});
+
+// функция закрытия меню бургер
+let resetNav = function () {
+  if (burgerBtn.classList.contains("menu-icon--active")) {
+    burgerBtn.classList.remove("menu-icon--active");
+    header.classList.remove("section-header--active-nav");
+    document.body.style.overflow = "";
+  }
+};
+
+// закрываем бургер при клике на ссылку в меню
+for (let menuLink of menuLinks) {
+  menuLink.addEventListener("click", function () {
+    // если открыто меню-бургер, закрываем его
+    resetNav();
+  });
+}
+
+// закрываем бургер меню при ресайзе окна
+window.addEventListener("resize", resetNav);
 
 // -----------  scroll to section  -----------
 
 // для ссылок в меню с атрибутом goto назначаем обработчик клика
-for (let menuLink of menuLinks) {
-  menuLink.addEventListener("click", function (evt) {
+for (let menuLinkAnchor of menuLinksAnchor) {
+  menuLinkAnchor.addEventListener("click", function (evt) {
     // убираем переход по ссылке
     evt.preventDefault();
-
-    // если открыто меню-бургер, закрываем его
-    if (burgerBtn.classList.contains("menu-icon--active")) {
-      burgerBtn.classList.remove("menu-icon--active");
-      header.classList.remove("section-header--active-nav");
-      document.body.style.overflow = "";
-    }
 
     // если у ссылки есть назначенное значение атрибута goto
     // и на странице есть раздел с таким классом
     if (
-      menuLink.dataset.goto &&
-      document.querySelector(menuLink.dataset.goto)
+      menuLinkAnchor.dataset.goto &&
+      document.querySelector(menuLinkAnchor.dataset.goto)
     ) {
       // находим этот блок
-      let gotoBlock = document.querySelector(menuLink.dataset.goto);
+      let gotoBlock = document.querySelector(menuLinkAnchor.dataset.goto);
 
       // вычисляем его положение на странице + прокрутка окна - ширина шапки
       let gotoValue =
