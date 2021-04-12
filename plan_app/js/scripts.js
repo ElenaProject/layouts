@@ -1,4 +1,10 @@
-// submenu
+// -----------  variables  -----------
+let navSublists = document.querySelectorAll(".nav__sublist");
+let header = document.querySelector(".section-header");
+let burgerBtn = document.querySelector(".menu-icon");
+let menuLinks = document.querySelectorAll(".nav__link[data-goto]");
+
+// -----------  submenu  -----------
 
 // mobile or not
 const isMobile = {
@@ -50,7 +56,43 @@ if (isMobile.any()) {
   document.body.classList.add("_pc");
 }
 
-// accordion
+// -----------  scroll to section  -----------
+
+// для ссылок в меню с атрибутом goto назначаем обработчик клика
+for (let menuLink of menuLinks) {
+  menuLink.addEventListener("click", function (evt) {
+    // убираем переход по ссылке
+    evt.preventDefault();
+
+    // если открыто меню-бургер, закрываем его
+    if (burgerBtn.classList.contains("menu-icon--active")) {
+      burgerBtn.classList.remove("menu-icon--active");
+      header.classList.remove("section-header--active-nav");
+      document.body.style.overflow = "";
+    }
+
+    // если у ссылки есть назначенное значение атрибута goto
+    // и на странице есть раздел с таким классом
+    if (
+      menuLink.dataset.goto &&
+      document.querySelector(menuLink.dataset.goto)
+    ) {
+      // находим этот блок
+      let gotoBlock = document.querySelector(menuLink.dataset.goto);
+
+      // вычисляем его положение на странице + прокрутка окна - ширина шапки
+      let gotoValue =
+        gotoBlock.getBoundingClientRect().top +
+        pageYOffset -
+        document.querySelector("header").offsetHeight;
+
+      // прокручиваем до этого места
+      window.scrollTo(0, gotoValue);
+    }
+  });
+}
+
+//-----------  accordion  -----------
 
 let faqList = document.querySelector(".section-faq__list");
 // Находим все тригеры

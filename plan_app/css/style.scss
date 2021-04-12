@@ -121,6 +121,9 @@ $breakpoints: (
 // === / MIXINS ===
 
 // === COMMON ===
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   @include roboto;
