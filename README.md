@@ -3,7 +3,6 @@
 Чтобы просмотреть кликните на интересующем названии
 
  ## 1. [Сайт для приложения](https://elenaproject.github.io/layouts/plan_app/index.html) ##
- ***
 <br>
 
 - lighthouse reports
@@ -12,7 +11,6 @@ desktop  | mobile
 ------------- | -------------
 <img src='plan_app/img/desktop-report_lighthouse.jpg' align='right' height='80px'> | <img src='plan_app/img/mobile_report_lighthouse.jpg' align='right' height='80px'>  
 
-<br>  
 
 - адаптивность
   > отображение на устройствах всех размеров
