@@ -5,8 +5,13 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="css/normalize.css">
+	<meta name="description" content="Plan and manage. App for your productivity">
+	<meta name="keywords" content="planing, productivity">
+	<title>Planning app</title>
+	<link rel="preload" href="css/normalize.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript>
+		<link rel="stylesheet" href="css/normalize.css.css">
+	</noscript>
 	<link rel="stylesheet" href="css/iconfont.css ">
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,46 +19,60 @@
 <body>
 	<!-- header -->
 	<header class="section-outer section-header">
-		<div class="section-inner section-inner--wide">
+		<div class="section-inner section-inner--wide vertical-indent vertical-indent--s">
 			<div class="main-navigation">
 				<a class="logo" href="#"><span class="visually-hidden">Logo</span></a>
-				<nav class="nav">
-					<ul class="nav__list">
-						<li class="nav__item">
-							<a class="nav__link nav__link--active" href="#">Home</a>
-						</li>
-						<li class="nav__item">
-							<a class="nav__link" href="#">Blog</a>
-						</li>
-						<li class="nav__item">
-							<a class="nav__link" href="#">Features</a>
-						</li>
-						<li class="nav__item">
-							<a class="nav__link" href="#">Pricing</a>
-						</li>
-						<li class="nav__item">
-							<a class="nav__link" href="#">Documentation</a>
-						</li>
-					</ul>
-				</nav>
-				<div class="socials">
-					<ul class="socials__list">
-						<li class="socials__item">
-							<a class="socials__link icon-facebook" href="#"><span class="visually-hidden">facebook</span></a>
-						</li>
-						<li class="socials__item">
-							<a class="socials__link icon-telegram" href="#"><span class="visually-hidden">telegram</span></a>
-						</li>
-						<li class="socials__item">
-							<a class="socials__link icon-twitter socials__link--active " href="#"><span
-									class="visually-hidden">twitter</span></a>
-						</li>
-						<li class="socials__item">
-							<a class="socials__link icon-medium" href="#"><span class="visually-hidden">medium</span></a>
-						</li>
-					</ul>
+				<!-- Иконка-бургер -->
+				<button class="menu-icon btn btn--no-bg">
+					<span class="visually-hidden">Open menu</span>
+					<span class="menu-icon__line"></span>
+				</button>
+
+				<div class="main-navigation__inner">
+					<nav class="nav section-header__nav">
+						<ul class="nav__list">
+							<li class="nav__item">
+								<a class="nav__link nav__link--active" href="#">Home</a>
+							</li>
+							<li class="nav__item">
+								<a class="nav__link" href="#" data-goto=".section-blog">Blog</a>
+							</li>
+							<li class="nav__item">
+								<a class="nav__link" href="#" data-goto=".section-features">Features</a>
+							</li>
+							<li class="nav__item">
+								<a class="nav__link" href="#">Pricing</a>
+							</li>
+							<li class="nav__item">
+								<a class="nav__link" href="#">Documentation</a>
+								<button class="nav__link-arrow"><span class="visually-hidden">Open submenu</span></button>
+								<ul class="nav__sublist">
+									<li class="nav__subitem"><a class="nav__subitem-link" href="#">Document #1</a></li>
+									<li class="nav__subitem"><a class="nav__subitem-link" href="#">Document #2</a></li>
+									<li class="nav__subitem"><a class="nav__subitem-link" href="#">Document #3</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+					<div class="socials">
+						<ul class="socials__list">
+							<li class="socials__item">
+								<a class="socials__link icon-facebook" href="#"><span class="visually-hidden">facebook</span></a>
+							</li>
+							<li class="socials__item">
+								<a class="socials__link icon-telegram" href="#"><span class="visually-hidden">telegram</span></a>
+							</li>
+							<li class="socials__item">
+								<a class="socials__link icon-twitter socials__link--active " href="#"><span
+										class="visually-hidden">twitter</span></a>
+							</li>
+							<li class="socials__item">
+								<a class="socials__link icon-medium" href="#"><span class="visually-hidden">medium</span></a>
+							</li>
+						</ul>
+					</div>
+					<a class="btn btn--primary--blue nav-btn" href="#">Get started</a>
 				</div>
-				<a class="btn btn--primary--blue section-header__btn" href="#">Get started</a>
 			</div>
 		</div>
 	</header>
@@ -64,9 +83,9 @@
 			<h1 class="visually-hidden">Planning app for your productivity</h1>
 			<ul class="slider-hero-image">
 				<li class="slider-hero-image__item" style="background-image: url(img/hero_image.svg);">
-					<div class="section-inner">
-						<h5>PLAN YOUR LIFE</h5>
-						<h2 class="title"><span class="title--light">Increase your</span> productivity</h2>
+					<div class="section-inner vertical-indent vertical-indent--l">
+						<h2 class="title title__section">PLAN YOUR LIFE</h2>
+						<p class="title subtitle subtitle--large"><span>Increase your</span> productivity</p>
 						<p class="text slider-hero-image__text ">Brute laoreet efficiendi id his, ea illum nonumes luptatum pro. Usu
 							atqui laudem an, insolens gubergren similique est cu. Et vel modus congue vituperata.</p>
 						<a class="slider-hero-image__btn icon-play" href="#">
@@ -86,17 +105,28 @@
 
 		<!-- customers -->
 		<section class="section-outer section-customers">
-			<div class="section-inner">
+			<div class="section-inner vertical-indent vertical-indent--m">
+				<h2 class="title title__section title--center visually-hidden">Customers</h2>
 				<ul class="customers">
-					<li><a class="customers__item icon-bitbucket" href="#"><span class="visually-hidden">bitbucket
-								customer</span></a></li>
-					<li><a class="customers__item icon-apple-watch" href="#"><span class="visually-hidden">apple-watch
-								customer</span></a></li>
-					<li><a class="customers__item icon-facebook1" href="#"><span class="visually-hidden">facebook
-								customer</span></a></li>
-					<li><a class="customers__item  icon-atlassian customers__item--active" href="#"><span
-								class="visually-hidden">atlassian customer</span></a></li>
-					<li><a class="customers__item icon-audi" href="#"><span class="visually-hidden">audi customer</span></a></li>
+					<li class="customers__item">
+						<a class="customers__link icon-bitbucket" href="#"><span class="visually-hidden">bitbucket
+								customer</span></a>
+					</li>
+					<li class="customers__item">
+						<a class="customers__link icon-apple-watch" href="#"><span class="visually-hidden">apple-watch
+								customer</span></a>
+					</li>
+					<li class="customers__item">
+						<a class="customers__link icon-facebook1" href="#"><span class="visually-hidden">facebook
+								customer</span></a>
+					</li>
+					<li class="customers__item">
+						<a class="customers__link customers__link--active icon-atlassian" href="#"><span
+								class="visually-hidden">atlassian customer</span></a>
+					</li>
+					<li class="customers__item">
+						<a class="customers__link icon-audi" href="#"><span class="visually-hidden">audi customer</span></a>
+					</li>
 				</ul>
 			</div>
 		</section>
@@ -104,11 +134,16 @@
 
 		<!-- app-demo -->
 		<section class="section-outer section-app-demo">
-			<div class="section-inner section-app-demo__inner">
+			<div class="section-inner vertical-indent vertical-indent--xl">
 				<div class="section-app-demo__content">
-					<img class="section-app-demo__img" src="img/app.png" alt="app demonstration" width="854" height="736">
-					<h5 class="section-app-demo__subtitle">DESKTOP AND MOBILE APP</h5>
-					<h3 class="title">Plan <span class="title--light">and</span> manage</h3>
+					<picture class="section-app-demo__img">
+						<source type="image/webp"
+							srcset="img/compressed/app.webp 1x, img/compressed/app@2x.webp 2x, img/compressed/app@3x.webp 3x">
+						<img src="img/compressed/app.png" srcset="img/compressed/app@2x.png 2x, img/compressed/app@3x.png 3x"
+							alt="app demonstration" width="854" height="736">
+					</picture>
+					<h2 class="title title__section section-app-demo__title">DESKTOP AND MOBILE APP</h2>
+					<p class="title subtitle subtitle--medium">Plan <span>and</span> manage</p>
 					<p class="text section-app-demo__text">Brute laoreet efficiendi id his, ea illum nonumes luptatum pro.
 						Usu
 						atqui laudem an, insolens gubergren similique est cu. Et vel modus congue vituperata. Solum patrioque no
@@ -126,34 +161,34 @@
 
 		<!-- features -->
 		<section class="section-outer section-features">
-			<div class="section-inner">
-				<h5 class="section-features__subtitle">ABOUT US</h5>
-				<h4 class="title">Read about our app</h4>
+			<div class="section-inner vertical-indent vertical-indent--l">
+				<h2 class="title title__section section-features__title">ABOUT US</h2>
+				<p class="title subtitle">Read about our app</p>
 				<ul class="features">
 					<li class="features__item">
 						<div class="features__icon icon-overview"></div>
-						<div class="features__title"> Overview</div>
+						<h3 class="title features__title"> Overview</h3>
 						<p class="features__text text">Brute laoreet efficiendi id his, ea illum nonumes luptatum pro.</p>
 					</li>
 					<li class="features__item">
 						<div class="features__icon icon-files"></div>
-						<div class="features__title">Files</div>
+						<h3 class="title features__title">Files</h3>
 						<p class="features__text text">No vim nulla vitae intellegat. Ei enim error ius, solet atomorum conceptam ex
 							has.
 						</p>
 					</li>
 					<li class="features__item">
 						<div class="features__icon icon-chats"></div>
-						<div class="features__title">Meeting chats</div>
+						<h3 class="title features__title">Meeting chats</h3>
 						<p class="features__text text">Vim ne tacimates neglegentur. Erat diceret omittam at est.</p>
 					</li>
 					<li class="features__item">
 						<div class="features__icon icon-save"></div>
-						<div class="features__title">Save events</div>
+						<h3 class="title features__title">Save events</h3>
 						<p class="features__text text">Nisl idque mel ea, nominati voluptatum.</p>
 					</li>
 				</ul>
-				<div class="section-features_btns">
+				<div class="section-features__btns">
 					<a class="btn btn--primary--pink" href="#">Read more</a>
 					<span class="or-block">OR</span>
 					<a class="btn btn--primary--blue" href="#">Get started</a>
@@ -164,43 +199,50 @@
 
 		<!-- stats -->
 		<section class="section-outer section-stats">
-			<section class="section-stats__left">
+			<h2 class="title title__section title--center visually-hidden">Statistics</h2>
+			<div class="section-stats__left">
 				<div class="section-stats__icon icon-productivity"></div>
 				<p class="section-stats__amount">89%</p>
 				<p class="section-stats__description">Customers who have increased their productivity</p>
-			</section>
-			<section class="section-stats__right">
+			</div>
+			<div class="section-stats__right">
 				<div class="section-stats__icon icon-users"></div>
 				<p class="section-stats__amount">3123</p>
 				<p class="section-stats__description">Users who have used our application</p>
-			</section>
+			</div>
 		</section>
 		<!-- / stats -->
 
 		<!-- blog -->
 		<section class="section-outer section-blog">
-			<div class="section-inner">
-				<h5 class="title title--center">OUR RESOURCES</h5>
-				<h4 class="title title--center">Start reading our blog</h4>
+			<div class="section-inner vertical-indent vertical-indent--l">
+				<h2 class="title title__section title--center">OUR RESOURCES</h2>
+				<p class="title title--center subtitle">Start reading our blog</p>
 				<div class="slider-wrapper">
 					<ul class="slider-blog">
 						<li class="slider-blog__item">
 							<figure class="slider-blog__gallery">
 								<a class="slider-blog__img-link slider-blog__img-link--big icon-loupe" aria-label="enlarge image"
 									href="#">
-									<img src="img/article-big.jpg" alt="desktop with notebook" width="268" height="267">
+									<img src="img/compressed/article-big.jpg"
+										srcset="img/compressed/article-big@2x.jpg 2x, img/compressed/article-big@3x.jpg 3x"
+										alt="desktop with notebook" width="268" height="267">
 								</a>
 								<a class="slider-blog__img-link slider-blog__img-link--s--pink icon-loupe" aria-label="enlarge image"
 									href="#">
-									<img src="img/article-s-1.jpg" alt="notebook and coffee" width="127" height="127">
+									<img src="img/compressed/article-s-1.jpg"
+										srcset="img/compressed/article-s-1@2x.jpg 2x, img/compressed/article-s-1@3x.jpg 3x"
+										alt="notebook and coffee" width="127" height="127">
 								</a>
 								<a class="slider-blog__img-link slider-blog__img-link--s--blue icon-loupe" aria-label="enlarge image"
 									href="#">
-									<img src="img/article-s-2.jpg" alt="man before the schedule" width="127" height="127">
+									<img src="img/compressed/article-s-2.jpg"
+										srcset="img/compressed/article-s-2@2x.jpg 2x, img/compressed/article-s-2@3x.jpg 3x"
+										alt="man before the schedule" width="127" height="127">
 								</a>
 							</figure>
 							<article class="slider-blog__article">
-								<h3>How to start planning</h3>
+								<h3 class="title subtitle subtitle--medium slider-blog__subtitle">How to start planning</h3>
 								<p class="text slider-blog__text ">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu
 									vidit tractatos, vero tractatos ius an, in mel diceret persecuti. Natum petentium principes mei ea.
 									Tota
@@ -233,10 +275,10 @@
 
 		<!-- quotes -->
 		<section class="section-outer section-quotes">
-			<div class="section-inner section-quotes__inner">
+			<div class="section-inner section-quotes__inner vertical-indent vertical-indent--l">
 				<div class="section-quotes__left">
-					<h5 class="section-quotes__subtitle">TESTIMONIALS</h5>
-					<h3 class="section-quotes__title">Customers's quotes</h3>
+					<h2 class="title title__section section-quotes__title">TESTIMONIALS</h2>
+					<p class="title subtitle subtitle--medium section-quotes__subtitle">Customers's quotes</p>
 					<p class="text">Brute laoreet efficiendi id his, ea illum nonumes luptatum pro. Usu atqui
 						laudem an.</p>
 				</div>
@@ -267,12 +309,14 @@
 
 		<!-- faq -->
 		<section class="section-outer section-faq">
-			<div class="section-inner section-faq__inner">
-				<h5 class="title title--center">CUSTOMER HELP</h5>
-				<h4 class="title title--center">Frequently asked questions</h4>
-				<ul class="section-faq__list">
+			<div class="section-inner section-faq__inner vertical-indent vertical-indent--l">
+				<h2 class="title title__section title--center">CUSTOMER HELP</h2>
+				<p class="title title--center subtitle section-faq__subtitle">Frequently asked questions</p>
+				<ul class="section-faq__list one-item">
 					<li class="section-faq__item">
-						<p class="section-faq__item-trigger icon-open-arrow">Reque insolens in vel?</p>
+						<h3 class="section-faq__item-trigger icon-open-arrow">
+							<button class="section-faq__item-trigger-btn text">Reque insolens in vel?</button>
+						</h3>
 						<div class="section-faq__item-content">
 							<p class="text section-faq__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu
 								usu
@@ -283,31 +327,10 @@
 						</div>
 					</li>
 					<li class="section-faq__item">
-						<p class="section-faq__item-trigger icon-open-arrow">Vis rebum error graecis ea, id sit postea accusamus?
-						</p>
-						<div class="section-faq__item-content">
-							<p class="text section-faq__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu
-								usu
-								vidit tractatos, vero
-								tractatos ius an, in mel diceret persecuti.
-							</p>
-							<a class="btn btn--grey" href="#">Go to documentation</a>
-						</div>
-					</li>
-					<li class="section-faq__item section-faq__item--active">
-						<p class="section-faq__item-trigger icon-open-arrow">Lorem repudiandae ne nec?</p>
-						<div class="section-faq__item-content">
-							<p class="text section-faq__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu
-								usu
-								vidit tractatos, vero
-								tractatos ius an, in mel diceret persecuti.
-							</p>
-							<a class="btn btn--grey" href="#">Go to documentation</a>
-						</div>
-					</li>
-					<li class="section-faq__item">
-						<p class="section-faq__item-trigger icon-open-arrow">Ad dicit numquam vel. Et eos iudico feugait percipitur?
-						</p>
+						<h3 class="section-faq__item-trigger text icon-open-arrow">
+							<button class="section-faq__item-trigger-btn text">Vis rebum error graecis ea, id sit postea
+								accusamuh3?</button>
+						</h3>
 						<div class="section-faq__item-content">
 							<p class="text section-faq__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu
 								usu
@@ -318,8 +341,37 @@
 						</div>
 					</li>
 					<li class="section-faq__item">
-						<p class="section-faq__item-trigger icon-open-arrow">Sea no dico percipitur. Fierent constituam definitiones
-							id eum?</p>
+						<h3 class="section-faq__item-trigger text icon-open-arrow">
+							<button class="section-faq__item-trigger-btn text">Lorem repudiandae ne nec?</button>
+						</h3>
+						<div class="section-faq__item-content">
+							<p class="text section-faq__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu
+								usu
+								vidit tractatos, vero
+								tractatos ius an, in mel diceret persecuti.
+							</p>
+							<a class="btn btn--grey" href="#">Go to documentation</a>
+						</div>
+					</li>
+					<li class="section-faq__item">
+						<h3 class="section-faq__item-trigger text icon-open-arrow">
+							<button class="section-faq__item-trigger-btn text"> Ad dicit numquam vel. Et eos iudico feugait
+								percipituh3?</button>
+						</h3>
+						<div class="section-faq__item-content">
+							<p class="text section-faq__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu
+								usu
+								vidit tractatos, vero
+								tractatos ius an, in mel diceret persecuti.
+							</p>
+							<a class="btn btn--grey" href="#">Go to documentation</a>
+						</div>
+					</li>
+					<li class="section-faq__item">
+						<h3 class="section-faq__item-trigger text icon-open-arrow">
+							<button class="section-faq__item-trigger-btn text">Sea no dico percipitur. Fierent constituam
+								definitionh3s id eum?</button>
+						</h3>
 						<div class="section-faq__item-content">
 							<p class="text section-faq__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu
 								usu
@@ -336,10 +388,9 @@
 
 		<!-- start -->
 		<section class="section-outer section-start">
-			<div class="section-inner section-start__inner">
-				<h5 class="section-start__title">PLAN YOUR LIFE</h5>
-				<h2 class="title section-start__title"><span class="title--light">Get</span> started <span
-						class="title--light">now</span></h2>
+			<div class="section-inner section-start__inner vertical-indent vertical-indent--l">
+				<h2 class="title title__section section-start__title">PLAN YOUR LIFE</h2>
+				<p class="title subtitle subtitle--large section-start__title"><span>Get</span> started <span>now</span></p>
 				<p class="text section-start__text">Brute laoreet efficiendi id his, ea illum nonumes luptatum pro. Usu atqui
 					laudem an, insolens gubergren similique est cu. Et vel modus congue vituperata.</p>
 				<div class="btn-group section-start__btn-group">
@@ -352,9 +403,9 @@
 
 		<!-- newsletter -->
 		<section class="section-outer section-newsletter">
-			<div class="section-inner section-newsletter__inner">
+			<div class="section-inner section-newsletter__inner vertical-indent vertical-indent--l">
 				<div class="section-newsletter__content">
-					<h4 class="section-newsletter__title">Sign up for newsletter</h4>
+					<h2 class="title subtitle section-newsletter__title">Sign up for newsletter</h2>
 					<p class="text">Cu qui soleat partiendo urbanitas. Eum aperiri indoctum eu, homero
 						alterum.
 					</p>
@@ -371,10 +422,10 @@
 	</main>
 	<!-- footer -->
 	<footer class="section-outer section-footer">
-		<div class="section-inner section-inner--wide">
-			<div class="main-navigation">
+		<div class="section-inner section-inner--wide vertical-indent vertical-indent--s">
+			<div class="main-navigation section-footer__main-navigation">
 				<a class="logo" href="#"><span class="visually-hidden">Logo</span></a>
-				<div class="nav">
+				<div class="nav section-footer__nav">
 					<ul class="nav__list">
 						<li class="nav__item">
 							<a class="nav__link nav__link--active" href="#">Home</a>
@@ -410,12 +461,18 @@
 						</li>
 					</ul>
 				</div>
+				<a class="btn btn--primary--blue nav-btn" href="#">Get started</a>
 			</div>
-			<a class="btn btn--primary--blue section-header__btn" href="#">Get started</a>
+			<div class="section-footer__copyright">Copyright © 2018 by Random site</div>
 		</div>
-		<div class="section-footer__copyright">Copyright © 2018 by Random site</div>
 	</footer>
 	<!-- / footer -->
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap&subset=latin-ext"
+		rel="stylesheet">
+	<script src="js/scripts.js"></script>
 </body>
 
 </html>

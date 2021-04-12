@@ -20,11 +20,31 @@
     text-align: center;
     background-position: 50% 85%;
     background-size: cover;
+
+    @include breakpoint-max(lg) {
+      height: $base * 130;
+    }
+
+    @include breakpoint-max(md) {
+      height: $base * 140;
+    }
+
+    @include breakpoint-max(sm) {
+      background-position: 42% 85%;
+    }
   }
 
   &__text {
     width: 55%;
     margin: 0 auto $base * 5;
+
+    @include breakpoint-max(md) {
+      width: 70%;
+    }
+
+    @include breakpoint-max(sm) {
+      width: 90%;
+    }
   }
 
   &__btn {
@@ -35,7 +55,7 @@
     width: $base * 13;
     height: $base * 13;
     color: $color-logo;
-    font-size: $fz-sm;
+    font-size: $fz-xs;
     background-color: $color-white;
     border-radius: 50%;
     box-shadow: 0px $base * 2 $base * 12 rgba(201, 209, 231, 0.6);

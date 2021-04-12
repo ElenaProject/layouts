@@ -4,18 +4,33 @@
   &__inner {
     display: flex;
     justify-content: space-between;
-  }
+    overflow: hidden;
 
-  &__subtitle {
-    margin-bottom: $base * 7;
+    @include breakpoint-max(sm) {
+      flex-direction: column;
+    }
   }
 
   &__title {
-    margin-bottom: $base * 4;
+    margin-bottom: $base * 8;
+  }
+
+  &__subtitle {
+    margin-bottom: $base * 5;
   }
 
   &__left {
     flex-basis: 44%;
+
+    @include breakpoint-max(sm) {
+      margin-bottom: $base * 16;
+    }
+
+    @include breakpoint-max(xs) {
+      position: relative;
+      z-index: 10;
+      margin-bottom: $base * 10;
+    }
   }
   &__right {
     flex-basis: 48%;
@@ -34,6 +49,11 @@
     box-shadow: 0px $base $base * 12 #f3f5fa;
     filter: drop-shadow(0px $base $base * 12 #d4dcf1);
     position: relative;
+
+    @include breakpoint-max(xs) {
+      padding: $base * 8;
+      padding-bottom: $base * 12;
+    }
 
     &-text {
       color: $color-dark-grey;

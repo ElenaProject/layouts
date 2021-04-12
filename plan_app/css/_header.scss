@@ -1,43 +1,220 @@
 .section-header {
-  .section-inner {
-    padding-top: $padding-vertical-xs;
-    padding-bottom: $padding-vertical-xs;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 80px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: $color-white;
   }
 
-  &__btn {
-    margin-left: $base * 11;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &--active-nav {
+    &::after {
+      display: block;
+    }
+
+    .main-navigation__inner {
+      top: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__nav {
+    @include breakpoint-max(lg) {
+      align-self: stretch;
+    }
   }
 }
+
 .main-navigation {
   display: flex;
   align-items: center;
+
+  &__inner {
+    z-index: 4;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    transition: $transition;
+
+    @include breakpoint-max(lg) {
+      position: fixed;
+
+      z-index: 2;
+      top: -200%;
+      left: 0;
+      right: 0;
+      max-height: 100%;
+      flex-direction: column;
+      margin: 0;
+      padding: $base * 5;
+      padding-top: $base * 20;
+      visibility: hidden;
+      background-color: $color-white;
+      overflow: auto;
+      opacity: 0;
+    }
+  }
 }
 .logo {
+  position: relative;
+  z-index: 5;
   width: $base * 6;
   height: $base * 6;
   background-color: $color-logo;
   border-radius: 50%;
 }
+
+.menu-icon {
+  $parent: &;
+
+  position: relative;
+  z-index: 5;
+  display: none;
+  margin-left: auto;
+  width: $base * 10;
+  height: $base * 9;
+  padding: $base;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: $base * 5;
+    height: $base/2;
+    background-color: $color-logo-grey;
+    transform: translateX(-50%);
+    transition: $transition;
+  }
+
+  &::before {
+    top: $base * 2;
+  }
+
+  &::after {
+    bottom: $base * 2;
+  }
+
+  &__line {
+    display: block;
+    margin: 0 auto;
+    width: $base * 5;
+    height: $base/2;
+    background-color: $color-logo-grey;
+    transition: $transition;
+  }
+
+  &--active {
+    &::before {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(40deg);
+    }
+
+    &::after {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-40deg);
+    }
+
+    #{$parent}__line {
+      transform: scale(0);
+    }
+  }
+
+  @include breakpoint-max(lg) {
+    display: block;
+  }
+}
+
 .nav {
+  $parent: &;
+
   margin-left: $base * 18;
+
+  @include breakpoint-max(xl) {
+    margin-left: $base * 12;
+  }
+
+  @include breakpoint-max(lg) {
+    margin-left: 0;
+  }
 
   &__list {
     @extend %list;
 
-    display: flex;
+    text-align: center;
+
+    @include breakpoint-min(sm) {
+      display: flex;
+      justify-content: space-evenly;
+    }
   }
 
   &__item {
+    position: relative;
+
+    // появляется при наведении и в фокусе только на ПК
+    ._pc &:hover,
+    ._pc &:focus-within,
+    ._touch &._active {
+      #{$parent}__sublist {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    ._touch &._active {
+      #{$parent}__link-arrow {
+        transform: rotate(180deg);
+      }
+    }
+
+    @include breakpoint-max(sm) {
+      padding: $base * 5 0;
+      border-bottom: 1px solid $color-bg-grey;
+    }
+
     & + & {
-      margin-left: $base * 10;
+      @include breakpoint-min(lg) {
+        margin-left: $base * 8;
+      }
+
+      @include breakpoint-min(xl) {
+        margin-left: $base * 10;
+      }
     }
   }
 
   &__link {
     @include quicksand;
 
+    display: inline-block;
+    padding: $base * 2 0;
     color: $color-text;
-    font-size: $fz-sm;
+    font-size: $fz-m;
     font-weight: $fw-medium;
     text-decoration: none;
     transition: $transition;
@@ -49,10 +226,86 @@
       color: $color-logo;
       font-weight: $fw-bold;
     }
+
+    &-arrow {
+      position: absolute;
+      top: 45%;
+      right: -($base * 3.5);
+      display: none;
+      width: 0;
+      height: 0;
+      padding: 0;
+      border: none;
+      border-left: $base solid transparent;
+      border-right: $base solid transparent;
+      border-top: $base * 2 solid $color-text;
+      transition: $transition;
+      outline: 0;
+
+      ._touch & {
+        display: inline-block;
+
+        @include breakpoint-max(sm) {
+          position: relative;
+          right: -1%;
+        }
+      }
+    }
+  }
+
+  &__sublist {
+    @extend %list;
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 140%;
+    background-color: $color-logo;
+    visibility: hidden;
+    opacity: 0;
+    transition: $transition;
+    pointer-events: none;
+
+    ._touch & {
+      right: -($base * 4);
+
+      @include breakpoint-max(sm) {
+        position: relative;
+        right: 0;
+        display: none;
+        min-width: 100%;
+      }
+    }
+  }
+
+  &__subitem-link {
+    @include quicksand;
+
+    display: block;
+    padding: $base * 3;
+    color: $color-white;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-text;
+      font-weight: $fw-medium;
+      background-color: $color-light-blue;
+    }
   }
 }
 .socials {
   margin-left: auto;
+
+  @include breakpoint-max(lg) {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: $base * 10;
+    margin-bottom: $base * 3;
+    margin-left: 0;
+  }
 
   &__list {
     @extend %list;
@@ -70,7 +323,7 @@
   &__link {
     display: block;
     color: $color-text;
-    font-size: $fz-md;
+    font-size: $fz-s;
     text-decoration: none;
     transition: $transition;
 
@@ -100,5 +353,14 @@
 
   &-medium {
     color: $color-dark-grey;
+  }
+}
+
+.nav-btn {
+  margin-left: $base * 11;
+
+  @include breakpoint-max(lg) {
+    margin: 0;
+    margin-bottom: $base * 9;
   }
 }

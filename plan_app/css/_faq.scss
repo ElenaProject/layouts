@@ -1,7 +1,25 @@
 .section-faq {
   &__inner {
+    box-sizing: border-box;
     padding-left: $base * 15;
     padding-right: $base * 15;
+
+    @include breakpoint-max(sm) {
+      padding-left: $base * 5;
+      padding-right: $base * 5;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: $base * 17;
+
+    @include breakpoint-max(sm) {
+      margin-bottom: $base * 10;
+    }
+
+    @include breakpoint-max(xs) {
+      margin-bottom: $base * 5;
+    }
   }
 
   &__list {
@@ -11,22 +29,50 @@
   &__item {
     $parent: &;
 
-    padding: $base * 8;
+    padding: $base * 6;
     padding-left: $base * 18;
     border-bottom: 1px solid $color-logo-grey;
 
+    @include breakpoint-max(xs) {
+      padding: $base * 4;
+      padding-left: $base * 10;
+    }
+
     &-trigger {
+      @include quicksand;
+
       position: relative;
       margin: 0;
       cursor: pointer;
+
+      &-btn {
+        @extend %btn;
+
+        display: block;
+        width: 100%;
+        padding: 0 $base;
+        color: $color-text;
+        text-align: left;
+        outline-color: $color-bg-grey;
+      }
 
       &::before {
         position: absolute;
         top: 50%;
         left: $base * -12;
-        font-size: $fz-sm;
+        width: $base * 8;
+        height: $base * 8;
+        font-size: $fz-xs;
+        text-align: center;
+        line-height: $base * 8;
+        vertical-align: middle;
         transform: translateY(-50%);
         transition: $transition;
+
+        @include breakpoint-max(xs) {
+          left: $base * -10;
+          font-size: $base * 2.5;
+        }
       }
     }
 
@@ -35,17 +81,27 @@
       justify-content: space-between;
       align-items: center;
       padding: $base * 6 0 $base * 6 $base * 4;
+
+      @include breakpoint-max(md) {
+        flex-direction: column;
+        align-items: start;
+      }
     }
 
     &-text {
       flex-basis: 63%;
+
+      @include breakpoint-max(md) {
+        margin-bottom: $base * 5;
+      }
     }
 
     &--active {
       #{$parent}-trigger {
-        color: $color-dark-grey;
-        font-weight: $fw-bold;
-
+        &-btn {
+          color: $color-dark-grey;
+          font-weight: $fw-bold;
+        }
         &::before {
           color: $color-dark-grey;
           transform: translateY(-50%) rotate(180deg);

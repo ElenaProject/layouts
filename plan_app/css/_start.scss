@@ -13,6 +13,7 @@
     right: 0;
     bottom: 0;
     background: url(../img/clouds-dark.svg) no-repeat center;
+    background-size: contain;
   }
 
   &__inner {
@@ -27,6 +28,11 @@
   &__text {
     max-width: 80%;
     margin: 0 auto $base * 12;
+
+    @include breakpoint-max(xs) {
+      min-width: 85%;
+      margin-bottom: $base * 10;
+    }
   }
 
   &__btn-group {

@@ -1,8 +1,9 @@
 .section-features {
   text-align: center;
   background: url(../img/clouds.svg) no-repeat center;
+  background-size: cover;
 
-  &__subtitle {
+  &__title {
     margin-bottom: $base * 6;
   }
 
@@ -20,7 +21,26 @@
 
   display: flex;
   width: 761/900 * 100%;
-  margin: 0 auto $base * 23;
+  margin: $base * 23 auto;
+
+  @include breakpoint-max(lg) {
+    margin: $base * 15 auto;
+  }
+
+  @include breakpoint-max(md) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @include breakpoint-max(sm) {
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: $base * 4;
+  }
+
+  @include breakpoint-max(xs) {
+    flex-direction: column;
+  }
 
   &__item {
     position: relative;
@@ -28,18 +48,43 @@
 
     & + & {
       margin-left: $margin-left;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -($margin-left + $divider-width)/2;
+
+        right: 100%;
+        width: $divider-width;
+        height: 1px;
+        background-color: $color-logo-grey;
+      }
+
+      @include breakpoint-max(sm) {
+        margin-left: 0;
+
+        &::before {
+          display: none;
+        }
+      }
     }
 
-    &:not(:first-child)::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: -($margin-left + $divider-width)/2;
+    @include breakpoint-max(md) {
+      flex-basis: 35%;
+      margin-bottom: $base * 12;
 
-      right: 100%;
-      width: $divider-width;
-      height: 1px;
-      background-color: $color-logo-grey;
+      &:nth-child(3n) {
+        margin-left: 0;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    @include breakpoint-max(sm) {
+      flex-basis: 45%;
     }
   }
 
@@ -56,17 +101,30 @@
     &::before {
       vertical-align: middle;
     }
+
+    @include breakpoint-max(md) {
+      margin-bottom: $base * 5;
+    }
   }
 
   &__title {
-    margin-bottom: $base * 6;
+    margin-bottom: $base * 7;
     color: $color-logo;
-    font-size: $fz-md;
+    font-size: $fz-s;
     font-weight: $fw-bold;
+
+    @include breakpoint-max(md) {
+      margin-bottom: $base * 3;
+    }
   }
 
   &__text {
-    font-size: $fz-sm;
+    font-size: $fz-xs;
+
+    @include breakpoint-max(xs) {
+      max-width: 60%;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -74,7 +132,7 @@
   display: inline-flex;
   align-items: center;
   color: $color-logo-grey;
-  font-size: $fz-sm;
+  font-size: $fz-xs;
   text-transform: uppercase;
 
   &::before,
@@ -85,5 +143,15 @@
     margin-right: $base * 4;
     margin-left: $base * 4;
     background-color: $color-logo-grey;
+  }
+
+  @include breakpoint-max(sm) {
+    margin-right: $base * 4;
+    margin-left: $base * 4;
+
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 }

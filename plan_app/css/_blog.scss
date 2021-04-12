@@ -8,48 +8,94 @@
 
 .slider-wrapper {
   position: relative;
+  margin: $base * 20 auto;
+
+  @include breakpoint-max(lg) {
+    margin: $base * 13 auto;
+  }
+
+  @include breakpoint-max(lg) {
+    margin: $base * 8 auto;
+  }
 }
 
 .slider-blog {
   @extend %list;
 
-  margin-bottom: $base * 25;
   background-color: $color-white;
   border: 1px solid $color-logo-grey;
   box-shadow: 0px $base * 4 $base * 12 #eff4ff;
 
-  &__item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: $base * 16 $base * 8;
+  @include breakpoint-max(md) {
+    width: 80%;
+    margin: 0 auto;
   }
 
-  &__gallery,
-  &__article {
-    flex-basis: 47%;
+  @include breakpoint-max(sm) {
+    width: auto;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: $base * 16 $base * 8;
+
+    @include breakpoint-max(lg) {
+      align-items: start;
+    }
+
+    @include breakpoint-max(md) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      padding: $base * 8;
+    }
+
+    @include breakpoint-max(xs) {
+      padding: $base * 4;
+    }
   }
 
   &__gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, $base * 30);
     grid-template-rows: repeat(2, $base * 30);
     gap: $base * 3;
     margin: 0;
+    margin-right: $base * 10;
+
+    @include breakpoint-max(lg) {
+      grid-template-columns: repeat(3, $base * 25);
+      grid-template-rows: repeat(2, $base * 25);
+      gap: $base * 2;
+      margin-right: $base * 7;
+    }
+
+    @include breakpoint-max(md) {
+      margin: 0;
+      margin-bottom: $base * 8;
+    }
+
+    @include breakpoint-max(sm) {
+      grid-template-columns: repeat(3, $base * 21);
+      grid-template-rows: repeat(2, $base * 21);
+    }
+
+    @include breakpoint-max(xs) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, $base * 27);
+      gap: $base * 3;
+    }
   }
 
   &__img-link {
     position: relative;
+    // IE 11
+    // display: block;
     text-decoration: none;
     overflow: hidden;
     border-radius: $base * 1.25;
     box-shadow: 0px $base * 4 $base * 25 #e5ebf8;
-
-    &:hover {
-      &::before {
-        opacity: 1;
-      }
-    }
 
     &::before {
       position: absolute;
@@ -59,7 +105,7 @@
       width: $base * 15;
       height: $base * 15;
       color: $color-text;
-      font-size: $fz-md;
+      font-size: $fz-s;
       line-height: $base * 16;
       text-align: center;
       background-color: $color-white;
@@ -67,6 +113,13 @@
       opacity: 0;
       transform: translate(-50%, -50%);
       transition: $transition;
+    }
+
+    &:hover,
+    &:focus {
+      &::before {
+        opacity: 1;
+      }
     }
 
     &::after {
@@ -80,7 +133,14 @@
 
     &--big {
       grid-column: span 2;
+      -ms-grid-column-span: 2;
       grid-row: span 2;
+      -ms-grid-row-span: 2;
+
+      @include breakpoint-max(xs) {
+        grid-column: span 2;
+        -ms-grid-column-span: 2;
+      }
 
       &::after {
         background: linear-gradient(
@@ -93,6 +153,9 @@
     }
 
     &--s--pink {
+      -ms-grid-column: 3;
+      -ms-grid-row: 1;
+
       &::after {
         background: linear-gradient(
           27.48deg,
@@ -103,6 +166,9 @@
     }
 
     &--s--blue {
+      -ms-grid-column: 3;
+      -ms-grid-row: 2;
+
       &::after {
         background: linear-gradient(
           13.49deg,
@@ -119,15 +185,45 @@
     }
   }
 
+  &__article {
+    flex-grow: 1;
+
+    @include breakpoint-max(md) {
+      position: relative;
+      z-index: 10;
+    }
+  }
+
+  &__subtitle {
+    font-weight: $fw-regular;
+
+    @include breakpoint-max(md) {
+      text-align: center;
+    }
+
+    @include breakpoint-max(sm) {
+      text-align: left;
+    }
+
+    @include breakpoint-max(sm) {
+      font-size: $base * 8.5;
+    }
+  }
+
   &__text {
     margin: $base * 8 0;
-    font-size: $fz-md;
+    font-size: $fz-s;
     letter-spacing: normal;
     overflow: hidden;
   }
 
   &__article-btns {
     display: flex;
+
+    @include breakpoint-max(xs) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__link {
@@ -139,6 +235,11 @@
 
     &:hover {
       color: darken($color-grey-blog, 10%);
+    }
+
+    @include breakpoint-max(xs) {
+      margin-left: 0;
+      margin-top: $base * 3;
     }
   }
 }
@@ -168,5 +269,9 @@
     left: 100%;
     margin-left: $base * 16;
     transform: translateY(-50%) rotate(180deg);
+  }
+
+  @include breakpoint-max(xl) {
+    display: none;
   }
 }

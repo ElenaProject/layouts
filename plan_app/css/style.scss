@@ -1,13 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap");
-
-// === MIXINS ===
-@mixin quicksand {
-  font-family: "Quicksand", sans-serif;
-}
-@mixin roboto {
-  font-family: "Roboto", sans-serif;
-}
-// === / MIXINS ===
+// @import url(./normalize.css);
+// @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap");
 
 // === PLACEHOLDERS ===
 %list {
@@ -32,26 +24,45 @@
 }
 // === / PLACEHOLDERS ===
 
-// === VARIABLES ===
-$base: 4px;
+// === FUNCTIONS ===
 
+// т.к. р-ры могут быть в разных ед измерения
+// сначала получаем множитель без единиц измерения (н-р 16px -> 16)
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// переводим р-р в rem (при базовом р-ре 16)
+@function calcRem($num) {
+  @return (strip-unit($num) / 16) * 1rem;
+}
+// оборачиваем все наши размеры в переменных в эту функцию - получаем р-ры в rem
+// теперь при изменении font-size для html - все размеры автоматич пересчитаются
+
+// === / FUNCTIONS ===
+
+// === VARIABLES ===
+$base: calcRem(4px);
+
+// Font-weight
 $fw-light: 300;
 $fw-regular: 400;
 $fw-medium: 500;
 $fw-bold: 700;
 
-$fz-sm: 12px;
-$fz-md: 15px;
-$fz-lg: 18px;
-$fz-xl: 48px;
-
-$padding-vertical-xs: $base * 5;
-$padding-vertical-s: $base * 15;
-$padding-vertical: $base * 30;
-$padding-vertical-xl: $base * 53;
+// Font-size
+$fz-xxs: calcRem(10px);
+$fz-xs: calcRem(12px);
+$fz-s: calcRem(15px);
+$fz-m: calcRem(18px);
+$fz-l: calcRem(24px);
+$fz-xl: calcRem(36px);
+$fz-xxl: calcRem(48px);
 
 $transition: 0.5s;
 
+// Colors
 $color-white: #ffffff;
 // Blue
 $color-light-blue: #d8e3fe;
@@ -64,11 +75,60 @@ $color-text: #8d96bd;
 $color-dark-grey: #757e9a;
 $color-grey-blog: #a8b4e5;
 
+// Breakpoints
+$breakpoints: (
+  xs: 400px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
 // === / VARIABLES ===
 
+// === MIXINS ===
+@mixin quicksand {
+  font-family: "Quicksand", sans-serif;
+}
+@mixin roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+// Breakpoints
+@mixin breakpoint-min($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@mixin breakpoint-max($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: (#{map-get($breakpoints, $breakpoint) - 1px})) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+// === / MIXINS ===
+
 // === COMMON ===
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @include roboto;
+
+  padding-top: 80px;
   color: $color-text;
 }
 
@@ -88,13 +148,71 @@ body {
   border-bottom: 1px solid $color-light-blue;
 }
 .section-inner {
-  box-sizing: border-box;
   max-width: 900px;
   margin: 0 auto;
-  padding: $padding-vertical 10px;
+  padding: 0 $base * 5;
 
   &--wide {
     max-width: 1200px;
+  }
+}
+
+.vertical-indent {
+  @mixin vertical-indent($size) {
+    padding-top: $size;
+    padding-bottom: $size;
+  }
+
+  &--s {
+    @include vertical-indent($base * 5);
+  }
+
+  &--m {
+    @include vertical-indent($base * 15);
+  }
+
+  &--l {
+    @include vertical-indent($base * 30);
+  }
+
+  &--xl {
+    @include vertical-indent($base * 53);
+  }
+
+  @include breakpoint-max(lg) {
+    &--m {
+      @include vertical-indent($base * 10);
+    }
+
+    &--l {
+      @include vertical-indent($base * 20);
+    }
+
+    &--xl {
+      @include vertical-indent($base * 30);
+    }
+  }
+
+  @include breakpoint-max(md) {
+    &--xl {
+      @include vertical-indent($base * 25);
+    }
+  }
+
+  @include breakpoint-max(sm) {
+    &--l {
+      @include vertical-indent($base * 10);
+    }
+
+    &--xl {
+      @include vertical-indent($base * 20);
+    }
+  }
+
+  @include breakpoint-max(xs) {
+    &--xl {
+      @include vertical-indent($base * 15);
+    }
   }
 }
 
@@ -105,7 +223,7 @@ body {
   @include quicksand;
 
   padding: $base * 3 $base * 4;
-  font-size: $fz-sm;
+  font-size: $fz-xs;
   font-weight: $fw-bold;
   border-radius: $base/2;
   outline-color: $color-title;
@@ -219,7 +337,7 @@ body {
 
   padding: $base * 5 $base * 6;
   color: $color-text;
-  font-size: $fz-sm;
+  font-size: $fz-xs;
   font-weight: $fw-bold;
   background-color: $color-bg-grey;
   border: 1px solid transparent;
@@ -230,64 +348,58 @@ body {
     @include quicksand;
 
     color: $color-text;
-    font-size: $fz-sm;
+    font-size: $fz-xs;
     font-weight: $fw-bold;
   }
 }
 
 // Headers
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @include quicksand;
+.title {
+  @include roboto;
+
   margin: 0;
   padding: 0;
   color: $color-title;
   font-weight: $fw-medium;
-}
-
-h1,
-h2 {
-  margin-bottom: $base * 7;
-  font-size: 48px;
-}
-
-h3 {
-  font-size: 36px;
-  margin-bottom: $base * 7;
-}
-
-h4 {
-  font-size: 24px;
-  margin-bottom: $base * 23;
-}
-
-h5 {
-  @include roboto;
-  margin-bottom: $base * 4;
-
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.title {
-  &--light {
-    font-weight: $fw-light;
-  }
 
   &--center {
     text-align: center;
+  }
+
+  &__section {
+    margin-bottom: $base * 4;
+    font-size: $fz-xxs;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+.subtitle {
+  @include quicksand();
+
+  margin-bottom: $base * 7;
+  font-size: $fz-l;
+
+  &--medium {
+    font-size: $fz-xl;
+  }
+
+  &--large {
+    font-size: $fz-xxl;
+
+    @include breakpoint-max(xs) {
+      font-size: $base * 10;
+    }
+  }
+  span {
+    font-weight: $fw-light;
   }
 }
 
 .text {
   margin: 0;
-  font-size: $fz-md;
+  font-size: $fz-s;
   font-weight: $fw-regular;
   line-height: 2;
   letter-spacing: 0.03em;
