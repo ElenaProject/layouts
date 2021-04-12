@@ -56,6 +56,21 @@ if (isMobile.any()) {
   document.body.classList.add("_pc");
 }
 
+// при клике в подменю, закрываем подменю
+for (let i = 0; i < navSublists.length; i++) {
+  let navSublist = navSublists[i];
+
+  navSublist.addEventListener("click", function () {
+    navSublist.parentElement.classList.remove("_active");
+
+    if (burgerBtn.classList.contains("menu-icon--active")) {
+      burgerBtn.classList.remove("menu-icon--active");
+      header.classList.remove("section-header--active-nav");
+      document.body.style.overflow = "";
+    }
+  });
+}
+
 // -----------  scroll to section  -----------
 
 // для ссылок в меню с атрибутом goto назначаем обработчик клика
