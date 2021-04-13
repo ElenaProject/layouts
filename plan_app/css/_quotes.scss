@@ -1,10 +1,10 @@
 .section-quotes {
   background: linear-gradient(180deg, #eaf0ff 0%, #f6f9ff 100%);
+  overflow: hidden;
 
   &__inner {
     display: flex;
     justify-content: space-between;
-    overflow: hidden;
 
     @include breakpoint-max(sm) {
       flex-direction: column;
@@ -19,8 +19,13 @@
     margin-bottom: $base * 5;
   }
 
+  &__right {
+    position: relative;
+    width: 48%;
+  }
+
   &__left {
-    flex-basis: 44%;
+    width: 45%;
 
     @include breakpoint-max(sm) {
       margin-bottom: $base * 16;
@@ -32,23 +37,31 @@
       margin-bottom: $base * 10;
     }
   }
-  &__right {
-    flex-basis: 48%;
-  }
 }
 
 .slider-quotes {
-  @extend %list;
+  width: 50vw;
+  min-width: 0;
+  margin-bottom: $base * 19;
+  // overflow: visible;
 
-  margin: $base * -5 0 $base * 19;
-
+  &__wrapper {
+    @extend %list;
+  }
   &__item {
+    position: relative;
+    flex-basis: $base * 106;
     padding: $base * 10 $base * 15 $base * 13;
+    box-sizing: border-box;
     background-color: $color-white;
     border: 1px solid $color-light-blue;
     box-shadow: 0px $base $base * 12 #f3f5fa;
-    filter: drop-shadow(0px $base $base * 12 #d4dcf1);
-    position: relative;
+    // filter: drop-shadow(0px $base $base * 12 #d4dcf1);
+    opacity: 0.5;
+
+    &.swiper-slide-active {
+      opacity: 1;
+    }
 
     @include breakpoint-max(xs) {
       padding: $base * 8;

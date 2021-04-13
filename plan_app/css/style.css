@@ -1,4 +1,4 @@
-.dots, .nav__list, .nav__sublist, .socials__list, .slider-hero-image, .customers, .features, .slider-blog__wrapper, .slider-quotes, .section-faq__list {
+.dots, .nav__list, .nav__sublist, .socials__list, .slider-hero-image, .customers, .features, .slider-blog__wrapper, .slider-quotes__wrapper, .section-faq__list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -340,6 +340,11 @@ body {
 
 .dots__item + .dots__item {
   margin-left: 0.75rem;
+}
+
+.swiper-pagination--center {
+  width: 100%;
+  left: 0;
 }
 
 .swiper-pagination-bullet {
@@ -1582,11 +1587,6 @@ body {
   }
 }
 
-.slider-blog__pagination {
-  width: 100%;
-  left: 0;
-}
-
 .blog-arrow {
   position: absolute;
   top: 50%;
@@ -1626,6 +1626,7 @@ body {
 .section-quotes {
   background: -webkit-gradient(linear, left top, left bottom, from(#eaf0ff), to(#f6f9ff));
   background: linear-gradient(180deg, #eaf0ff 0%, #f6f9ff 100%);
+  overflow: hidden;
 }
 
 .section-quotes__inner {
@@ -1635,7 +1636,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  overflow: hidden;
 }
 
 @media (max-width: 575px) {
@@ -1655,9 +1655,13 @@ body {
   margin-bottom: 1.25rem;
 }
 
+.section-quotes__right {
+  position: relative;
+  width: 48%;
+}
+
 .section-quotes__left {
-  -ms-flex-preferred-size: 44%;
-      flex-basis: 44%;
+  width: 45%;
 }
 
 @media (max-width: 575px) {
@@ -1674,24 +1678,28 @@ body {
   }
 }
 
-.section-quotes__right {
-  -ms-flex-preferred-size: 48%;
-      flex-basis: 48%;
-}
-
 .slider-quotes {
-  margin: -1.25rem 0 4.75rem;
+  width: 50vw;
+  min-width: 0;
+  margin-bottom: 4.75rem;
 }
 
 .slider-quotes__item {
+  position: relative;
+  -ms-flex-preferred-size: 26.5rem;
+      flex-basis: 26.5rem;
   padding: 2.5rem 3.75rem 3.25rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-color: #ffffff;
   border: 1px solid #d8e3fe;
   -webkit-box-shadow: 0px 0.25rem 3rem #f3f5fa;
           box-shadow: 0px 0.25rem 3rem #f3f5fa;
-  -webkit-filter: drop-shadow(0px 0.25rem 3rem #d4dcf1);
-          filter: drop-shadow(0px 0.25rem 3rem #d4dcf1);
-  position: relative;
+  opacity: 0.5;
+}
+
+.slider-quotes__item.swiper-slide-active {
+  opacity: 1;
 }
 
 @media (max-width: 399px) {

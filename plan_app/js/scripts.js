@@ -173,6 +173,21 @@ new Swiper(".slider-blog__container", {
   keyboard: true,
 });
 
+// Слайдер quotes
+new Swiper(".slider-quotes", {
+  loop: true,
+  slidesPerView: "auto",
+  spaceBetween: 64,
+
+  pagination: {
+    el: ".section-quotes__right .swiper-pagination",
+    clickable: true,
+  },
+
+  grabCursor: true,
+  keyboard: true,
+});
+
 //-----------  accordion  -----------
 
 let faqList = document.querySelector(".section-faq__list");

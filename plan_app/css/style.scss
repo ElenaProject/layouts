@@ -431,6 +431,11 @@ body {
 }
 .swiper {
   &-pagination {
+    &--center {
+      width: 100%;
+      left: 0;
+    }
+
     &-bullet {
       width: $base * 2;
       height: $base * 2;
