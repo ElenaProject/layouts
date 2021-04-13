@@ -40,23 +40,18 @@
 }
 
 .slider-quotes {
-  width: 50vw;
+  width: calc(50vw + 48px);
   min-width: 0;
-  margin-bottom: $base * 19;
-  // overflow: visible;
+  margin-left: -48px;
+  margin-top: -48px;
+  margin-bottom: $base * 10;
 
   &__wrapper {
     @extend %list;
   }
   &__item {
-    position: relative;
     flex-basis: $base * 106;
-    padding: $base * 10 $base * 15 $base * 13;
-    box-sizing: border-box;
-    background-color: $color-white;
-    border: 1px solid $color-light-blue;
-    box-shadow: 0px $base $base * 12 #f3f5fa;
-    // filter: drop-shadow(0px $base $base * 12 #d4dcf1);
+    padding: $base * 12;
     opacity: 0.5;
 
     &.swiper-slide-active {
@@ -68,6 +63,15 @@
       padding-bottom: $base * 12;
     }
 
+    &-content {
+      position: relative;
+      padding: $base * 10 $base * 15 $base * 13;
+      box-sizing: border-box;
+      background-color: $color-white;
+      border: 1px solid $color-light-blue;
+      box-shadow: 0px $base $base * 12 #f3f5fa;
+      box-shadow: 0px $base $base * 12 #d4dcf1;
+    }
     &-text {
       color: $color-dark-grey;
       line-height: 1.7;

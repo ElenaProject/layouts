@@ -176,8 +176,9 @@ new Swiper(".slider-blog__container", {
 // Слайдер quotes
 new Swiper(".slider-quotes", {
   loop: true,
+  // loopedSlides: 2,
   slidesPerView: "auto",
-  spaceBetween: 64,
+  // spaceBetween: 64,
 
   pagination: {
     el: ".section-quotes__right .swiper-pagination",
