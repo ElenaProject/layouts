@@ -429,23 +429,29 @@ body {
     }
   }
 }
+.swiper {
+  &-pagination {
+    &-bullet {
+      width: $base * 2;
+      height: $base * 2;
+      margin: 0 !important;
+      cursor: pointer;
+      background-color: $color-logo-grey;
+      border: $base * 1.5 solid transparent;
+      border-radius: 50%;
+      transition: $transition;
+      opacity: 1;
+      background-clip: content-box;
 
-.swiper-pagination {
-  &-bullet {
-    width: $base * 2;
-    height: $base * 2;
-    margin: 0 !important;
-    cursor: pointer;
-    background-color: $color-logo-grey;
-    border: $base * 1.5 solid transparent;
-    border-radius: 50%;
-    transition: $transition;
-    opacity: 1;
-    background-clip: content-box;
-
-    &-active {
-      background-color: $color-logo;
+      &-active {
+        background-color: $color-logo;
+      }
     }
+  }
+
+  &-button-prev::after,
+  &-button-next::after {
+    display: none;
   }
 }
 

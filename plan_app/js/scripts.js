@@ -139,7 +139,7 @@ for (let menuLinkAnchor of menuLinksAnchor) {
   });
 }
 
-// -----------  hero-slider  -----------
+// -----------  sliders  -----------
 
 // Инициализируем swiper
 // Слайдер hero-image
@@ -147,8 +147,26 @@ new Swiper(".section-hero-image", {
   loop: true,
 
   pagination: {
-    el: ".swiper-pagination",
+    el: ".section-hero-image .swiper-pagination",
     clickable: true,
+  },
+
+  grabCursor: true,
+  keyboard: true,
+});
+
+// Слайдер blog
+new Swiper(".slider-blog__container", {
+  loop: true,
+
+  pagination: {
+    el: ".slider-blog .swiper-pagination",
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: ".slider-blog .swiper-button-next",
+    prevEl: ".slider-blog .swiper-button-prev",
   },
 
   grabCursor: true,
