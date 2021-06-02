@@ -405,6 +405,7 @@ body {
   letter-spacing: 0.03em;
 }
 
+// Slider pagination
 .dots {
   @extend %list;
 
@@ -426,6 +427,36 @@ body {
     & + & {
       margin-left: $base * 3;
     }
+  }
+}
+.swiper {
+  &-pagination {
+    &--center {
+      width: 100%;
+      left: 0;
+    }
+
+    &-bullet {
+      width: $base * 2;
+      height: $base * 2;
+      margin: 0 !important;
+      cursor: pointer;
+      background-color: $color-logo-grey;
+      border: $base * 1.5 solid transparent;
+      border-radius: 50%;
+      transition: $transition;
+      opacity: 1;
+      background-clip: content-box;
+
+      &-active {
+        background-color: $color-logo;
+      }
+    }
+  }
+
+  &-button-prev::after,
+  &-button-next::after {
+    display: none;
   }
 }
 

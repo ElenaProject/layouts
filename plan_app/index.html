@@ -10,9 +10,10 @@
 	<title>Planning app</title>
 	<link rel="preload" href="css/normalize.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<noscript>
-		<link rel="stylesheet" href="css/normalize.css.css">
+		<link rel="stylesheet" href="css/normalize.css">
 	</noscript>
 	<link rel="stylesheet" href="css/iconfont.css ">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -79,10 +80,21 @@
 	<!-- / header -->
 	<main>
 		<!-- hero-image -->
-		<section class="section-outer section-hero-image">
+		<section class="section-outer section-hero-image swiper-container">
 			<h1 class="visually-hidden">Planning app for your productivity</h1>
-			<ul class="slider-hero-image">
-				<li class="slider-hero-image__item" style="background-image: url(img/hero_image.svg);">
+			<ul class="slider-hero-image swiper-wrapper">
+				<li class="slider-hero-image__item swiper-slide" style="background-image: url(img/hero_image.svg);">
+					<div class="section-inner vertical-indent vertical-indent--l">
+						<h2 class="title title__section">PLAN YOUR LIFE</h2>
+						<p class="title subtitle subtitle--large"><span>Increase your</span> productivity</p>
+						<p class="text slider-hero-image__text ">Brute laoreet efficiendi id his, ea illum nonumes luptatum pro. Usu
+							atqui laudem an, insolens gubergren similique est cu. Et vel modus congue vituperata.</p>
+						<a class="slider-hero-image__btn icon-play" href="#">
+							<span class="visually-hidden">View video about app</span>
+						</a>
+					</div>
+				</li>
+				<li class="slider-hero-image__item swiper-slide" style="background-image: url(img/hero_image.svg);">
 					<div class="section-inner vertical-indent vertical-indent--l">
 						<h2 class="title title__section">PLAN YOUR LIFE</h2>
 						<p class="title subtitle subtitle--large"><span>Increase your</span> productivity</p>
@@ -95,11 +107,8 @@
 				</li>
 			</ul>
 
-			<ul class="dots section-hero-image__dots">
-				<li class="dots__item dots__item--active"></li>
-				<li class="dots__item"></li>
-				<li class="dots__item"></li>
-			</ul>
+			<div class="swiper-pagination">
+			</div>
 		</section>
 		<!-- / hero-image -->
 
@@ -218,57 +227,125 @@
 			<div class="section-inner vertical-indent vertical-indent--l">
 				<h2 class="title title__section title--center">OUR RESOURCES</h2>
 				<p class="title title--center subtitle">Start reading our blog</p>
-				<div class="slider-wrapper">
-					<ul class="slider-blog">
-						<li class="slider-blog__item">
-							<figure class="slider-blog__gallery">
-								<a class="slider-blog__img-link slider-blog__img-link--big icon-loupe" aria-label="enlarge image"
-									href="#">
-									<img src="img/compressed/article-big.jpg"
-										srcset="img/compressed/article-big@2x.jpg 2x, img/compressed/article-big@3x.jpg 3x"
-										alt="desktop with notebook" width="268" height="267">
-								</a>
-								<a class="slider-blog__img-link slider-blog__img-link--s--pink icon-loupe" aria-label="enlarge image"
-									href="#">
-									<img src="img/compressed/article-s-1.jpg"
-										srcset="img/compressed/article-s-1@2x.jpg 2x, img/compressed/article-s-1@3x.jpg 3x"
-										alt="notebook and coffee" width="127" height="127">
-								</a>
-								<a class="slider-blog__img-link slider-blog__img-link--s--blue icon-loupe" aria-label="enlarge image"
-									href="#">
-									<img src="img/compressed/article-s-2.jpg"
-										srcset="img/compressed/article-s-2@2x.jpg 2x, img/compressed/article-s-2@3x.jpg 3x"
-										alt="man before the schedule" width="127" height="127">
-								</a>
-							</figure>
-							<article class="slider-blog__article">
-								<h3 class="title subtitle subtitle--medium slider-blog__subtitle">How to start planning</h3>
-								<p class="text slider-blog__text ">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu
-									vidit tractatos, vero tractatos ius an, in mel diceret persecuti. Natum petentium principes mei ea.
-									Tota
-									everti periculis vis ei, quas tibique pro at, eos ut decore...</p>
-								<div class="slider-blog__article-btns">
-									<a class="btn btn--primary--blue" href="#">Read now</a>
-									<a class="btn slider-blog__link" href="#">Add to your bookmarks</a>
-								</div>
-							</article>
-						</li>
-					</ul>
 
-					<a class="blog-arrow blog-arrow--prev icon-arrow" href="#">
+				<div class="slider-blog">
+					<div class="slider-blog__container swiper-container">
+						<ul class="slider-blog__wrapper swiper-wrapper">
+							<li class="slider-blog__item swiper-slide">
+								<figure class="slider-blog__gallery">
+									<a class="slider-blog__img-link slider-blog__img-link--big icon-loupe" aria-label="enlarge image"
+										href="#">
+										<img src="img/compressed/article-big.jpg"
+											srcset="img/compressed/article-big@2x.jpg 2x, img/compressed/article-big@3x.jpg 3x"
+											alt="desktop with notebook" width="268" height="267">
+									</a>
+									<a class="slider-blog__img-link slider-blog__img-link--s--pink icon-loupe" aria-label="enlarge image"
+										href="#">
+										<img src="img/compressed/article-s-1.jpg"
+											srcset="img/compressed/article-s-1@2x.jpg 2x, img/compressed/article-s-1@3x.jpg 3x"
+											alt="notebook and coffee" width="127" height="127">
+									</a>
+									<a class="slider-blog__img-link slider-blog__img-link--s--blue icon-loupe" aria-label="enlarge image"
+										href="#">
+										<img src="img/compressed/article-s-2.jpg"
+											srcset="img/compressed/article-s-2@2x.jpg 2x, img/compressed/article-s-2@3x.jpg 3x"
+											alt="man before the schedule" width="127" height="127">
+									</a>
+								</figure>
+								<article class="slider-blog__article">
+									<h3 class="title subtitle subtitle--medium slider-blog__subtitle">How to start planning</h3>
+									<p class="text slider-blog__text ">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu
+										usu
+										vidit tractatos, vero tractatos ius an, in mel diceret persecuti. Natum petentium principes mei ea.
+										Tota
+										everti periculis vis ei, quas tibique pro at, eos ut decore...</p>
+									<div class="slider-blog__article-btns">
+										<a class="btn btn--primary--blue" href="#">Read now</a>
+										<a class="btn slider-blog__link" href="#">Add to your bookmarks</a>
+									</div>
+								</article>
+							</li>
+							<li class="slider-blog__item swiper-slide">
+								<figure class="slider-blog__gallery">
+									<a class="slider-blog__img-link slider-blog__img-link--big icon-loupe" aria-label="enlarge image"
+										href="#">
+										<img src="img/compressed/article-big.jpg"
+											srcset="img/compressed/article-big@2x.jpg 2x, img/compressed/article-big@3x.jpg 3x"
+											alt="desktop with notebook" width="268" height="267">
+									</a>
+									<a class="slider-blog__img-link slider-blog__img-link--s--pink icon-loupe" aria-label="enlarge image"
+										href="#">
+										<img src="img/compressed/article-s-1.jpg"
+											srcset="img/compressed/article-s-1@2x.jpg 2x, img/compressed/article-s-1@3x.jpg 3x"
+											alt="notebook and coffee" width="127" height="127">
+									</a>
+									<a class="slider-blog__img-link slider-blog__img-link--s--blue icon-loupe" aria-label="enlarge image"
+										href="#">
+										<img src="img/compressed/article-s-2.jpg"
+											srcset="img/compressed/article-s-2@2x.jpg 2x, img/compressed/article-s-2@3x.jpg 3x"
+											alt="man before the schedule" width="127" height="127">
+									</a>
+								</figure>
+								<article class="slider-blog__article">
+									<h3 class="title subtitle subtitle--medium slider-blog__subtitle">How to start planning</h3>
+									<p class="text slider-blog__text ">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu
+										usu
+										vidit tractatos, vero tractatos ius an, in mel diceret persecuti. Natum petentium principes mei ea.
+										Tota
+										everti periculis vis ei, quas tibique pro at, eos ut decore...</p>
+									<div class="slider-blog__article-btns">
+										<a class="btn btn--primary--blue" href="#">Read now</a>
+										<a class="btn slider-blog__link" href="#">Add to your bookmarks</a>
+									</div>
+								</article>
+							</li>
+							<li class="slider-blog__item swiper-slide">
+								<figure class="slider-blog__gallery">
+									<a class="slider-blog__img-link slider-blog__img-link--big icon-loupe" aria-label="enlarge image"
+										href="#">
+										<img src="img/compressed/article-big.jpg"
+											srcset="img/compressed/article-big@2x.jpg 2x, img/compressed/article-big@3x.jpg 3x"
+											alt="desktop with notebook" width="268" height="267">
+									</a>
+									<a class="slider-blog__img-link slider-blog__img-link--s--pink icon-loupe" aria-label="enlarge image"
+										href="#">
+										<img src="img/compressed/article-s-1.jpg"
+											srcset="img/compressed/article-s-1@2x.jpg 2x, img/compressed/article-s-1@3x.jpg 3x"
+											alt="notebook and coffee" width="127" height="127">
+									</a>
+									<a class="slider-blog__img-link slider-blog__img-link--s--blue icon-loupe" aria-label="enlarge image"
+										href="#">
+										<img src="img/compressed/article-s-2.jpg"
+											srcset="img/compressed/article-s-2@2x.jpg 2x, img/compressed/article-s-2@3x.jpg 3x"
+											alt="man before the schedule" width="127" height="127">
+									</a>
+								</figure>
+								<article class="slider-blog__article">
+									<h3 class="title subtitle subtitle--medium slider-blog__subtitle">How to start planning</h3>
+									<p class="text slider-blog__text ">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu
+										usu
+										vidit tractatos, vero tractatos ius an, in mel diceret persecuti. Natum petentium principes mei ea.
+										Tota
+										everti periculis vis ei, quas tibique pro at, eos ut decore...</p>
+									<div class="slider-blog__article-btns">
+										<a class="btn btn--primary--blue" href="#">Read now</a>
+										<a class="btn slider-blog__link" href="#">Add to your bookmarks</a>
+									</div>
+								</article>
+							</li>
+						</ul>
+					</div>
+
+					<a class="blog-arrow blog-arrow--prev swiper-button-prev icon-arrow" href="#">
 						<span class="visually-hidden">previous blog slide</span>
 					</a>
-					<a class="blog-arrow blog-arrow--next icon-arrow" href="#">
+					<a class="blog-arrow blog-arrow--next swiper-button-next icon-arrow_next" href="#">
 						<span class="visually-hidden">next blog slide</span>
 					</a>
+					<div class="swiper-pagination swiper-pagination--center">
+					</div>
+
 				</div>
-
-				<ul class="dots">
-					<li class="dots__item dots__item--active"></li>
-					<li class="dots__item"></li>
-					<li class="dots__item"></li>
-				</ul>
-
 			</div>
 		</section>
 		<!-- / blog -->
@@ -283,25 +360,51 @@
 						laudem an.</p>
 				</div>
 				<div class="section-quotes__right">
-					<ul class="slider-quotes">
-						<li class="slider-quotes__item">
-							<p class="text slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu
-								usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.
-							</p>
-							<img class="slider-quotes__item-img" src="img/customer.jpg" alt="customer photo" width="60" height="60">
-						</li>
-					</ul>
-					<ul class="dots slider-blog__dots">
-						<li class="dots__item"></li>
-						<li class="dots__item"></li>
-						<li class="dots__item dots__item--active"></li>
-						<li class="dots__item"></li>
-						<li class="dots__item"></li>
-						<li class="dots__item"></li>
-						<li class="dots__item"></li>
-						<li class="dots__item"></li>
-						<li class="dots__item"></li>
-					</ul>
+					<div class="slider-quotes swiper-container">
+						<ul class="slider-quotes__wrapper swiper-wrapper">
+							<li class="slider-quotes__item swiper-slide">
+								<div class="slider-quotes__item-content">
+									<p class="text slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam.
+										Eu
+										usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.
+									</p>
+									<img class="slider-quotes__item-img" src="img/customer.jpg" alt="customer photo" width="60"
+										height="60">
+								</div>
+							</li>
+							<li class="slider-quotes__item swiper-slide">
+								<div class="slider-quotes__item-content">
+									<p class="text slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam.
+										Eu
+										usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.
+									</p>
+									<img class="slider-quotes__item-img" src="img/customer.jpg" alt="customer photo" width="60"
+										height="60">
+								</div>
+							</li>
+							<li class="slider-quotes__item swiper-slide">
+								<div class="slider-quotes__item-content">
+									<p class="text slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam.
+										Eu
+										usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.
+									</p>
+									<img class="slider-quotes__item-img" src="img/customer.jpg" alt="customer photo" width="60"
+										height="60">
+								</div>
+							</li>
+							<li class="slider-quotes__item swiper-slide">
+								<div class="slider-quotes__item-content">
+									<p class="text slider-quotes__item-text">Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam.
+										Eu
+										usu vidit tractatos, vero tractatos ius an, in mel diceret persecuti.
+									</p>
+									<img class="slider-quotes__item-img" src="img/customer.jpg" alt="customer photo" width="60"
+										height="60">
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="swiper-pagination swiper-pagination--center"></div>
 				</div>
 			</div>
 		</section>
@@ -472,7 +575,9 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap&subset=latin-ext"
 		rel="stylesheet">
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="js/scripts.js"></script>
+
 </body>
 
 </html>

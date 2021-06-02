@@ -139,6 +139,54 @@ for (let menuLinkAnchor of menuLinksAnchor) {
   });
 }
 
+// -----------  sliders  -----------
+
+// Инициализируем swiper
+// Слайдер hero-image
+new Swiper(".section-hero-image", {
+  loop: true,
+
+  pagination: {
+    el: ".section-hero-image .swiper-pagination",
+    clickable: true,
+  },
+
+  grabCursor: true,
+  keyboard: true,
+});
+
+// Слайдер blog
+new Swiper(".slider-blog__container", {
+  loop: true,
+
+  pagination: {
+    el: ".slider-blog .swiper-pagination",
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: ".slider-blog .swiper-button-next",
+    prevEl: ".slider-blog .swiper-button-prev",
+  },
+
+  grabCursor: true,
+  keyboard: true,
+});
+
+// Слайдер quotes
+new Swiper(".slider-quotes", {
+  loop: true,
+  slidesPerView: "auto",
+
+  pagination: {
+    el: ".section-quotes__right .swiper-pagination",
+    clickable: true,
+  },
+
+  grabCursor: true,
+  keyboard: true,
+});
+
 //-----------  accordion  -----------
 
 let faqList = document.querySelector(".section-faq__list");

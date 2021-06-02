@@ -1,13 +1,20 @@
 .section-quotes {
   background: linear-gradient(180deg, #eaf0ff 0%, #f6f9ff 100%);
+  overflow: hidden;
 
   &__inner {
     display: flex;
     justify-content: space-between;
-    overflow: hidden;
+
+    @include breakpoint-max(md) {
+      flex-direction: column;
+      width: 80%;
+      margin: 0 auto;
+    }
 
     @include breakpoint-max(sm) {
-      flex-direction: column;
+      width: 100%;
+      box-sizing: border-box;
     }
   }
 
@@ -19,40 +26,89 @@
     margin-bottom: $base * 5;
   }
 
-  &__left {
-    flex-basis: 44%;
+  &__right {
+    position: relative;
+    width: 48%;
 
-    @include breakpoint-max(sm) {
-      margin-bottom: $base * 16;
+    @include breakpoint-max(lg) {
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    @include breakpoint-max(md) {
+      min-width: 100%;
+    }
+  }
+
+  &__left {
+    width: 45%;
+
+    @include breakpoint-max(md) {
+      width: 100%;
+      margin-bottom: $base * 14;
     }
 
     @include breakpoint-max(xs) {
       position: relative;
       z-index: 10;
-      margin-bottom: $base * 10;
     }
-  }
-  &__right {
-    flex-basis: 48%;
   }
 }
 
 .slider-quotes {
-  @extend %list;
+  width: calc(50vw + 48px);
+  min-width: 0;
+  margin-left: -$base * 12;
+  margin-top: -$base * 12;
+  margin-bottom: $base * 10;
 
-  margin: $base * -5 0 $base * 19;
+  @include breakpoint-max(lg) {
+    width: 100%;
+    margin: 0;
+    margin-top: -$base * 12;
+  }
+
+  @include breakpoint-max(sm) {
+    margin-bottom: $base * 5;
+  }
+
+  @include breakpoint-max(xs) {
+    width: 120%;
+    margin-left: -10%;
+    margin-right: -10%;
+  }
+
+  &__wrapper {
+    @extend %list;
+  }
 
   &__item {
-    padding: $base * 10 $base * 15 $base * 13;
-    background-color: $color-white;
-    border: 1px solid $color-light-blue;
-    box-shadow: 0px $base $base * 12 #f3f5fa;
-    filter: drop-shadow(0px $base $base * 12 #d4dcf1);
-    position: relative;
+    flex-basis: $base * 108;
+    padding: $base * 12;
+    opacity: 0.5;
 
-    @include breakpoint-max(xs) {
-      padding: $base * 8;
-      padding-bottom: $base * 12;
+    &.swiper-slide-active {
+      opacity: 1;
+    }
+
+    @include breakpoint-max(lg) {
+      flex-basis: 100%;
+      box-sizing: border-box;
+    }
+
+    &-content {
+      position: relative;
+      padding: $base * 10 $base * 15 $base * 13;
+      box-sizing: border-box;
+      background-color: $color-white;
+      border: 1px solid $color-light-blue;
+      box-shadow: 0px $base $base * 12 #f3f5fa;
+      box-shadow: 0px $base $base * 12 #d4dcf1;
+
+      @include breakpoint-max(sm) {
+        padding: $base * 8;
+        padding-bottom: $base * 10;
+      }
     }
 
     &-text {
