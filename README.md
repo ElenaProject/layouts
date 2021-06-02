@@ -2,7 +2,7 @@
 
 Чтобы просмотреть кликните на интересующем названии
 
- ## 1. [Сайт для приложения](https://elenaproject.github.io/layouts/plan_app/index.html) ##
+ ## 1. [App website](https://elenafrontend.github.io/layouts/plan_app/index.html) ##
 <br>
 
 - lighthouse reports
@@ -13,7 +13,7 @@ desktop  | mobile
 
 
 - адаптивность
-  > отображение на устройствах всех размеров
+  >- отображение на устройствах всех размеров
 
 - доступность  
   >- верстка выполнена с учетом семантики, выделены landmarks для облегчения навигации при помощи screen readers
