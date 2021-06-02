@@ -9,7 +9,7 @@
 
 desktop  | mobile
 ------------- | -------------
-<img src='plan_app/img/desktop-report_lighthouse.jpg' align='right' height='80px'> | <img src='plan_app/img/mobile_report_lighthouse.jpg' align='right' height='80px'>  
+<img src='https://elenafrontend.github.io/layouts/plan_app/img/desktop-report_lighthouse.jpg' align='right' height='80px'> | <img src='https://elenafrontend.github.io/layouts/plan_app/img/mobile_report_lighthouse.jpg' align='right' height='80px'>  
 
 
 - адаптивность
